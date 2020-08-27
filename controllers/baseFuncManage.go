@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"bailun.com/CT4_quote_server/front_gateway/models"
+	"bailun.com/CT4_quote_server/WebManageSvr/models"
 	"encoding/json"
 	"github.com/astaxie/beego"
 )
@@ -20,45 +20,17 @@ type ReturnGetTableConfig struct {
 	Data                []models.DataTableConfig
 }
 
-// @Title FuncList
-// @Description list object
-// @Param   funcName  query   string     false       "funcName"
-// @Success 200
-// @router /getTableConfig [get]
-func (f *FuncManagerController) GetTableConfig() {
-	funcName := f.GetString("funcName", "")
-	var ReturnData ReturnGetTableConfig
-	ReturnData.SetData(0, "success to get")
-	defer func() {
-		f.Data["json"] = ReturnData
-		f.ServeJSON()
-	}()
-	db, tb, ok := models.GetDBTBInfo(funcName)
-	if !ok {
-		ReturnData.SetData(1, "not found table")
-		return
-	}
-	res, err := models.GetDBTbConfig(db, tb)
-	if err != nil {
-		ReturnData.SetData(1, "get table config failed")
-		return
-	}
-	ReturnData.Data = res
-
-}
-
 type ReturnGetAllTable struct {
 	models.CommonReturn `json:",inline"`
-	Data                []string
+	Data                []models.DBTBInfo
 }
 
 // @Title tableList
-// @Description list object
-// @Param   db  query   string     false       "db"
-// @Success 200
+// @Description
+// @Success 200  {object} controllers.ReturnGetAllTable
 // @router /getAllTables [get]
 func (f *FuncManagerController) GetAllTable() {
-	funcName := f.GetString("db", "")
+	//funcName := f.GetString("db", "")
 	var ReturnData ReturnGetAllTable
 	ReturnData.SetData(0, "success to get")
 	defer func() {
@@ -66,12 +38,12 @@ func (f *FuncManagerController) GetAllTable() {
 		f.ServeJSON()
 	}()
 
-	db, err := models.GetDBNames(funcName)
+	dbTb, err := models.GetDBNames()
 	if err != nil {
 		ReturnData.SetData(1, err.Error())
 		return
 	}
-	ReturnData.Data = db
+	ReturnData.Data = dbTb
 }
 
 type UpdateTBconfParm struct {
@@ -79,8 +51,8 @@ type UpdateTBconfParm struct {
 	Data     []models.DataTableUpdateConfig `json:"Data"`
 }
 
-// @Title FuncList
-// @Description list object
+// @Title update
+// @Description update object
 // @Param   body		body 	controllers.UpdateTBconfParm	true	     "parm"
 // @Success 200
 // @router /updateTableConfig [post]
@@ -116,39 +88,4 @@ func (f *FuncManagerController) UpdateTableConfig() {
 type TBDataListReturn struct {
 	models.CommonReturn `json:",inline"`
 	Data                []map[string]interface{}
-}
-
-// @Title getTableDataList
-// @Description getTableDataList
-// @Param   funcName  query   string     false       "funcName"
-// @Param   page  query   int     false       "funcName"
-// @Param   size  query   int     false       "funcName"
-// @Success 200
-// @router /getTableDataList [get]
-func (f *FuncManagerController) GetTableDataList() {
-	var err error
-	var page, size int
-	funcName := f.GetString("funcName", "")
-	page, err = f.GetInt("page", 1)
-	size, err = f.GetInt("size", 10)
-	var ReturnData TBDataListReturn
-	ReturnData.SetData(0, "success to get")
-	defer func() {
-		f.Data["json"] = ReturnData
-		f.ServeJSON()
-
-	}()
-	db, tb, ok := models.GetDBTBInfo(funcName)
-	if !ok {
-		ReturnData.SetData(1, "failed to find tb")
-	}
-
-	var getData []map[string]interface{}
-	getData, err = models.GetTableDataList(db, tb, page, size)
-	if err != nil {
-		ReturnData.SetData(1, err.Error())
-	}
-
-	ReturnData.Data = getData
-	return
 }

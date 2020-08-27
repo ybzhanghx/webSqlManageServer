@@ -14,8 +14,6 @@ require (
 	bailun.com/CT4_quote_server/lib v0.0.0-00010101000000-000000000000
 	bailun.com/CT4_quote_server/protocol v0.0.0-00010101000000-000000000000
 	github.com/BurntSushi/toml v0.3.1
-	github.com/astaxie/beego v1.12.2
-	github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a // indirect
+	github.com/astaxie/beego v1.12.1
 	github.com/jmoiron/sqlx v1.2.0
-	github.com/smartystreets/goconvey v1.6.4
 )

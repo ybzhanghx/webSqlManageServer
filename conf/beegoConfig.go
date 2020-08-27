@@ -30,12 +30,13 @@ func BeeConfInit() {
 
 	beego.BConfig.AppName = Conf.Server.AppName
 	beego.BConfig.Listen.HTTPPort = Conf.Server.HTTPPort
-	beego.BConfig.RunMode = Conf.Server.RunMode
+	//beego.BConfig.RunMode = Conf.Server.RunMode
 	// 是否允许在 HTTP 请求时，返回原始请求体数据字节，默认为 false
 	beego.BConfig.CopyRequestBody = Conf.Server.CopyRequestBody
 	// 是否模板自动渲染，默认值为 true，对于 API 类型的应用，应用需要把该选项设置为 false，不需要渲染模板
 	beego.BConfig.WebConfig.AutoRender = Conf.Server.AutoRender
-
+	beego.BConfig.WebConfig.EnableDocs = Conf.Server.EnableDocs
+	beego.BConfig.RunMode = Conf.Server.RunMode
 	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
 		AllowAllOrigins:  true,
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},

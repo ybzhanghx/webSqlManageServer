@@ -8,27 +8,20 @@
 package routers
 
 import (
-	"bailun.com/CT4_quote_server/front_gateway/controllers"
-
+	"bailun.com/CT4_quote_server/WebManageSvr/controllers"
 	"github.com/astaxie/beego"
 )
 
 func init() {
-
-	ns := beego.NewNamespace("/manage",
-		beego.NSNamespace("/user",
-			beego.NSInclude(
-				&controllers.UserController{},
-			),
-		),
-		beego.NSNamespace("/tradeAccount",
-			beego.NSInclude(
-				&controllers.TradeAccountController{},
-			),
-		),
+	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/funcList",
 			beego.NSInclude(
 				&controllers.FuncManagerController{},
+			),
+		),
+		beego.NSNamespace("/table",
+			beego.NSInclude(
+				&controllers.TableManagerController{},
 			),
 		),
 	)

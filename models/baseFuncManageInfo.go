@@ -2,7 +2,7 @@ package models
 
 import (
 	"bailun.com/CT4_quote_server/WebManageSvr/conf"
-	"bailun.com/CT4_quote_server/lib/sqltool"
+
 	"database/sql"
 	"errors"
 	"github.com/astaxie/beego/logs"
@@ -14,6 +14,8 @@ import (
 	"sync"
 )
 
+const ()
+
 type dataBaseMapTable struct {
 	dataBase string
 	table    string
@@ -21,26 +23,23 @@ type dataBaseMapTable struct {
 
 var (
 	funcTableMap sync.Map
-	sysInfDb     *sqlx.DB
-	testInfDb    *sqlx.DB
-	tradeFxDb    *sqlx.DB
 )
 
 func BaseFuncManageInit() {
-	var err error
-	sysInfDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
-		conf.Conf.MysqlConf.SystemDbName)
-
-	testInfDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
-		"zybtest")
-	tradeFxDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
-		"TradeFxDB")
-	if err != nil {
-		panic(err)
-	}
+	//var err error
+	//sysInfDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
+	//	conf.Conf.MysqlConf.SystemDbName)
+	//
+	//testInfDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
+	//	"zybtest")
+	//tradeFxDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
+	//	"TradeFxDB")
+	//if err != nil {
+	//	panic(err)
+	//}
 	funcTableMap.Store("test", dataBaseMapTable{"zybtest", "tableA"})
 	funcTableMap.Store("clientManage", dataBaseMapTable{"CT4DB", "info_user"})
-	dbNames, _ := GetDBNames("TradeFxDB")
+	dbNames, _ := GetTBNamesByDB("TradeFxDB")
 	for i := range dbNames {
 		funcTableMap.Store(dbNames[i], dataBaseMapTable{"TradeFxDB", dbNames[i]})
 	}
@@ -77,11 +76,8 @@ func GetDBTbConfig(db, tb string) (res []DataTableConfig, err error) {
 	FROM INFORMATION_SCHEMA.COLUMNS
 	WHERE  LOWER(table_schema) = "%s" and TABLE_NAME = "%s"`, db, tb)
 
-	if err = sysInfDb.Select(&res,
+	if err = conf.SysInfDb.Select(&res,
 		sqlfmt); err != nil {
-		if err == sql.ErrNoRows {
-			err = ErrUserIsNotExist
-		}
 
 		logs.Error(res, err)
 		return
@@ -93,8 +89,43 @@ func GetDBTbConfig(db, tb string) (res []DataTableConfig, err error) {
 //	DbName string
 //	TbName []string
 //}
+type DBTBInfo struct {
+	DbName string
+	TbName []string
+}
+type tmpSqlData struct {
+	DB string `db:"DB"`
+	TB string `db:"TB"`
+}
 
-func GetDBNames(db string) (res []string, err error) {
+func GetDBNames() (res []DBTBInfo, err error) {
+	sqlFmt := `select TABLE_SCHEMA DB,table_name TB  from information_schema.tables
+			where  table_type='base table' ORDER BY TABLE_SCHEMA;`
+
+	var sqlData []tmpSqlData
+	err = conf.SysInfDb.Select(&sqlData, sqlFmt)
+	if err != nil {
+		logs.Error(err.Error())
+		return
+	}
+	var tmpMap = make(map[string][]string)
+	for i := range sqlData {
+		if _, ok := tmpMap[sqlData[i].DB]; !ok {
+			tmpMap[sqlData[i].DB] = []string{}
+		}
+		tmpMap[sqlData[i].DB] = append(tmpMap[sqlData[i].DB], sqlData[i].TB)
+	}
+
+	for key, value := range tmpMap {
+		var tmpNode DBTBInfo
+		tmpNode.DbName = key
+		tmpNode.TbName = value
+		res = append(res, tmpNode)
+	}
+	return
+}
+
+func GetTBNamesByDB(db string) (res []string, err error) {
 	sqlfmt := fmt.Sprintf(`select table_name from information_schema.tables 	
 		where table_schema='%s' and table_type='base table'`, db)
 	if db == "" {
@@ -102,11 +133,11 @@ func GetDBNames(db string) (res []string, err error) {
 			where table_schema=%s and table_type='base table`
 	}
 
-	if err = sysInfDb.Select(&res,
+	if err = conf.SysInfDb.Select(&res,
 		sqlfmt); err != nil {
-		if err == sql.ErrNoRows {
-			err = ErrUserIsNotExist
-		}
+		//if err == sql.ErrNoRows {
+		//	err = ErrUserIsNotExist
+		//}
 
 		logs.Error(res, err)
 		return
@@ -119,7 +150,7 @@ func UpdateDBConfig(db, tb string, data []DataTableUpdateConfig) (err error) {
 	var dbs *sqlx.DB
 
 	if db == "zybtest" {
-		dbs = testInfDb
+		dbs = conf.SysInfDb
 	} else {
 		return
 	}
@@ -201,9 +232,9 @@ func UpdateDBConfig(db, tb string, data []DataTableUpdateConfig) (err error) {
 func GetTableDataList(db, tb string, page, size int) (data []map[string]interface{}, err error) {
 	var dbs *sqlx.DB
 	if db == "zybtest" {
-		dbs = testInfDb
+		dbs = conf.SysInfDb
 	} else if db == "TradeFxDB" {
-		dbs = tradeFxDb
+		dbs = conf.SysInfDb
 	} else {
 		return nil, errors.New("not found db")
 	}
