@@ -1,7 +1,5 @@
 package models
 
-import pb "bailun.com/CT4_quote_server/protocol/rpc"
-
 type CommonReturn struct {
 	Code int
 	Msg  string
@@ -9,11 +7,6 @@ type CommonReturn struct {
 
 func (c *CommonReturn) SetData(code int, msg string) {
 	c.Code, c.Msg = code, msg
-}
-
-type TradeAccountReturn struct {
-	CommonReturn `json:",inline"`
-	Data         []*pb.TradeAccountItemInfo `json:"data"`
 }
 
 type TradeAccountSingReq struct {

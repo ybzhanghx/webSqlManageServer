@@ -2,6 +2,10 @@ package models
 
 import (
 	"bailun.com/CT4_quote_server/WebManageSvr/conf"
+	"bailun.com/CT4_quote_server/WebManageSvr/utils"
+
+	dynamicstruct "github.com/ompluscator/dynamic-struct"
+	"strings"
 
 	"database/sql"
 	"errors"
@@ -229,56 +233,193 @@ func UpdateDBConfig(db, tb string, data []DataTableUpdateConfig) (err error) {
 	return
 }
 
-func GetTableDataList(db, tb string, page, size int) (data []map[string]interface{}, err error) {
+func GetTableDataList(db, tb string, page, size int) (data []interface{}, colTypes []FieldType, err error) {
 	var dbs *sqlx.DB
-	if db == "zybtest" {
-		dbs = conf.SysInfDb
-	} else if db == "TradeFxDB" {
-		dbs = conf.SysInfDb
-	} else {
-		return nil, errors.New("not found db")
+	var ok bool
+	if dbs, ok = conf.ArrSqlDb[db]; !ok {
+		return nil, nil, errors.New("not found db")
 	}
-	//data =make([]interface{},0)
 
 	sqlFmt := fmt.Sprintf("SELECT * FROM `%s`  Limit %d,%d", tb, (page-1)*size, size)
 	var rows *sqlx.Rows
 	rows, err = dbs.Queryx(sqlFmt)
 	if err != nil {
 		logs.Error(err)
-		return nil, err
+		return nil, nil, err
 	}
+	//dbs.Select()
+
+	colField, _ := rows.ColumnTypes()
+
+	typeStruc := dynamicstruct.NewStruct()
+	colTypes = make([]FieldType, len(colField))
+	for i := range colField {
+		colTypes[i] = typeDatabaseName(typeStruc, colField[i])
+	}
+	buildStruct := typeStruc.Build()
 
 	for rows.Next() {
-		//下面演示如何将数据保存到struct、map和数组中
-		//定义struct对象
-		//var p Place
-
-		//定义map类型
-		m := make(map[string]interface{})
-
-		////定义slice类型
-		//s := make([]interface{}, 0)
-		//
-		////使用StructScan函数将当前记录的数据保存到struct对象中
-		//err = rows.StructScan(&p)
-		////保存到map
-		err = rows.MapScan(m)
+		var node = buildStruct.New()
+		err = rows.StructScan(node)
 		if err != nil {
 			logs.Error(err)
-			return nil, err
 		}
-		data = append(data, m)
-		//保存到数组
-		//err = rows.SliceScan(&s)
+		err = nil
+		data = append(data, node)
 	}
-	//if err = dbs.Select(&data, sqlFmt); err != nil {
-	//	if err == sql.ErrNoRows {
-	//		err = ErrUserIsNotExist
-	//	}
-	//
-	//	return
-	//}
-	fmt.Println(data)
 	return
 
+}
+
+func GetTableDataTotals(db, tb string) (res int64, err error) {
+	var dbs *sqlx.DB
+	var ok bool
+	if dbs, ok = conf.ArrSqlDb[db]; !ok {
+		return 0, errors.New("not found db")
+	}
+	sqlFmt := fmt.Sprintf("SELECT count(*) FROM `%s` ", tb)
+	err = dbs.QueryRow(sqlFmt).Scan(&res)
+	if err != nil {
+		logs.Error(err.Error())
+	}
+	return
+}
+
+type FieldType struct {
+	FieldName string
+	TypeName  string
+	AbleNull  bool
+}
+
+func typeDatabaseName(newStruct dynamicstruct.Builder, Field *sql.ColumnType) (colTypes FieldType) {
+	FieldName := Field.Name()
+	typeName := Field.DatabaseTypeName()
+	isNull, _ := Field.Nullable()
+
+	newTypeName := strings.ToUpper(FieldName[0:1]) + FieldName[1:]
+	tagStr := fmt.Sprintf(`db:"%s" json:"%s"`, FieldName, FieldName)
+
+	colTypes.AbleNull = isNull
+	colTypes.FieldName = FieldName
+	var types interface{}
+	types = func() interface{} {
+		switch {
+		case strings.Contains(typeName, "INT"):
+			colTypes.TypeName = "int"
+			if !isNull {
+				return 0
+			} else {
+				return sql.NullInt64{}
+			}
+		case strings.Contains(typeName, "CHAR"), strings.Contains(typeName, "TEXT"):
+			colTypes.TypeName = "string"
+			if !isNull {
+				return ""
+			} else {
+				return sql.NullString{}
+			}
+
+		case strings.Contains(typeName, "DATETIME"):
+			colTypes.TypeName = "time"
+			return utils.NullTimeStamp{}
+		default:
+			return 0
+		}
+	}()
+
+	newStruct = newStruct.AddField(newTypeName, types, tagStr)
+	return
+	//switch{
+	//case strings.Contains(typeName,"INT"):
+	//
+	//	//types = 0
+	//	newStruct = newStruct.AddField(newTypeName,0, `db:"`+FieldName+`"`)
+	//case strings.Contains(typeName,"CHAR"),strings.Contains(typeName,"TEXT"):
+	//	newStruct = newStruct.AddField(newTypeName,"", `db:"`+FieldName+`"`)
+	//case strings.Contains(typeName,"DATETIME"):
+	//	newStruct = newStruct.AddField(newTypeName,"", `db:"`+FieldName+`"`)
+	//}
+	//AddField("DataBase", "", `json:"dataBasse" db:"Database"`).
+	//	Build()
+	//switch mf.fieldType {
+	//case fieldTypeBit:
+	//	return "BIT"
+	//case fieldTypeBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "TEXT"
+	//	}
+	//	return "BLOB"
+	//case fieldTypeDate:
+	//	return "DATE"
+	//case fieldTypeDateTime:
+	//	return "DATETIME"
+	//case fieldTypeDecimal:
+	//	return "DECIMAL"
+	//case fieldTypeDouble:
+	//	return "DOUBLE"
+	//case fieldTypeEnum:
+	//	return "ENUM"
+	//case fieldTypeFloat:
+	//	return "FLOAT"
+	//case fieldTypeGeometry:
+	//	return "GEOMETRY"
+	//case fieldTypeInt24:
+	//	return "MEDIUMINT"
+	//case fieldTypeJSON:
+	//	return "JSON"
+	//case fieldTypeLong:
+	//	return "INT"
+	//case fieldTypeLongBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "LONGTEXT"
+	//	}
+	//	return "LONGBLOB"
+	//case fieldTypeLongLong:
+	//	return "BIGINT"
+	//case fieldTypeMediumBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "MEDIUMTEXT"
+	//	}
+	//	return "MEDIUMBLOB"
+	//case fieldTypeNewDate:
+	//	return "DATE"
+	//case fieldTypeNewDecimal:
+	//	return "DECIMAL"
+	//case fieldTypeNULL:
+	//	return "NULL"
+	//case fieldTypeSet:
+	//	return "SET"
+	//case fieldTypeShort:
+	//	return "SMALLINT"
+	//case fieldTypeString:
+	//	if mf.charSet == collations[binaryCollation] {
+	//		return "BINARY"
+	//	}
+	//	return "CHAR"
+	//case fieldTypeTime:
+	//	return "TIME"
+	//case fieldTypeTimestamp:
+	//	return "TIMESTAMP"
+	//case fieldTypeTiny:
+	//	return "TINYINT"
+	//case fieldTypeTinyBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "TINYTEXT"
+	//	}
+	//	return "TINYBLOB"
+	//case fieldTypeVarChar:
+	//	if mf.charSet == collations[binaryCollation] {
+	//		return "VARBINARY"
+	//	}
+	//	return "VARCHAR"
+	//case fieldTypeVarString:
+	//	if mf.charSet == collations[binaryCollation] {
+	//		return "VARBINARY"
+	//	}
+	//	return "VARCHAR"
+	//case fieldTypeYear:
+	//	return "YEAR"
+	//default:
+	//	return ""
+	//}
 }

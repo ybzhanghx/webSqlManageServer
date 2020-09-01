@@ -40,7 +40,8 @@ func (f *TableManagerController) TableConfig() {
 
 // @Title getTableDataList
 // @Description getTableDataList
-// @Param   funcName  query   string     false       "funcName"
+// @Param  DB   query   string     false       "funcName"
+// @Param  TB   query   string     false       "funcName"
 // @Param   page  query   int     false       "funcName"
 // @Param   size  query   int     false       "funcName"
 // @Success 200
@@ -61,12 +62,19 @@ func (f *TableManagerController) DataList() {
 
 	}()
 
-	var getData []map[string]interface{}
-	getData, err = models.GetTableDataList(db, tb, page, size)
+	var getData []interface{}
+	var fields []models.FieldType
+	getData, fields, err = models.GetTableDataList(db, tb, page, size)
 	if err != nil {
 		ReturnData.SetData(1, err.Error())
+		return
 	}
-
+	ReturnData.Totals, err = models.GetTableDataTotals(db, tb)
+	if err != nil {
+		ReturnData.SetData(1, err.Error())
+		return
+	}
 	ReturnData.Data = getData
+	ReturnData.Fields = fields
 	return
 }

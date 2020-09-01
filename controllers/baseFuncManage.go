@@ -87,5 +87,7 @@ func (f *FuncManagerController) UpdateTableConfig() {
 
 type TBDataListReturn struct {
 	models.CommonReturn `json:",inline"`
-	Data                []map[string]interface{}
+	Fields              []models.FieldType
+	Data                []interface{}
+	Totals              int64
 }

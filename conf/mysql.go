@@ -7,7 +7,7 @@ import (
 
 var (
 	SysInfDb *sqlx.DB
-	arrSqlDb map[string]*sqlx.DB
+	ArrSqlDb map[string]*sqlx.DB
 )
 
 func MysqlInit() {
@@ -17,6 +17,24 @@ func MysqlInit() {
 	SysInfDb, err = sqltool.InitDB(c.User, c.Pwd, c.Addr, c.SystemDbName)
 	if err != nil {
 		panic(err)
+	}
+	ArrSqlDb = make(map[string]*sqlx.DB)
+	var dbName []struct {
+		DataBase string `db:"Database"`
+	}
+
+	err = SysInfDb.Select(&dbName, "show databases ")
+	if err != nil {
+		panic(err)
+	}
+
+	for i := range dbName {
+		var tmpDb *sqlx.DB
+		tmpDb, err = sqltool.InitDB(c.User, c.Pwd, c.Addr, dbName[i].DataBase)
+		if err != nil {
+			panic(err)
+		}
+		ArrSqlDb[dbName[i].DataBase] = tmpDb
 	}
 
 	//testInfDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
