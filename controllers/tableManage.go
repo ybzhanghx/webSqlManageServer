@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"bailun.com/CT4_quote_server/WebManageSvr/models"
+	"encoding/json"
 	"github.com/astaxie/beego"
 )
 
@@ -9,10 +10,15 @@ type TableManagerController struct {
 	beego.Controller
 }
 
+type ReturnGetTableConfig struct {
+	models.CommonReturn `json:",inline"`
+	Data                []models.DataTableConfig
+}
+
 // @Title FuncList
 // @Description list object
 // @Param   DB  query   string     false       "db"
-// @Param   TB  query   string     false       "funcName"
+// @Param   TB  query   string     false       "tb"
 // @Success 200
 // @router /TableConfig [get]
 func (f *TableManagerController) TableConfig() {
@@ -36,6 +42,13 @@ func (f *TableManagerController) TableConfig() {
 		return
 	}
 	ReturnData.Data = res
+}
+
+type TBDataListReturn struct {
+	models.CommonReturn `json:",inline"`
+	Fields              []models.FieldType
+	Data                []interface{}
+	Totals              int64
 }
 
 // @Title getTableDataList
@@ -77,4 +90,40 @@ func (f *TableManagerController) DataList() {
 	ReturnData.Data = getData
 	ReturnData.Fields = fields
 	return
+}
+
+type UpdateTBConfParm struct {
+	DB       string                         `json:"DB"`
+	TB       string                         `json:"TB"`
+	FuncName string                         `json:"funcName"`
+	Data     []models.DataTableUpdateConfig `json:"Data"`
+}
+
+// @Title update
+// @Description update object
+// @Param   body		body 	controllers.UpdateTBConfParm	true	     "parm"
+// @Success 200
+// @router /updateTableConfig [post]
+func (f *TableManagerController) UpdateTableConfig() {
+
+	var ReturnData models.CommonReturn
+	ReturnData.SetData(0, "success to update")
+	defer func() {
+		f.Data["json"] = ReturnData
+		f.ServeJSON()
+
+	}()
+	var parmData UpdateTBConfParm
+	err := json.Unmarshal(f.Ctx.Input.RequestBody, &parmData)
+	if err != nil {
+		ReturnData.SetData(1, "parm is error:"+err.Error())
+		return
+	}
+
+	err = models.UpdateDBConfig(parmData.DB, parmData.TB, parmData.Data)
+	if err != nil {
+		ReturnData.SetData(1, err.Error())
+		return
+	}
+
 }

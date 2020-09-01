@@ -104,7 +104,7 @@ type tmpSqlData struct {
 
 func GetDBNames() (res []DBTBInfo, err error) {
 	sqlFmt := `select TABLE_SCHEMA DB,table_name TB  from information_schema.tables
-			where  table_type='base table' ORDER BY TABLE_SCHEMA;`
+			where  table_type='BASE TABLE' ORDER BY TABLE_SCHEMA;`
 
 	var sqlData []tmpSqlData
 	err = conf.SysInfDb.Select(&sqlData, sqlFmt)
@@ -153,11 +153,11 @@ func UpdateDBConfig(db, tb string, data []DataTableUpdateConfig) (err error) {
 
 	var dbs *sqlx.DB
 
-	if db == "zybtest" {
-		dbs = conf.SysInfDb
-	} else {
-		return
+	var ok bool
+	if dbs, ok = conf.ArrSqlDb[db]; !ok {
+		return errors.New("not found db")
 	}
+
 	rofunc := func(err error, tx *sql.Tx) {
 		logs.Error(err.Error())
 		err = tx.Rollback()
