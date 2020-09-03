@@ -13,7 +13,7 @@ import (
 	"log"
 
 	"fmt"
-
+	"github.com/jinzhu/copier"
 	"github.com/jmoiron/sqlx"
 	"sync"
 )
@@ -66,6 +66,16 @@ type DataTableConfig struct {
 	DataType  string `db:"data_type" json:"data_type"`
 	IsNull    string `db:"is_null" json:"is_null"`
 	Length    int    `db:"length" json:"length"`
+	ColumnKey string `db:"COLUMN_KEY" json:"columnKey"`
+}
+type DataTableConfigReturn struct {
+	FieldName  string `json:"field_name"`
+	FieldDesc  string `json:"field_desc"`
+	DataType   string `json:"data_type"`
+	IsNull     string `json:"is_null"`
+	Length     int    `json:"length"`
+	IsKey      bool   `json:"is_key"`
+	IsAbleNull bool   `json:"is_able_null"`
 }
 
 type DataTableUpdateConfig struct {
@@ -74,17 +84,27 @@ type DataTableUpdateConfig struct {
 	Action          string `json:"action"`
 }
 
-func GetDBTbConfig(db, tb string) (res []DataTableConfig, err error) {
+func GetDBTbConfig(db, tb string) (res []DataTableConfigReturn, err error) {
 	sqlfmt := fmt.Sprintf(`SELECT COLUMN_NAME field_name,column_comment field_desc,DATA_TYPE data_type,
-	IS_NULLABLE is_null,IFNULL(CHARACTER_MAXIMUM_LENGTH,0) length
+	IS_NULLABLE is_null,IFNULL(CHARACTER_MAXIMUM_LENGTH,0) length,COLUMN_KEY 
 	FROM INFORMATION_SCHEMA.COLUMNS
 	WHERE  LOWER(table_schema) = "%s" and TABLE_NAME = "%s"`, db, tb)
-
-	if err = conf.SysInfDb.Select(&res,
+	var sqlData []DataTableConfig
+	if err = conf.SysInfDb.Select(&sqlData,
 		sqlfmt); err != nil {
 
-		logs.Error(res, err)
+		logs.Error(sqlData, err)
 		return
+	}
+	//res = make([]DataTableConfigReturn,len(sqlData))
+	err = copier.Copy(&res, &sqlData)
+	if err != nil {
+		logs.Error(err.Error())
+		return
+	}
+	for i, v := range sqlData {
+		res[i].IsKey = v.ColumnKey == "PRI"
+		res[i].IsAbleNull = v.IsNull == "YES"
 	}
 	return
 }
@@ -102,6 +122,7 @@ type tmpSqlData struct {
 	TB string `db:"TB"`
 }
 
+//获取 数据库表数据
 func GetDBNames() (res []DBTBInfo, err error) {
 	sqlFmt := `select TABLE_SCHEMA DB,table_name TB  from information_schema.tables
 			where  table_type='BASE TABLE' ORDER BY TABLE_SCHEMA;`
@@ -129,6 +150,7 @@ func GetDBNames() (res []DBTBInfo, err error) {
 	return
 }
 
+//获取表数据
 func GetTBNamesByDB(db string) (res []string, err error) {
 	sqlfmt := fmt.Sprintf(`select table_name from information_schema.tables 	
 		where table_schema='%s' and table_type='base table'`, db)
@@ -149,6 +171,7 @@ func GetTBNamesByDB(db string) (res []string, err error) {
 	return
 }
 
+//更新配置
 func UpdateDBConfig(db, tb string, data []DataTableUpdateConfig) (err error) {
 
 	var dbs *sqlx.DB
@@ -229,10 +252,16 @@ func UpdateDBConfig(db, tb string, data []DataTableUpdateConfig) (err error) {
 		rofunc(err, tx)
 		return
 	}
+	err = tx.Commit()
+	if err != nil {
+		logs.Error(err.Error())
+		return
+	}
 
 	return
 }
 
+//获取表数据
 func GetTableDataList(db, tb string, page, size int) (data []interface{}, colTypes []FieldType, err error) {
 	var dbs *sqlx.DB
 	var ok bool
@@ -271,6 +300,7 @@ func GetTableDataList(db, tb string, page, size int) (data []interface{}, colTyp
 
 }
 
+//获取表产犊
 func GetTableDataTotals(db, tb string) (res int64, err error) {
 	var dbs *sqlx.DB
 	var ok bool
@@ -291,6 +321,7 @@ type FieldType struct {
 	AbleNull  bool
 }
 
+//获取表类型数据
 func typeDatabaseName(newStruct dynamicstruct.Builder, Field *sql.ColumnType) (colTypes FieldType) {
 	FieldName := Field.Name()
 	typeName := Field.DatabaseTypeName()
@@ -422,4 +453,47 @@ func typeDatabaseName(newStruct dynamicstruct.Builder, Field *sql.ColumnType) (c
 	//default:
 	//	return ""
 	//}
+}
+
+//删除表数据
+func DelTableRow(db, tb string, value []string) (err error) {
+	var dbs *sqlx.DB
+	var ok bool
+	if dbs, ok = conf.ArrSqlDb[db]; !ok {
+		err = errors.New("not found db")
+		logs.Error(err.Error())
+		return err
+	}
+
+	rofunc := func(err error, tx *sql.Tx) {
+		logs.Error(err.Error())
+		err = tx.Rollback()
+		if err != nil {
+			log.Println("tx.Rollback() Error:" + err.Error())
+			return
+		}
+
+	}
+	var tx *sql.Tx
+	tx, err = dbs.Begin()
+	delIdArr := func() string {
+		tmp := ""
+		for i := range value {
+			tmp += value[i] + ","
+		}
+		return tmp[:len(tmp)-1]
+	}
+	sqlFmt := fmt.Sprintf("DELETE FROM %s WHERE id in (%s）", tb, delIdArr)
+	_, err = tx.Exec(sqlFmt)
+	if err != nil {
+		rofunc(err, tx)
+		return
+	}
+
+	if err = tx.Commit(); err != nil {
+		logs.Error(err.Error())
+		return
+	}
+	return
+
 }
