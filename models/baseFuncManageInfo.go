@@ -455,6 +455,133 @@ func typeDatabaseName(newStruct dynamicstruct.Builder, Field *sql.ColumnType) (c
 	//}
 }
 
+//获取表类型数据
+func typeDatabaseNameNoNull(newStruct dynamicstruct.Builder, Field *sql.ColumnType) (colTypes FieldType) {
+	FieldName := Field.Name()
+	typeName := Field.DatabaseTypeName()
+	isNull, _ := Field.Nullable()
+
+	newTypeName := strings.ToUpper(FieldName[0:1]) + FieldName[1:]
+	tagStr := fmt.Sprintf(`db:"%s" json:"%s"`, FieldName, FieldName)
+
+	colTypes.AbleNull = isNull
+	colTypes.FieldName = FieldName
+	var types interface{}
+	types = func() interface{} {
+		switch {
+		case strings.Contains(typeName, "INT"):
+			colTypes.TypeName = "int"
+			return 0
+		case strings.Contains(typeName, "CHAR"), strings.Contains(typeName, "TEXT"):
+			colTypes.TypeName = "string"
+
+			return ""
+		case strings.Contains(typeName, "DATETIME"):
+			colTypes.TypeName = "time"
+
+			return ""
+		default:
+			return 0
+		}
+	}()
+
+	newStruct = newStruct.AddField(newTypeName, types, tagStr)
+	return
+	//switch{
+	//case strings.Contains(typeName,"INT"):
+	//
+	//	//types = 0
+	//	newStruct = newStruct.AddField(newTypeName,0, `db:"`+FieldName+`"`)
+	//case strings.Contains(typeName,"CHAR"),strings.Contains(typeName,"TEXT"):
+	//	newStruct = newStruct.AddField(newTypeName,"", `db:"`+FieldName+`"`)
+	//case strings.Contains(typeName,"DATETIME"):
+	//	newStruct = newStruct.AddField(newTypeName,"", `db:"`+FieldName+`"`)
+	//}
+	//AddField("DataBase", "", `json:"dataBasse" db:"Database"`).
+	//	Build()
+	//switch mf.fieldType {
+	//case fieldTypeBit:
+	//	return "BIT"
+	//case fieldTypeBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "TEXT"
+	//	}
+	//	return "BLOB"
+	//case fieldTypeDate:
+	//	return "DATE"
+	//case fieldTypeDateTime:
+	//	return "DATETIME"
+	//case fieldTypeDecimal:
+	//	return "DECIMAL"
+	//case fieldTypeDouble:
+	//	return "DOUBLE"
+	//case fieldTypeEnum:
+	//	return "ENUM"
+	//case fieldTypeFloat:
+	//	return "FLOAT"
+	//case fieldTypeGeometry:
+	//	return "GEOMETRY"
+	//case fieldTypeInt24:
+	//	return "MEDIUMINT"
+	//case fieldTypeJSON:
+	//	return "JSON"
+	//case fieldTypeLong:
+	//	return "INT"
+	//case fieldTypeLongBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "LONGTEXT"
+	//	}
+	//	return "LONGBLOB"
+	//case fieldTypeLongLong:
+	//	return "BIGINT"
+	//case fieldTypeMediumBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "MEDIUMTEXT"
+	//	}
+	//	return "MEDIUMBLOB"
+	//case fieldTypeNewDate:
+	//	return "DATE"
+	//case fieldTypeNewDecimal:
+	//	return "DECIMAL"
+	//case fieldTypeNULL:
+	//	return "NULL"
+	//case fieldTypeSet:
+	//	return "SET"
+	//case fieldTypeShort:
+	//	return "SMALLINT"
+	//case fieldTypeString:
+	//	if mf.charSet == collations[binaryCollation] {
+	//		return "BINARY"
+	//	}
+	//	return "CHAR"
+	//case fieldTypeTime:
+	//	return "TIME"
+	//case fieldTypeTimestamp:
+	//	return "TIMESTAMP"
+	//case fieldTypeTiny:
+	//	return "TINYINT"
+	//case fieldTypeTinyBLOB:
+	//	if mf.charSet != collations[binaryCollation] {
+	//		return "TINYTEXT"
+	//	}
+	//	return "TINYBLOB"
+	//case fieldTypeVarChar:
+	//	if mf.charSet == collations[binaryCollation] {
+	//		return "VARBINARY"
+	//	}
+	//	return "VARCHAR"
+	//case fieldTypeVarString:
+	//	if mf.charSet == collations[binaryCollation] {
+	//		return "VARBINARY"
+	//	}
+	//	return "VARCHAR"
+	//case fieldTypeYear:
+	//	return "YEAR"
+	//default:
+	//	return ""
+	//}
+}
+
 //删除表数据
 func DelTableRow(db, tb string, value []string) (err error) {
 	var dbs *sqlx.DB

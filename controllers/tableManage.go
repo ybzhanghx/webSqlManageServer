@@ -164,3 +164,32 @@ func (f *TableManagerController) DelTableRows() {
 	}
 
 }
+
+// @Title del
+// @Description update object
+// @Param   body		body 	models.WriteParm	true	     "parm"
+// @Success 200
+// @router /updateTableData [post]
+func (f *TableManagerController) UpdateTableData() {
+
+	var ReturnData models.CommonReturn
+	ReturnData.SetData(0, "success to update")
+	defer func() {
+		f.Data["json"] = ReturnData
+		f.ServeJSON()
+
+	}()
+	var parmData models.WriteParm
+	err := json.Unmarshal(f.Ctx.Input.RequestBody, &parmData)
+	if err != nil {
+		ReturnData.SetData(1, "parm is error:"+err.Error())
+		return
+	}
+
+	err = models.WriteTable(parmData)
+	if err != nil {
+		ReturnData.SetData(1, err.Error())
+		return
+	}
+
+}

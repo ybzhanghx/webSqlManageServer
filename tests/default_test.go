@@ -4,7 +4,7 @@ import (
 	"bailun.com/CT4_quote_server/WebManageSvr/conf"
 	"bailun.com/CT4_quote_server/WebManageSvr/models"
 	_ "bailun.com/CT4_quote_server/WebManageSvr/routers"
-	"bailun.com/CT4_quote_server/WebManageSvr/utils"
+	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/jmoiron/sqlx"
@@ -12,7 +12,6 @@ import (
 	"path/filepath"
 	"runtime"
 	"testing"
-	"time"
 )
 
 func init() {
@@ -30,7 +29,7 @@ func TestGetTableList(t *testing.T) {
 	conf.BeeConfInit()
 	conf.MysqlInit()
 
-	_, _ = models.GetTableDataList("TradeFxDB", "trade_account", 1, 10)
+	_, _, _ = models.GetTableDataList("TradeFxDB", "trade_account", 1, 10)
 	//func (mf *mysqlField) typeDatabaseName() string {
 	//	switch mf.fieldType {
 	//case fieldTypeBit:
@@ -158,11 +157,17 @@ func TestMe(t *testing.T) {
 }
 
 func TestTime(t *testing.T) {
-	str := "0000-00-00 00:00:00"
-	times, err := time.ParseInLocation(utils.TimeFormat1, str, utils.LocZone)
+	bytes := []byte(
+		`{"Add":"[{\"id\":\"row_43\",\"itemA\":\"ddsg\",\"itemTime\":\"2020-09-04 00:01:00\"}]","Del":[],"Upd":"",
+"DB":"zybtest","TB":"tableA"}`)
+	data := models.WriteParm{}
+	err := json.Unmarshal(bytes, &data)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	fmt.Println(times)
+
+}
+
+func TestInsert(t *testing.T) {
 
 }
