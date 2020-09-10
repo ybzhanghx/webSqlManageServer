@@ -13,7 +13,7 @@ import (
 //获取 数据库表数据
 func GetDBNames() (res []models.DBTBInfo, err error) {
 	sqlFmt := `select TABLE_SCHEMA DB,table_name TB  from information_schema.tables
-			where  table_type='BASE TABLE' ORDER BY TABLE_SCHEMA;`
+			where  table_type='BASE TABLE' ORDER BY DB;`
 
 	var sqlData []models.DbTb
 	err = mysqls.SysInfDb.Select(&sqlData, sqlFmt)

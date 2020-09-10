@@ -6,6 +6,7 @@ import (
 	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
 	_ "bailun.com/CT4_quote_server/WebManageSvr/routers"
 	"bailun.com/CT4_quote_server/WebManageSvr/service"
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -22,107 +23,12 @@ func init() {
 	beego.TestBeegoInit(apppath)
 }
 
-// TestGet is a sample to run an endpoint test
-func TestGetTableList(t *testing.T) {
-	var err error
-	if err = conf.Init(); err != nil {
-		panic(err)
-	}
-	conf.BeeConfInit()
-	mysqls.MysqlInit()
-
-	_, _, _ = service.GetTableDataList("TradeFxDB", "trade_account", 1, 10)
-	//func (mf *mysqlField) typeDatabaseName() string {
-	//	switch mf.fieldType {
-	//case fieldTypeBit:
-	//	return "BIT"
-	//case fieldTypeBLOB:
-	//	if mf.charSet != collations[binaryCollation] {
-	//	return "TEXT"
-	//}
-	//	return "BLOB"
-	//case fieldTypeDate:
-	//	return "DATE"
-	//case fieldTypeDateTime:
-	//	return "DATETIME"
-	//case fieldTypeDecimal:
-	//	return "DECIMAL"
-	//case fieldTypeDouble:
-	//	return "DOUBLE"
-	//case fieldTypeEnum:
-	//	return "ENUM"
-	//case fieldTypeFloat:
-	//	return "FLOAT"
-	//case fieldTypeGeometry:
-	//	return "GEOMETRY"
-	//case fieldTypeInt24:
-	//	return "MEDIUMINT"
-	//case fieldTypeJSON:
-	//	return "JSON"
-	//case fieldTypeLong:
-	//	return "INT"
-	//case fieldTypeLongBLOB:
-	//	if mf.charSet != collations[binaryCollation] {
-	//	return "LONGTEXT"
-	//}
-	//	return "LONGBLOB"
-	//case fieldTypeLongLong:
-	//	return "BIGINT"
-	//case fieldTypeMediumBLOB:
-	//	if mf.charSet != collations[binaryCollation] {
-	//	return "MEDIUMTEXT"
-	//}
-	//	return "MEDIUMBLOB"
-	//case fieldTypeNewDate:
-	//	return "DATE"
-	//case fieldTypeNewDecimal:
-	//	return "DECIMAL"
-	//case fieldTypeNULL:
-	//	return "NULL"
-	//case fieldTypeSet:
-	//	return "SET"
-	//case fieldTypeShort:
-	//	return "SMALLINT"
-	//case fieldTypeString:
-	//	if mf.charSet == collations[binaryCollation] {
-	//	return "BINARY"
-	//}
-	//	return "CHAR"
-	//case fieldTypeTime:
-	//	return "TIME"
-	//case fieldTypeTimestamp:
-	//	return "TIMESTAMP"
-	//case fieldTypeTiny:
-	//	return "TINYINT"
-	//case fieldTypeTinyBLOB:
-	//	if mf.charSet != collations[binaryCollation] {
-	//	return "TINYTEXT"
-	//}
-	//	return "TINYBLOB"
-	//case fieldTypeVarChar:
-	//	if mf.charSet == collations[binaryCollation] {
-	//	return "VARBINARY"
-	//}
-	//	return "VARCHAR"
-	//case fieldTypeVarString:
-	//	if mf.charSet == collations[binaryCollation] {
-	//	return "VARBINARY"
-	//}
-	//	return "VARCHAR"
-	//case fieldTypeYear:
-	//	return "YEAR"
-	//default:
-	//	return ""
-	//}
-	//}
-}
-
 func TestGetTableList2(t *testing.T) {
 	var err error
 	if err = conf.Init(); err != nil {
 		panic(err)
 	}
-	conf.BeeConfInit()
+
 	mysqls.MysqlInit()
 
 	_, _ = service.GetDBNames()
@@ -134,7 +40,7 @@ func TestMe(t *testing.T) {
 	if err = conf.Init(); err != nil {
 		panic(err)
 	}
-	conf.BeeConfInit()
+
 	mysqls.MysqlInit()
 	typeStruc := dynamicstruct.NewStruct().
 		AddField("DataBase", "", `json:"dataBasse" db:"Database"`).
@@ -170,6 +76,30 @@ func TestTime(t *testing.T) {
 
 }
 
-func TestInsert(t *testing.T) {
+func TestGetDB(t *testing.T) {
+	var err error
+	if err = conf.Init(); err != nil {
+		panic(err)
+	}
+
+	mysqls.MysqlInit()
+	var firstB []byte
+	for i := 0; i < 10; i++ {
+		d, _ := service.GetDBNames()
+
+		b, _ := json.Marshal(d)
+		if i == 0 {
+			firstB = b
+		} else {
+			if !bytes.Equal(firstB, b) {
+				fmt.Println(string(firstB))
+				fmt.Println(string(b))
+				fmt.Println(d)
+				fmt.Println(i)
+				break
+			}
+		}
+
+	}
 
 }

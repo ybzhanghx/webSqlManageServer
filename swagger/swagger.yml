@@ -48,25 +48,35 @@ paths:
       description: update object
       operationId: DBTBInfoManagerController.update
       parameters:
-      - in: body
-        name: body
-        description: parm
-        required: true
-        schema:
-          $ref: '#/definitions/controllers.UpdateTBConfParm'
+        - in: body
+          name: body
+          description: parm
+          required: true
+          schema:
+            $ref: '#/definitions/controllers.UpdateTBConfParm'
       responses:
         "200":
           description: ""
+  /entry/funcList:
+    get:
+      tags:
+        - entry
+      operationId: EntryManagerController.tableList
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ReturnFuncList'
   /table/list:
     get:
       tags:
-      - table
+        - table
       description: getTableDataList
       operationId: TableDataManagerController.getTableDataList
       parameters:
-      - in: query
-        name: DB
-        description: funcName
+        - in: query
+          name: DB
+          description: funcName
         type: string
       - in: query
         name: TB
@@ -102,6 +112,32 @@ paths:
         "200":
           description: ""
 definitions:
+  conf.FuncListConf:
+    title: FuncListConf
+    type: object
+    properties:
+      Children:
+        type: array
+        items:
+          $ref: '#/definitions/conf.FuncNode'
+      Name:
+        type: string
+      Types:
+        type: string
+      Value:
+        type: string
+  conf.FuncNode:
+    title: FuncNode
+    type: object
+    properties:
+      Children:
+        type: array
+        items:
+          $ref: '#/definitions/conf.FuncNode'
+      Name:
+        type: string
+      Value:
+        type: string
   controllers.CommonReturn:
     title: CommonReturn
     type: object
@@ -111,6 +147,14 @@ definitions:
         format: int64
       Msg:
         type: string
+  controllers.ReturnFuncList:
+    title: ReturnFuncList
+    type: object
+    properties:
+      "":
+        $ref: '#/definitions/controllers.CommonReturn'
+      Data:
+        $ref: '#/definitions/conf.FuncListConf'
   controllers.ReturnGetAllTable:
     title: ReturnGetAllTable
     type: object

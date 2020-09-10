@@ -12,7 +12,7 @@ type (
 		*conf.CommConf
 		Server    *Server
 		MysqlConf *MysqlConf
-		funcList  *FuncListConf
+		FuncList  *FuncListConf
 	}
 	Server struct {
 		AppName         string
@@ -34,7 +34,7 @@ type (
 	FuncListConf struct {
 		Name     string
 		Value    string
-		types    string
+		Types    string
 		Children []FuncNode
 	}
 	FuncNode struct {

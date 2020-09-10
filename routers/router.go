@@ -24,6 +24,11 @@ func init() {
 				&controllers.TableDataManagerController{},
 			),
 		),
+		beego.NSNamespace("/entry",
+			beego.NSInclude(
+				&controllers.EntryManagerController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 

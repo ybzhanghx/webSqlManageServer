@@ -87,6 +87,22 @@
                 }
             }
         },
+        "/entry/funcList": {
+            "get": {
+                "tags": [
+                    "entry"
+                ],
+                "operationId": "EntryManagerController.tableList",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ReturnFuncList"
+                        }
+                    }
+                }
+            }
+        },
         "/table/list": {
             "get": {
                 "tags": [
@@ -156,6 +172,45 @@
         }
     },
     "definitions": {
+        "conf.FuncListConf": {
+            "title": "FuncListConf",
+            "type": "object",
+            "properties": {
+                "Children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/conf.FuncNode"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Types": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "conf.FuncNode": {
+            "title": "FuncNode",
+            "type": "object",
+            "properties": {
+                "Children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/conf.FuncNode"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
         "controllers.CommonReturn": {
             "title": "CommonReturn",
             "type": "object",
@@ -166,6 +221,18 @@
                 },
                 "Msg": {
                     "type": "string"
+                }
+            }
+        },
+        "controllers.ReturnFuncList": {
+            "title": "ReturnFuncList",
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/controllers.CommonReturn"
+                },
+                "Data": {
+                    "$ref": "#/definitions/conf.FuncListConf"
                 }
             }
         },
