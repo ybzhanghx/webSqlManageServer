@@ -25,3 +25,6 @@ gen
 # vendor/
 
 go.sum
+
+logs
+*.tmp
