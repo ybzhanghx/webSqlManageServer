@@ -1,86 +1,16 @@
 package models
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/conf"
+	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
 	"database/sql"
 	"encoding/json"
-	"errors"
 	"fmt"
-	"github.com/astaxie/beego/logs"
-	"github.com/jmoiron/sqlx"
 	dynamicstruct "github.com/ompluscator/dynamic-struct"
-	"log"
 	"strconv"
 	"strings"
 )
 
-type WriteParm struct {
-	DB  string
-	TB  string
-	Add string
-	Del []int
-	Upd string
-}
-type tt interface {
-}
-
-func WriteTable(p WriteParm) (err error) {
-	var dbs *sqlx.DB
-	var ok bool
-	if dbs, ok = conf.ArrSqlDb[p.DB]; !ok {
-		return errors.New("not found db")
-	}
-	sqlFmt := fmt.Sprintf("SELECT * FROM `%s` ", p.TB)
-	var rows *sqlx.Rows
-	rows, err = dbs.Queryx(sqlFmt)
-	if err != nil {
-		logs.Error(err)
-		return err
-	}
-	//dbs.Select()
-
-	colField, _ := rows.ColumnTypes()
-
-	typeStruct := dynamicstruct.NewStruct()
-	colTypes := make([]FieldType, len(colField))
-	for i := range colField {
-		colTypes[i] = typeDatabaseNameNoNull(typeStruct, colField[i])
-	}
-	pData := typeStruct.Build().NewSliceOfStructs()
-
-	tx, err := dbs.Begin()
-	if len(p.Add) != 0 {
-		if err = Add(p.TB, tx, p.Add, pData, colTypes); err != nil {
-			return
-		}
-	}
-	if len(p.Del) != 0 {
-		if err = DelTableRows(p.TB, tx, p.Del); err != nil {
-			return
-		}
-	}
-	if len(p.Upd) != 0 {
-		if err = UpdateTableRows(p.TB, tx, p.Upd, pData, colTypes); err != nil {
-			return
-		}
-	}
-	err = tx.Commit()
-	if err != nil {
-		logs.Error(err.Error())
-		return
-	}
-	return nil
-}
-func roBackFunc(err error, tx *sql.Tx) {
-	logs.Error(err.Error())
-	err = tx.Rollback()
-	if err != nil {
-		log.Println("tx.Rollback() Error:" + err.Error())
-		return
-	}
-
-}
-func Add(tb string, tx *sql.Tx, bytes string, pData interface{}, colTypes []FieldType) (err error) {
+func TableInsert(tb string, tx *sql.Tx, bytes string, pData interface{}, colTypes []FieldType) (err error) {
 	getBytes := []byte(bytes)
 	err = json.Unmarshal(getBytes, &pData)
 	if err != nil {
@@ -129,7 +59,7 @@ func Add(tb string, tx *sql.Tx, bytes string, pData interface{}, colTypes []Fiel
 
 	_, err = tx.Exec(sqlStr)
 	if err != nil {
-		roBackFunc(err, tx)
+		mysqls.RoBackMysqlFunc(err, tx)
 		return
 	}
 	return
@@ -152,6 +82,7 @@ func UpdateTableRows(tb string, tx *sql.Tx, bytes string, pData interface{}, col
 			var tmpV string
 			switch v.TypeName {
 			case "int":
+				fmt.Println(getV.Int())
 				tmpV = strconv.Itoa(getV.Int())
 			case "string":
 				tmpV = "'" + getV.String() + "'"
@@ -171,7 +102,7 @@ func UpdateTableRows(tb string, tx *sql.Tx, bytes string, pData interface{}, col
 		sqlStr := fmt.Sprintf("update %s SET %s WHERE id = %s ", tb, strings.Join(slicev, ","), idv)
 		_, err = tx.Exec(sqlStr)
 		if err != nil {
-			roBackFunc(err, tx)
+			mysqls.RoBackMysqlFunc(err, tx)
 			return
 		}
 
@@ -192,7 +123,7 @@ func DelTableRows(tb string, tx *sql.Tx, value []int) (err error) {
 	sqlFmt := fmt.Sprintf("DELETE FROM %s WHERE id in (%s)", tb, strings.Join(delIdArr, ","))
 	_, err = tx.Exec(sqlFmt)
 	if err != nil {
-		roBackFunc(err, tx)
+		mysqls.RoBackMysqlFunc(err, tx)
 		return
 	}
 	return

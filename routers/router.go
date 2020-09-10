@@ -14,14 +14,14 @@ import (
 
 func init() {
 	ns := beego.NewNamespace("/v1",
-		beego.NSNamespace("/funcList",
+		beego.NSNamespace("/dbTbInfo",
 			beego.NSInclude(
-				&controllers.FuncManagerController{},
+				&controllers.DBTBInfoManagerController{},
 			),
 		),
 		beego.NSNamespace("/table",
 			beego.NSInclude(
-				&controllers.TableManagerController{},
+				&controllers.TableDataManagerController{},
 			),
 		),
 	)

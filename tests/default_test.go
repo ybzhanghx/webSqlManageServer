@@ -2,8 +2,10 @@ package test
 
 import (
 	"bailun.com/CT4_quote_server/WebManageSvr/conf"
-	"bailun.com/CT4_quote_server/WebManageSvr/models"
+	"bailun.com/CT4_quote_server/WebManageSvr/controllers"
+	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
 	_ "bailun.com/CT4_quote_server/WebManageSvr/routers"
+	"bailun.com/CT4_quote_server/WebManageSvr/service"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -27,9 +29,9 @@ func TestGetTableList(t *testing.T) {
 		panic(err)
 	}
 	conf.BeeConfInit()
-	conf.MysqlInit()
+	mysqls.MysqlInit()
 
-	_, _, _ = models.GetTableDataList("TradeFxDB", "trade_account", 1, 10)
+	_, _, _ = service.GetTableDataList("TradeFxDB", "trade_account", 1, 10)
 	//func (mf *mysqlField) typeDatabaseName() string {
 	//	switch mf.fieldType {
 	//case fieldTypeBit:
@@ -121,9 +123,9 @@ func TestGetTableList2(t *testing.T) {
 		panic(err)
 	}
 	conf.BeeConfInit()
-	conf.MysqlInit()
+	mysqls.MysqlInit()
 
-	_, _ = models.GetDBNames()
+	_, _ = service.GetDBNames()
 
 }
 
@@ -133,7 +135,7 @@ func TestMe(t *testing.T) {
 		panic(err)
 	}
 	conf.BeeConfInit()
-	conf.MysqlInit()
+	mysqls.MysqlInit()
 	typeStruc := dynamicstruct.NewStruct().
 		AddField("DataBase", "", `json:"dataBasse" db:"Database"`).
 		Build()
@@ -141,7 +143,7 @@ func TestMe(t *testing.T) {
 
 	var rows *sqlx.Rows
 	//err = conf.SysInfDb.Select(&getData, "show databases ")
-	rows, err = conf.SysInfDb.Queryx("show databases ")
+	rows, err = mysqls.SysInfDb.Queryx("show databases ")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
@@ -158,9 +160,9 @@ func TestMe(t *testing.T) {
 
 func TestTime(t *testing.T) {
 	bytes := []byte(
-		`{"Add":"[{\"id\":\"row_43\",\"itemA\":\"ddsg\",\"itemTime\":\"2020-09-04 00:01:00\"}]","Del":[],"Upd":"",
+		`{"TableInsert":"[{\"id\":\"row_43\",\"itemA\":\"ddsg\",\"itemTime\":\"2020-09-04 00:01:00\"}]","Del":[],"Upd":"",
 "DB":"zybtest","TB":"tableA"}`)
-	data := models.WriteParm{}
+	data := controllers.UpdateTableParm{}
 	err := json.Unmarshal(bytes, &data)
 	if err != nil {
 		fmt.Println(err.Error())

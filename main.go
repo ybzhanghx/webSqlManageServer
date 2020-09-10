@@ -2,9 +2,9 @@ package main
 
 import (
 	"bailun.com/CT4_quote_server/WebManageSvr/conf"
+	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
 	_ "bailun.com/CT4_quote_server/WebManageSvr/routers"
 	"flag"
-
 	"github.com/astaxie/beego"
 )
 
@@ -15,10 +15,7 @@ func main() {
 		panic(err)
 	}
 	conf.BeeConfInit()
-	conf.MysqlInit()
-	if beego.BConfig.RunMode == "dev" {
-		beego.BConfig.WebConfig.DirectoryIndex = true
-		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-	}
+	mysqls.MysqlInit()
+
 	beego.Run()
 }

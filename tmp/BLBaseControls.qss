@@ -1,0 +1,4761 @@
+﻿/**************************Qwidget Green默认样式**************************/
+/************************* QWidget 控件类**************************/
+QWidget
+{
+	font-family: Microsoft YaHei UI;
+	font-size: 12px;
+	font-weight: normal; 
+	font-style: normal;
+	color:#242735;
+	outline:0px;
+}
+QWidget[widgetType=widget_default]
+{
+	background-color:#ffffff;
+	border:0px;
+}
+QWidget[widgetType="widget_bottom"]
+{
+	background-color:#e5e5e7;
+	border:0px;
+}
+QWidget[widgetType="widget_autoreg"]
+{
+	background-color:#ffffff;
+	border:0px;
+}
+QWidget[widgetType="widget_account_bottom"]
+{
+	background-color:#f6f6f6;
+	border:0px;
+
+}QWidget[widgetType="widget_boredr_top"]
+{
+	background-color:#ffffff;
+	border-top:1px solid rgb(186,186,188);
+}
+QWidget[widgetType=widget_gray_bg]
+{
+	background-color:#f7f7f8;
+	border:0px;
+}
+
+QWidget[widgetType=gray_background]{
+	border:0px;
+	background-color:#e5e5e7;
+}
+
+QWidget[widgetType=phone_focus]{
+	background-color:#ffffff;
+	border:1px solid #07a962; 
+}
+QWidget[widgetType=phone_error]{
+	border:1px solid #e63c51; 
+	background-color:#ffffff;
+}
+QWidget[widgetType=phone_focusout]{
+	background-color:#ffffff;
+	border:1px solid #e5e5e7; color:#333543;
+}
+
+/**************************Qwidget depthmarket**************************/
+QWidget#noDataWidget
+{
+	background-image:url(:/resGreenImage/image_blank_logo48);
+}
+
+QWidget[widgetType="widget_cloudtip"]
+{
+	background-color:#ffffff;
+	border:0px;
+	border-radius:5px;
+}
+/**************************Trader**************************/
+QWidget[widgetType=widget_trader_title]
+{
+	background-color:#f7f7f8;
+	border:0px;
+}
+QWidget[widgetType=widget_status]
+{
+	border-top:1px solid rgb(229,229,231);
+	background-color:#e6f6ef;
+}
+QWidget[widgetType=widget_timeDate]
+{
+	background-color:#ffffff;
+	color:#e5e5e7;
+	border-radius:2px;
+	border:1px solid rgb(229,229,231);
+}
+
+/**************************自定义用户Colorbox对话框**************************/
+QWidget[widgetType=color_widget]
+{
+	background-color:#ffffff;
+	border:1px solid #e5e5e7;
+	border-radius: 2px;
+}
+QWidget:hover[widgetType=color_widget]
+{
+	background-color:#ffffff;
+	border:1px solid #07a962;
+	border-radius: 2px;
+}
+QWidget:disabled[widgetType=color_widget]
+{
+	background-color:#f7f7f8;
+	border:1px solid #e5e5e7;
+	border-radius: 2px;
+}
+
+QWidget[widgetType=color_bg_widget]
+{
+	background-image:url(:/resGreenCom/image_colorselect_bg); 
+	border-radius: 1px;
+}
+
+/*自定义颜色的编辑框Wgt*/
+QWidget[widgetType=pCustomEditWgt_BlChart]
+{
+	border-image: url(:/resGreenCustomCr/customCr_bg); 
+}
+
+QWidget[frameType="borderRed"]
+{
+    border:1px solid #e63c51;
+}
+QWidget#passWordFrame
+{
+    border:1px solid #e5e5e7;
+}
+QWidget:hover#passWordFrame
+{
+    border:1px solid #07A962;
+}
+QWidget:pressed#passWordFrame
+{
+    border:1px solid #07A962;
+}
+QWidget[widgetType=listHaveUpdateTipWgt]
+{
+    background-color: rgba(0,0,0,0); border-image:url(:/resGreenFinancialInfo/updateBg); 
+}
+
+QWidget#widget_buttons{
+  background-color:#f7f7f8;
+  border:0px;
+}
+
+
+/************************** CollapseviewItem / MatchCollapseviewItem**************************/
+QWidget[widgetType=item_widget_movie]{
+  background-color:#ffffff;
+  border-bottom:1px solid rgb(193,234,215);
+}
+QWidget[widgetType=widget_movie]{
+  background-color:#F7F7F8;
+  border-bottom:1px solid rgb(193,234,215);
+}
+
+QWidget[widgetType=match_title]{
+  background-color:#ffffff;
+  color:#242735;
+  border-top:1px solid rgb(156, 221, 192);
+}
+
+QWidget[mdiType="widget_border"]
+{
+	border:1px solid  rgb(229,229,231);
+}
+QWidget[mdiType="mdi_default"]
+{
+	background-color: rgb(255, 255, 255);
+}
+QWidget[mdiType="mdi_focus"]
+{
+	background-color: rgb(180, 229, 207);
+}
+
+QWidget[widgetType=minus_plus_widget]
+{
+	background-color:#ffffff;
+	border:1px solid #e5e5e7; 
+	border-radius: 2px;
+}
+
+QWidget[widgetType=widget_chart]
+{
+	background-color:#3a3b3e;
+	border:0px;
+}
+
+QWidget[widgetType=doing_widget]
+{
+	border:0px;
+	background-color:rgba(0, 0, 0, 0.87);
+}
+
+QWidget[widgetType=pIndicatorTitleWgt_BlChart]
+{
+	background-color: #ffffff;  
+	border-bottom:1px solid #e5e5e7; 
+	border-radius: 2px;
+}
+
+/*指标属性的主体的左边*/
+QWidget[widgetType=pBodyWgtLeft_BlChart]
+{
+	background-color: #ffffff;  
+	border-right:1px solid #e5e5e7; 
+}
+
+/*配置*/
+QWidget[widgetType=configWgt_BlChart]
+{
+	background-color: #ffffff;  
+	border:1px solid #e5e5e7; 
+	border-radius: 2px;
+}
+
+/*更多*/
+QWidget[widgetType=pMoreWgt_BlChart]
+{
+	border-image:url(:/resGreenCom/image_border_dashed);
+}
+
+QWidget[widgetType=pTextContentWgt_BlChart]
+{
+	background-color: #f7f7f8;
+}
+
+QWidget[widgetType=newsItem_hover]{
+	background-color: #f7f7f8;
+} 
+/*持仓动向*/
+QWidget[widgetType=shadowDataWidget]
+{
+	border-radius:2px;
+	background-color: #ffffff; 
+}
+
+QWidget[widgetType=borderWidget]
+{
+	border-radius: 2px;
+	border:1px solid #e5e5e7;
+}
+QWidget[widgetType=topborder_widget]
+{
+	border-top:1px solid rgb(229,229,231);
+}
+
+/*left nav widget */
+QWidget[BgColor=light]{
+    background-color: #ffffff;
+}
+QWidget[BgColor=dart]{
+    background-color: #f7f7f8;
+}
+QWidget[BgColor=high]{
+    background-color: #e6f6ef;
+}
+QStackedWidget[widgetType=borderStack]
+{ 
+	border:8px solid  #e5e5e7; 
+}
+QWidget[widgetType=noBorder]
+{
+	background-color: #ffffff; 
+	border: 0px;
+}
+QWidget[widgetType=rightShadow_widget]
+{
+	border-right:8px qlineargradient(x1:0, y1:0, x2:1, y2:0,stop:0 rgba(238, 238, 238, 0),stop:1 rgba(0, 0, 0, 0.08));
+}
+QWidget[widgetType=newsWindowMessageItem]{
+	background-color: #f7f7f8;
+} 
+QWidget:hover[widgetType=newsItem_normal]{
+	background-color: #f7f7f8;
+} 
+QWidget:hover[widgetType=newsItem_hot]{
+	background-color: #fef4f5;
+} 
+
+QWidget[widgetType=calendarTime] {
+	font-size: 13px;  
+	color: #242735;
+	border-right:1px solid #f0f0f1; border-bottom:1px solid #f0f0f1;
+}
+QWidget[widgetType=calendarHolidayTime] {
+	font-size: 13px;  
+	color: #242735;
+	background-color: #f7f7f8; 
+	border-right:1px solid #f0f0f1; border-bottom:1px solid #f0f0f1;
+}
+
+
+QWidget[widgetType=calendarItemTitle]{
+	border-bottom:1px solid #f0f0f1;
+}
+
+QWidget[widgetType=calendarItem]{
+	border-bottom:1px solid #f0f0f1; 
+} 
+QWidget:hover[widgetType=calendarItem]{
+	background-color: #f7f7f8; 
+}
+QWidget[widgetType=calendarHolidayItem]{
+	background-color: #f7f7f8; 
+	border-bottom:1px solid #f0f0f1; 
+}
+
+/**************************K线跳转**************************/
+QWidget[widgetType=date_edit_frame]{
+	border: 1px solid #e5e5e7;
+	image-position: left; image : url(:/resGreenCom/Resources/Images/Green/common/common_24_date_gray.png);
+}
+QWidget:hover[widgetType=date_edit_frame]{
+	border-color: #07a962;
+	image : url(:/resGreenCom/Resources/Images/Green/common/common_24_date_highlight.png);
+}
+QWidget[widgetType=date_edit_frame_select]{
+	border: 1px solid #07a962;
+	image-position: left; image : url(:/resGreenCom/Resources/Images/Green/common/common_24_date_highlight.png);
+}
+
+QWidget[widgetType=time_edit_frame]{
+	border: 1px solid #e5e5e7;
+	image-position: left; image : url(:/resGreenCom/Resources/Images/Green/common/common_24_clock.png);
+}
+QWidget:hover[widgetType=time_edit_frame]{
+	border-color: #07a962;
+	image : url(:/resGreenCom/Resources/Images/Green/common/common_24_clock_highlight.png);
+}
+
+QWidget:disabled[widgetType=time_edit_frame] {
+color:#ccccd0; border: 1px solid #e5e5e7; background-color:#f7f7f8;
+image-position: left; image: url(:/resGreenCom/Resources/Images/Green/common/common_24_clock_gray.png);
+}
+
+QWidget[widgetType=time_edit_frame_select]{
+	border: 1px solid #07a962;
+	image-position: left; image : url(:/resGreenCom/Resources/Images/Green/common/common_24_clock_highlight.png);
+}
+
+/************************* QFrame 控件类**************************/
+QFrame[frameType=line]
+{
+	border:0px;
+	background-color:#e5e5e7;
+	color:#e5e5e7;
+}
+QFrame[frameType=account_line]
+{
+	color:#0091ff;
+}
+QFrame[frameType=institution_line]
+{
+	background-color:#e5e5e7;
+}
+
+QFrame[lineType="lineNoLogin"] {
+	border:none;
+	background-color:#e5e5e7;
+	max-height:1px;
+}
+
+/************************* QDialog 控件类**************************/
+QDialog[dlgStyle="multiTimeZoneDlg"]
+{
+	font-size: 10px; 
+	line-height: 1.45; 
+}
+
+/*---未登录时的样式*/
+QDialog[dialogType=headMenu]{
+	background-color: rgb(255, 255, 255);
+}
+/************************* QMainwindow 控件类**************************/
+QMainWindow
+{
+	background-color:#e5e5e7;
+}
+
+/* 设置Dock拖动调与 MDI背景色一致 */
+QMainWindow::separator[wndType="ChartArea"]
+{
+	width:0px;
+	height:0px;
+	margin: 2px;
+	padding: 0px;
+	background-color:#e5e5e7;
+	color:rgb(229,229,231);
+}
+
+QMainWindow::separator[wndType="MainArea"]
+{
+	width: 0px;
+	height: 0px;
+	margin: 1px;
+	padding: 0px;
+	background-color:#e5e5e7;
+}
+/************************* QDockWidget 控件类**************************/
+QDockWidget
+{
+	background-color:#e5e5e7;
+}
+
+/************************* QLabel 控件类**************************/
+
+QLabel[depthType="text"]
+{
+	background-color: transparent;
+	color:#CCCDD0;
+}
+QLabel[depthType="timeico"]
+{
+	border:none;
+	image:url(:/resGreenCom/common_24_clock_gray);
+	background-color:none;
+}
+QLabel[depthType="InstantName"]
+{
+	font-weight: 600;
+}
+
+QLabel[labelType="hotkeylabel"]
+{
+	border-top: none;
+	border-bottom: 1px solid rgb(229, 229, 231);
+	border-left: none;
+	border-right: none;
+	padding: 20px;
+}
+
+QLabel[labelType="cloudtime"]
+{
+  font-size: 14px;
+  font-weight: 600;
+  color:#242735;
+  background-color:transparent;
+}
+QLabel[labelType="clouddesc"]
+{
+  color:#999aa1;
+  background-color:transparent;
+}
+
+QLabel[labelType=label_cycle]
+{
+	background-color:#ffffff;
+}
+QLabel[labelType=label_sum]
+{
+	
+	font-weight:bold;
+}
+QLabel[labelType=label_profitloss]
+{
+	color:#242735;
+	
+	font-weight:bold;
+	color:#ff333543;
+}
+QLabel[labelType=label_icon]
+{
+	background-color:transparent;
+	background-image:url(:/resGreenTraderTeminal/TraderCaleadarClock);
+}
+QLabel[labelType=label_split]
+{
+	background-color:rgb(229,229,231);
+}
+/**************************QLabel**************************/
+QLabel[labelType=high_light]
+{
+	background-color:none;color:#07a962;
+}
+QLabel[labelType=font12]
+{
+	color:#242735;line-height: 1.33;
+}
+QLabel[labelType=font12_border]
+{
+	color:#242735;line-height: 1.33;
+	border: 1px solid #e5e5e7; 
+}
+QLabel[labelType=font12_bold]
+{
+	color:#242735;line-height: 1.33; font-weight: bold;
+}
+
+QLabel[labelType=gray12]
+{
+	color:#999aa1;
+}
+QLabel[labelType=gray12_bg]{
+	background-color: #f0f0f1; color: #999aa1; 
+} 
+QLabel[labelType=gray12_bg_border]{
+	background-color: #f0f0f1; color: #999aa1; 
+	border: 1px solid #999aa1; 
+} 
+QLabel[labelType=gray12_highlight]{
+	color: #07a962; 
+} 
+QLabel[labelType=font14]
+{
+	font-size:14px;
+	color:#242735;
+}
+QLabel[labelType=font14_highlight]
+{
+	font-size:14px;
+	color:#07a962;
+}
+QLabel[labelType=font11_redText]
+{
+	color:#e63c51;
+}
+QLabel[labelType=font12_redText]
+{
+	
+	color:#e63c51;
+}
+QLabel[labelType=font14_redText]
+{
+	font-size:14px;
+	color:#e63c51;
+}
+QLabel[labelType=font14_bold]
+{
+	font-size:14px;
+	color:#242735; font-weight: bold;
+}
+QLabel[labelType=font14_bold_highlight]
+{
+	font-size:14px;
+	color:#07a962; font-weight: bold;
+}
+
+QLabel[labelType=font24]
+{
+	font-size:24px;
+	color:#242735;
+}
+QLabel[labelType=gray11]
+{
+	color:#999aa1;
+}
+QLabel[labelType=gray10]
+{
+	font-size:10px;
+	color:#999aa1;
+}
+QLabel[labelType=green10]
+{
+	font-size:10px;
+	color:#07a962;
+}
+
+QLabel[labelType=cloud_bg]
+{
+	/*background-image:url(:/resDarkCom/image_cloud_pic.png); */
+	background-image:url(:/resDarkCom/image_cloud_pic); 
+}
+QLabel[labelType=normal12]
+{
+	color:#000000;
+}
+
+QLabel[labelType=login_Retrive_success]
+{
+	background-image:url(:/resGreenLogin/Resources/Images/Green/login/common_32_sucess.png);
+	background-repeat: none;
+	background-position: center;
+}
+QLabel[labelType=errorCode_failedPixmap]
+{
+	background-image:url(:/resGreenLogin/Resources/Images/Green/login/common_12_notice.png);
+	background-repeat: none;
+	background-position: center;
+}
+
+/**************************BLPasswordLabel**************************/
+QLabel[labelType=Login_Password_normal]
+{	background-image: url(:/resGreenCom/common_24_password);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_Password_highlight]
+{	background-image: url(:/resGreenCom/common_24_password_highlight);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_VerifyCode_normal]
+{	background-image: url(:/resGreenCom/common_24_verify);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_VerifyCode_highlight]
+{	background-image: url(:/resGreenCom/Resources/Images/Green/common/common_24_verify_highlight.png);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_phone_normal]
+{	background-image: url(:/resGreenCom/common_24_phone);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_phone_highlight]
+{	background-image: url(:/resGreenCom/Resources/Images/Green/common/common_24_phone_highlight.png);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_email_normal]
+{	background-image: url(:/resGreenCom/common_24_mail);
+	background-repeat:no repeat;
+	background-position:center;
+}
+QLabel[labelType=Login_email_highlight]
+{	background-image: url(:/resGreenCom/common_24_mail_highlight);
+	background-repeat:no repeat;
+	background-position:center;
+}
+
+/**************************财经日历详情窗口 zying**************************/
+/*显示更多标签按钮*/
+QLabel::hover[labelType=showMore]
+{
+	color:#07a962;
+}
+/*柱状图、折线图、表格*/
+QLabel::hover[labelType=choose]
+{
+	color:#242735;
+}
+QLabel::pressed[labelType=choose]
+{
+	color:#242735;
+}
+
+/*标签图例*/
+QLabel[labelType=marker0]
+{
+    width:8px; 
+	height:8px;
+    background-color:#1a54df;
+	border-radius:2px;
+}
+QLabel[labelType=marker2]
+{
+    width:8px; height:8px;
+    background-color:#07a962;
+	border-radius:2px;
+}
+QLabel[labelType=marker4]
+{
+    width:24px; height:10px;
+    background-image: url(:/resGreenImage/image_example_yellow2);
+}
+QLabel[labelType=marker]
+{
+    height: 16px;
+	color:#999aa1;
+}
+/**************************财经日历详情窗口  完**************************/
+
+/**************************用户协议窗口  zying**************************/
+QLabel[labelType=languageChina]
+{
+	line-height: 1.83;
+	color:#242735;
+	background-color:#ffffff;
+}
+QLabel:hover[labelType=languageChina]
+{
+	color:#07a962;
+}
+QLabel[labelType=language]
+{
+	line-height: 1.45;
+	color:#242735;
+	background-color:#ffffff;
+}
+QLabel:hover[labelType=language]
+{
+	color:#07a962;
+}
+QLabel[labelType=titleText]
+{
+	width: 354px;
+	height: 20px;
+	font-size: 24px;
+	font-weight: 600;
+	color:#242735;
+	background-color:#ffffff;
+}
+/**************************用户协议窗口  完**************************/
+
+/**************************检查更新窗口  zying**************************/
+/* 贴一张大图片 */
+QLabel[labelType="bg"]
+{
+	border-image: url(:/resGreenSystem/image_update_logo);
+}
+/* 中间软件名 Cloud Trader */
+QLabel[labelType="appName"]
+{
+	font-size: 14px;
+	font-weight: 400;
+}
+
+QLabel[labelType="updateFaile"]
+{
+	
+	color: #e63c51;
+}
+
+/* 发现新版本 */
+QLabel[labelType="lbConst2"]
+{
+	font-size: 14px;
+	font-weight: 400;
+}
+
+QLabel[labelType=Calendar] {
+	border:0px; color: #242735; font-family: HelveticaNeue; 
+}
+
+/**************************BLListHaveUpdateTipWgt**************************/
+QLabel[labelType=listHaveUpdateTipWgt_Text]
+{
+    color: #07a962;  font-size: 14px; line-height: 1.43;
+}
+QLabel[labelType=listHaveUpdateTipWgt_Image]
+{
+    background-image: url(:/resGreenCom/common_16_update); background-position: center ; background-repeat: no-repeat;
+}
+
+/************************** Search_Widget **************************/
+QLabel[labelType=search_label]
+{
+	font:14px;
+	color:#cccdd0;
+	background-color:rgb(255,255,255);
+	border-bottom:1px solid rgb(229,229,231);
+}
+
+/*Buy Sell label*/
+QLabel[labelType=BuySellPrice_Label]
+{
+                font-family: Trebuchet MS; 
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	color: #f0f0f1;
+	background-color:#00000000;
+}
+
+QLabel[labelType=BuySellPrice_line]
+{
+	background-color: rgba(255, 255, 255, 0.16);
+}
+
+/*执行中的widget*/
+
+QLabel[labelType=doing_title]
+{
+	font-size: 20px;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 1.2;
+	color: #ffffff;
+}
+/*执行失败的窗口*/
+QLabel[labelType=fail_title]
+{
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #e02020;
+}
+
+QLabel[labelType=fail_orderInfo]
+{
+	font-weight: 600;
+	color: #f0f0f1;
+}
+
+QLabel[labelType=fail_name]
+{
+	color: #f0f0f1;
+}
+
+QLabel[labelType=fail_info]
+{
+	color: #999aa1;
+}
+
+QLabel[labelType=fail_icon]
+{
+	image:url(:/resGreenTraderOrder/invalid-name);
+}
+
+QLabel[labelType=cutLine_label]
+{
+	background-color: #e5e5e7
+}
+
+/*时间*/
+/* 时间选择界面 */
+QLabel[labelType=timeChooseTitle]
+{
+	line-height:1.45;
+	color:#999aa1;
+}
+
+/*指标属性的第二层标题*/
+QLabel[labelType=pIndicatorTitle_BlChart]
+{
+	/* font-family: Helvetica Neue; */
+	 
+	
+	line-height: 1.33;
+	letter-spacing: normal;
+	color:#242735;
+	background-color: #ffffff;  
+}
+
+/*分割线*/
+QLabel[labelType=separatorLine_BlChart]
+{
+	background-color: #e5e5e7;
+}
+
+/*右边的导航标题 QLabel*/
+QLabel[labelType=rightTitleName_BlChart]
+{
+	color:#242735;
+	 
+	 
+	font-weight: 600; 
+	font-style: normal;  
+	line-height: normal;
+	text-align: right;
+}
+
+/*右边参数名称 QLabel*/
+QLabel[labelType=parameterName_BlChart]
+{
+	color: #242735; 
+	font-family: Helvetica; 
+	line-height: 1.45;
+}
+
+/*关于的一级标题*/
+QLabel[labelType=h1Title_BlChart]
+{
+	color:#242735;
+	
+	font-size: 14px;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 1.43;
+}
+
+/*关于的二级标题*/
+QLabel[labelType=h2Title_BlChart]
+{
+	color:#999aa1;
+	
+	line-height: 1.45;
+}
+
+/*关于的内容*/
+QLabel[labelType=labelContent_BlChart]
+{
+	color:#242735; 
+	border:8px; 
+	background-color: #f7f7f8;
+
+	line-height: normal;
+}
+
+/*基础信息*/
+QLabel[labelType=BoldLabel]
+{
+	font-weight: 600;
+	line-height: 1.43;
+	color:#242735;
+}
+QLabel[labelType=H2_Title]{
+	font-size: 13px;color: #242735; 
+}
+
+QLabel[labelType=richtextLabel]
+{
+	text-align:top;
+}
+QLabel[labelType=load]
+{
+	background-color: #e5e5e7; 
+	color: #999aa1; 
+ 
+	line-height: normal;
+}
+/*最新动态*/
+/*itemwidget label*/
+QLabel[labelType=redUpDown]
+{
+	 
+	font-size: 10px; 
+	line-height: normal;
+	background-color:red;
+	color:#ffffff;
+}
+QLabel[labelType=blueUpDown]
+{
+	 
+	font-size: 10px; 
+	line-height: normal;
+	background-color:blue;
+	color:#ffffff;
+}
+
+QLabel[labelType=markNormal]
+{
+	 
+	font-size: 10px; 
+	line-height: normal; 
+	color:#ffffff;
+	background-color: #999aa1;
+}
+QLabel[labelType=mainFlowLabel]
+{
+	 
+	font-weight: 600; 
+	line-height: 1.36;
+	background-color: rgba(0,0,0,0); 
+}
+
+QLabel[labelType=hollowCircle]
+{
+	background-color:#ffffff;
+	border:1px solid #242735;
+	border-radius:4px;
+}
+
+QLabel[labelType=roundedRectangle_red]
+{
+	background-color:#e63c51;
+	border-radius:2px;
+}
+QLabel[labelType=roundedRectangle_blue]
+{
+	background-color:#2f54eb;
+	border-radius:2px;
+}
+
+QLabel[labelType=smallFontLabel]
+{
+	
+	font-size:9px;
+	color:#999aa1;
+}
+QLabel[labelType=pointLabel]
+{
+	background-color: #333543;
+}
+
+
+QLabel[labelType=graybg_label]
+{
+	background-color:#f7f7f8;
+	line-height:1.45;
+	color:#999aa1;
+}
+QLabel[labelType=gray10_label]
+{
+	
+	font-size:10px;
+	color:#999aa1;
+}
+QLabel[labelType=graybg_roundRectanglelabel]
+{
+	background-color:#999aa1;
+	border-radius:2px;
+}
+QLabel[labelType=roundedRectangle_label]
+{
+	border-radius:2px;
+}
+
+
+/*财务分析*/
+QLabel[labelType=greenMarker]
+{
+	background-color:#07a962;
+	border-radius: 2px;
+}
+QLabel[labelType=greenMarker_transparent]
+{
+	background-color:rgba(7, 169, 98, 0.54);
+	border-radius: 2px;
+}
+QLabel[labelType=greenMarker_circle]
+{
+	background-color:#07a962;
+	border-radius: 4px;
+}
+QLabel[labelType=blueMarker]
+{
+	background-color:#1a54df;
+	border-radius: 2px;
+}
+QLabel[labelType=blueMarker_circle]
+{
+	background-color:#1a54df;
+	border-radius: 4px;
+}
+QLabel[labelType=yellowMarker]
+{
+	background-color:#faac2f;
+	border-radius:2px;
+}
+QLabel[labelType=yellowMarker_circle]
+{
+	background-color:#faac2f;
+	border-radius:4px;
+}
+QLabel[labelType=earningsPerShare]
+{
+	background-image: url(:/resGreenVarieties/earningsPerShare);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+QLabel[labelType=forecastEarningsPerShare]
+{
+	background-image: url(:/resGreenVarieties/forecastEarningsPerShare);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+QLabel[labelType=netProfitRate]
+{
+	background-image: url(:/resGreenVarieties/balanceRate);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+QLabel[labelType=bold_11_label]
+{
+	
+	font-weight:600;
+	line-height:1.45;
+	color:#242735;
+}
+QLabel[labelType=areaLabel]
+{
+	background-color:rgba(153,154,161,0.08);
+}
+QLabel[labelType=Font_Body_Main]
+{
+	 
+	line-height: 1.45;  
+	color: #242735; 
+	background-color: rgba(0,0,0,0); 
+}
+QLabel[Size=Font_Body_Sub]
+{
+	 
+	line-height: 1.45;  
+	color: #999aa1;  
+	background-color: rgba(0,0,0,0);
+}
+QLabel[labelType=netprofitLabel]
+{
+	border-radius:2px;
+	background-color:#07a962;
+}
+QLabel[labelType=earningPerShareLabel]
+{
+	border-radius:4px;
+	background-color:#3e77ff;
+}
+QLabel[labelType=netprofitrateLabel]
+{
+	border-radius:2px;
+	background-color:#faac2f;
+}
+
+QLabel[labelType=chartTitle_1_Label]
+{
+	 
+	font-weight: 600; 
+	line-height: normal;
+	color:#242735;
+	background-color: #ffffff;
+}
+QLabel[labelType=chartTitle_2_Label]
+{
+	 
+	font-size: 10px; 
+ 
+	line-height: normal; 
+	color:#999aa1; 
+	background-color: #ffffff;
+}
+QLabel[labelType=operating_label]
+{
+	border-radius:4px;
+	background-color:#1a54df;
+}
+QLabel[labelType=investment_label]
+{
+	border-radius:4px;
+	background-color:#07a962;
+}
+QLabel[labelType=finance_label]
+{
+	border-radius:4px;
+	background-color:#f7a92e;
+}
+
+/* 查看详情 */
+QLabel[labelType=oddnumber_label]
+{
+	 
+	font-size: 13px; 
+	line-height: 1.5;  
+	color: #242735; 
+	background-color: rgba(0,0,0,0); 
+}
+QLabel[labelType=leftBorderTableLabel]
+{
+	 
+	 
+	font-weight: 600; 
+	font-style: normal;  
+	line-height: normal; 
+	color: #242735;  
+	background-color: rgba(0,0,0,0); 
+	border:none; 
+	border-left:4px solid #07a962;
+}
+QLabel[labelType=tableTitleLabel]
+{
+	
+	
+	font-weight:normal;
+	padding-left: 4px;
+	color:#999aa1;
+	background-color:515254;
+	border-bottom:1px solid rgb(229,229,231);
+}
+
+/**************************MainFrame 主页面**************************/
+QLabel[labelStyle="CurrentTimeZoneTimeLabel"]  
+{ 
+  font-size:10px;
+}
+
+QLabel[labelType=toolTip] {
+	color: #575757; 
+	background: white;
+	border:1px solid black;
+}
+
+QLabel[labelStype="F11Label"]
+{
+	width:17px; 
+	height:14px; 
+	font-size:10px;
+	line-height:1.4; 
+	color:#242735;
+}
+
+QLabel[labelStype="heplLabel"]
+{
+	width:47px;
+	height:14px; 
+	color:#999aa1;
+}
+
+QLabel[labelStype="NewsTimeLabel"]
+{
+	width:26px; 
+	height:14px;
+	font-size:10px; 
+	color:#999aa1; 
+}
+QLabel[labelStype="NewsTimeLabel-time"]
+{
+	width:28px; 
+	height:16px;
+	line-height:1.45;
+	color:#999aa1; 
+}
+
+
+QLabel[labelStyle="ServerResTimeTextLabel"]
+{
+	width:65px;
+	height:32px; 
+	font-size:10px;
+	color:#242735;
+}
+QLabel[btnStyle="multiTimeZoneBtn"]
+{
+	border:1px solid transparent;
+	
+	background-position: left;
+	background-repeat:	no-repeat;
+	color:#242735; 
+	padding-left:8px;
+	padding-top:0px; 
+	text-align: right; 
+	font-size: 10px; 
+	line-height: 1.45;
+}
+
+
+/**************************资讯-新闻**************************/
+
+QLabel[labelType=richtextLabel]
+{
+	text-align:top;
+}
+
+QLabel[labelType=voice]{
+	border-image: url(:/resGreenCom/common-16-broadcast);
+} 
+
+QLabel[labelType=shadow] {
+	background-color: rgba(0,0,0,0); 
+	border-image: url(:/resGreenFinancialInfo/shadow);
+}
+QLabel[labelType=newsDateLabel] {
+	background-color: #f0f0f1;  
+	font-size: 13px; 
+	line-height: normal;  
+	color: #999aa1; 
+}
+QLabel[labelType=loadPhoto]{
+	border-image: url(:/resGreenCom/image_blank_logo64); 
+}
+
+/************资讯热点的内容****************/ 
+QLabel[labelType=hotContent] {
+	 font-size: 14px; 
+	color: rgba(43,43,43, 0.6);
+}
+QLabel[labelType=hotContent_highlight] {
+	 font-size: 14px; 
+	color: rgba(43,43,43, 1);
+}
+
+QLabel[labelType=calendarReviseTip]{
+	border-radius: 3px; background-color: #1bcf3b; 
+} 
+
+QLabel[labelType=calendarMessageTitle] {
+	background-color: #f0f0f1; color: #242735; 
+}
+
+QLabel[labelType=dropdown_img]{background-image: url(:/resGreenCom/common_16_dropdown_main); }
+QLabel[labelType=dropdown_img_focus]{background-image: url(:/resGreenCom/common_16_dropdown_highlight); }
+
+QLabel[labelType=item]{
+	  
+	color: #242735; background-color:rgba(0,0,0,0);
+}
+QLabel:hover[labelType=item]{
+	background-color:#f7f7f8; color: #07a962;
+}
+QLabel[labelType=item_checked]{
+	 
+	color: #ffffff; background-color:#07a962;
+}
+
+QLabel[labelType=handle]{ 
+	background-image: url(:/resDarkFinancialInfo/toolBar_handle); 
+	background-repeat : no-repeat; background-position : center;
+}
+
+QLabel[labType="askLabel"]{
+	font: 12px "Microsoft YaHei UI";
+	color: rgb(36, 39, 53);
+}
+/************************* QpushButton 控件类**************************/
+/*************************CJF MARK**************************/
+QPushButton
+{
+	color: #1e1e1e;  
+}
+
+QPushButton:checked
+{
+	color: #242735;
+}
+
+QPushButton:hover
+{
+	 color: #07a962;
+}
+QPushButton:disabled
+{
+	color:#ccccd0;
+}
+/**************************BLFramelessWidget 样式**************************/
+QPushButton[btnType=cloud_btn] {
+	background-color:none;
+	background-position:left;
+    background-repeat:no-repeat;
+	text-align:right;
+	border:none;
+	background-image:url(:/resGreenCom/common_28_cloud_main);
+}
+QPushButton:hover[btnType=cloud_btn] 
+{
+	background-image:url(:/resGreenCom/common_28_cloud_green);
+}
+
+QPushButton[btnType=share_btn] {
+	background-color:none;
+	background-position:left;
+    background-repeat:no-repeat;
+	text-align:right;
+	border:none;
+	background-image:url(:/resGreenCom/common_28_share_main);
+}
+QPushButton:hover[btnType=share_btn] 
+{
+	background-image:url(:/resGreenCom/common_28_share_green);
+}
+
+QPushButton[btnType=msg_btn] {
+	background-color:none;
+	background-position:left;
+    background-repeat:no-repeat;
+	text-align:right;
+	border:none;
+	background-image:url(:/resGreenCom/common_32_news_main);
+}
+QPushButton:hover[btnType=msg_btn] 
+{
+	background-image:url(:/resGreenCom/common_32_news_green);
+}
+
+QPushButton[pushbuttonType="zxbtn"]
+{
+	border:none;
+	image:url(:/resGreenButtons/btn_28_onstar);
+    background-color:none;
+}
+QPushButton[pushbuttonType="zxbtn"]:hover
+{
+	image:url(:/resGreenButtons/btn_28_onstar_hover);
+}
+QPushButton[pushbuttonType="zxbtn"]:checked:hover
+{
+	image:url(:/resGreenButtons/btn_28_onstar_hover);
+}
+QPushButton[pushbuttonType="zxbtn"]:checked
+{
+	image:url(:/resGreenButtons/btn_28_addstar);
+}
+QPushButton[btnType=cloudButton] {
+	background-color:none;
+	background-position:left;
+    background-repeat:no-repeat;
+	text-align:right;
+	border:1px solid #e5e5e7;
+	background-image:url(:/resGreenButtons/Resources/Images/Green/buttons/common_28_download_main.png);
+}
+QPushButton:hover[btnType=cloudButton] 
+{
+
+	background-image:url(:/resGreenButtons/Resources/Images/Green/buttons/common_28_download_highlight.png);
+}
+QPushButton[btnType=immdownButton]
+{
+	color:#4169E1;
+	background-color:transparent;
+	border:none;
+}
+
+QPushButton[btnType=datebtn]
+{
+	color:#999aa1;
+	line-height:1.33;
+	border:0px;
+	background-color:transparent;
+}
+
+
+QPushButton[btnType=combo] 
+{
+	border: 1px solid #e5e5e7; 
+	border-radius: 2px; 
+	color: #242735;
+	 
+	 
+	font-style: normal;  
+	line-height: 1.45;
+	background-image: url(:/resDarkCom/common_16_dropdown_main);
+	background-position: right; 
+	background-repeat: no-repeat; 
+	text-align: left; 
+	padding-left:8px; 
+	background-color: #ffffff;
+}
+QPushButton:hover[btnType=combo] 
+{ 
+	background-color: #f7f7f8; 
+	border: 1px solid #07a962;
+}
+QPushButton:checked[btnType=combo] 
+{
+	border: 1px solid #07a962; 
+	background-image: url(:/resDarkCom/common_16_dropdown_highlight); 
+	background-color:#f7f7f8;
+}
+QPushButton[btnType=clearBtn]
+{
+	width:56px;
+	height:24px;
+	background-color:#ffffff;
+	border-radius:2px;
+	border:1px solid rgb(229,229,231);
+	color:#333543;
+	line-height:1.45;
+}
+QPushButton[btnType=clearBtn]:hover 
+{
+	border: 1px solid #07a962; 
+}
+QPushButton:pressed[btnType=clearBtn]
+{
+	color:#07a962;
+}
+
+QPushButton[btnType=timeChooseReturnBtn]
+{
+	border:0px; 
+	color: #242735; 
+	font-family: HelveticaNeue; 
+	 
+	font-style: normal;  
+	line-height: 1.43; 
+	border-radius:2px;
+	border:1px solid rgb(229,229,231);
+}
+QPushButton[btnType=timeChooseReturnBtn]:hover
+{
+	border:0px; 
+	font-family: HelveticaNeue; 
+	 
+	font-weight: 500; 
+	font-style: normal;  
+	line-height: normal;
+	border: 1px solid #07a962; 
+}
+QPushButton:pressed[btnType=timeChooseReturnBtn]
+{
+	color:#07a962; 
+	border: 1px solid #07a962;
+}
+/**************************QPushButton-Comfirm**************************/
+QPushButton[btnType=confirm] {
+	background-color:qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890);
+	color:#ffffff;
+	border-radius:2px;
+}
+QPushButton:hover[btnType=confirm] 
+{
+	background-color:qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #36d891, stop:1 #24b597);
+	color:#ffffff;
+}
+QPushButton:pressed[btnType=confirm] 
+{
+	background-color:qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #04bd70, stop:1 #049c89);
+	color:#ffffff;
+}
+QPushButton:disabled[btnType=confirm] 
+{
+	background-color:qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 208, 114, 0.4), stop:1 rgba(1, 168, 144, 0.4) );
+	color:transparent;
+}
+/**************************QPushButton-Cancel**************************/
+QPushButton[btnType=cancel] {
+	background-color:#ffffff;color:#333543;
+	border-radius:2px;border:1px solid #e5e5e7;
+}
+QPushButton:hover[btnType=cancel] 
+{
+	background-color:#f7f7f8;color:#333543;
+	border-radius:2px;border:1px solid #e5e5e7;
+}
+QPushButton:pressed[btnType=cancel] 
+{
+	background-color:#f0f0f1;color:#333543;
+	border-radius:2px;border:1px solid #e5e5e7;
+}
+
+QPushButton:disabled[btnType=cancel] 
+{
+	background-color:#ffffff;color:#cccdd0;
+	border-radius:2px;border:1px solid #e5e5e7;
+}
+
+/**************************QPushButton-Delete**************************/
+QPushButton[btnType=delete] {
+	background-color:#ffffff;color:#e63c51;
+	border-radius:2px;border:1px solid #e63c51;
+}
+QPushButton:hover[btnType=delete] 
+{
+	background-color:#eaeaea;color:#e63c51;
+	border-radius:2px;border:1px solid #e63c51;
+}
+QPushButton:pressed[btnType=delete] 
+{
+	background-color:#e63c51;color:#ffffff;
+	border-radius:2px;border:1px solid #e63c51;
+}
+
+QPushButton:disabled[btnType=delete] 
+{
+	background-color:#ffffff;color:#cccdd0;
+	border-radius:2px;border:1px solid #e5e5e7;
+}
+/**************************QPushButton-Switch**************************/
+QPushButton[btnType=switch] {
+	background-image:url(:/resGreenButtons/SwitchOff); 
+	border:0xp;
+}
+QPushButton:checked[btnType=switch] 
+{
+	background-image:url(:/resGreenButtons/SwitchOn); 
+}
+QPushButton:disabled[btnType=switch] 
+{
+	background-image:url(:/resGreenButtons/SwitchOffDisable); 
+}
+QPushButton:checked:disabled[btnType=switch] 
+{
+	background-image:url(:/resGreenButtons/SwitchOnDisable); 
+}
+
+/**************************QPushButton-Text**************************/
+QPushButton[btnType=text] {
+	background-color:#ffffff;color:#242735;
+	border:0px;border-radius: 2px;
+}
+QPushButton:hover[btnType=text] 
+{
+	background-color:#f7f7f8;color:#07a962;
+	border:0px;
+}
+QPushButton:pressed[btnType=text] 
+{
+	background-color:#d7f1e6;;
+	border:1px solid #9cddc0;
+}
+QPushButton:checked[btnType=text] 
+{
+	background-color:#d7f1e6;;
+	border:1px solid #9cddc0;
+}
+QPushButton:disabled[btnType=text] 
+{
+	color:#ccccd0;
+}
+/**************************QPushButton-Plain**************************/
+QPushButton[btnType=plain] {
+	background-color:#ffffff;
+	color:#999aa1;
+	border:0px;
+}
+QPushButton:hover[btnType=plain] 
+{
+	background-color:#ffffff;
+	color:#07a962;
+}
+QPushButton:checked[btnType=plain] 
+{
+	color:#07a962;
+}
+/**************************QPushButton-Plain_NoBG**************************/
+QPushButton[btnType=Plain_NoBG] {
+	color:#07a962;
+	border:0px;
+}
+
+QPushButton:checked[btnType=Plain_NoBG] 
+{
+	color:#07a962;
+}
+/**************************QPushButton-Underline**************************/
+QPushButton[btnType=underline] {
+	background-color:#ffffff;
+	color:#07a962;
+	border:0px;
+}
+QPushButton:hover[btnType=underline] 
+{
+	border-bottom:1px solid rgb(85,196,147);
+}
+/**************************QPushButton-Min**************************/
+QPushButton[btnType=min] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Minimize);
+}
+QPushButton:hover[btnType=min] 
+{
+	background-color:#f7f7f8;
+	image:url(:/resGreenCom/Minimize_HL);
+}
+/**************************QPushButton-Max**************************/
+QPushButton[btnType=max] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Maximize);
+}
+QPushButton:hover[btnType=max] 
+{
+	background-color:#f7f7f8;
+	image:url(:/resGreenCom/Maximize_HL);
+}
+QPushButton[btnType=max_full] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Default);
+}
+QPushButton:hover[btnType=max_full] 
+{
+	background-color:#f7f7f8;
+	image:url(:/resGreenCom/Default_HL);
+}
+/**************************QPushButton-Setting**************************/
+QPushButton[btnType=set] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Setting);
+}
+QPushButton:hover[btnType=set] 
+{
+	background-color:#f7f7f8;
+	image:url(:/resGreenCom/Setting_HL);
+}
+/**************************QPushButton-Close**************************/
+QPushButton[btnType=close_hide] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Close_28);
+}
+QPushButton[btnType=close] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Close_28);
+}
+QPushButton:hover[btnType=close] 
+{
+	image:url(:/resGreenCom/Close_Hover_28);
+}
+/**************************QPushButton-ArrowDown**************************/
+QPushButton[btnType=arrowDown] {
+	border:none;
+	background-color:none;
+	image:url(:/resGreenCom/Movedown);
+}
+QPushButton:hover[btnType=arrowDown] 
+{
+	image:url(:/resGreenCom/Movedown_HL);
+}
+
+/**************************QPushButton-TabBar**************************/
+QPushButton[btnType=tabBar] {
+	border:none; background-color: #f7f7f8; 
+	color: #999aa1;  font-size: 13px;  	
+	padding-left:16px;
+	padding-right:16px;
+}
+QPushButton:checked[btnType=tabBar] 
+{
+	background-color: #ffffff; color: #242735;
+}
+QPushButton:hover[btnType=tabBar] 
+{
+	 color: #242735;
+}
+
+QPushButton[btnType=null_button]
+{
+	background-color:rgb(229, 229, 231);
+	border:none;
+}
+
+
+/**************************BLPasswordEditor_Btn**************************/
+QPushButton[btnType=PWEditor_seePWBtn] 
+{
+	border-image:url(:/resGreenCom/Resources/Images/Green/common/common_24_seepsw.png);
+	border-right:1px;
+}
+QPushButton:hover[btnType=PWEditor_seePWBtn] 
+{ 
+	border-image:url(:/resGreenCom/Resources/Images/Green/common/common_24_seepsw_highlight.png);
+}
+QPushButton:checked[btnType=PWEditor_seePWBtn] 
+{
+	border-image:url(:/resGreenCom/Resources/Images/Green/common/common_24_cantseepsw_gray.png);
+}
+QPushButton:checked:hover[btnType=PWEditor_seePWBtn] 
+{ 
+	border-image:url(:/resGreenCom/Resources/Images/Green/common/common_24_cantseepsw_highlight.png);
+}
+
+/*自定义下拉框 btn*/
+QPushButton[btnType=seleteColor_btn] 
+{
+	border-image:url(:/resGreenCom/common_16_dropdown_main);
+	border-right:1px;
+}
+QPushButton:hover[btnType=seleteColor_btn] 
+{ 
+	border-image:url(:/resGreenCom/common_16_dropdown_highlight);
+}
+QPushButton:checked[btnType=seleteColor_btn] 
+{
+	border-image:url(:/resGreenCom/common_16_dropdown_highlight);
+}
+QPushButton:disabled[btnType=seleteColor_btn] 
+{
+	border-image:url(:/resGreenCom/common_16_dropdown_disable);
+}
+
+/*技术分析图的样式*/
+QPushButton[btnType=styleColorBtn_BlChart] 
+{
+	border-image:url(:/resGreenCom/common_16_dropdown_main);
+	border-right:1px;
+}
+QPushButton:hover[btnType=styleColorBtn_BlChart] 
+{ 
+	border-image:url(:/resGreenCom/common_16_dropdown_highlight);
+}
+QPushButton:checked[btnType=styleColorBtn_BlChart] 
+{
+	border-image:url(:/resGreenCom/common_16_dropdown_highlight);
+}
+/*自定义颜色的编辑框里面的按钮*/
+QPushButton:disabled[btnType=pShowCrBtn_BlChart] 
+{ 
+	border-image: url(:/resGreenCustomCr/customCr_disale); 
+}
+
+/*自定义颜色返回*/
+QPushButton[btnType=pSelectCrReturnBtn_BlChart] 
+{
+	border-image: url(:/resGreenCustomCr/customCr_return); 
+}
+
+/**************************自定义用户Colorbox Over**************************/
+
+/**************************自定义用户LineStyle**************************/
+/*线的样式和宽度 btn*/
+QPushButton[btnType=line_BlChart] 
+{
+	background-position: right;
+	background-repeat: no-repeat;
+	border-radius: 2px;
+	padding-left:0px; 
+	padding-right:0px; 
+	padding-top:0px; 
+	text-align: left;
+	background-image:url(:/resGreenCom/common_16_dropdown_main);
+	background-color: #ffffff;
+	border:1px solid #e5e5e7;
+}
+QPushButton:hover[btnType=line_BlChart] 
+{ 
+	background-color: #ffffff; 
+	border:1px solid #07a962; 
+}
+QPushButton:checked[btnType=line_BlChart] 
+{
+	background-color: #ffffff; 
+	border:1px solid #07a962; 
+}
+/**************************自定义用户LineStyle Over**************************/
+
+/* 三个小btn绿色 */
+QPushButton[btnType="miniBtn"]
+{
+    background-color：#ffffff;
+	border:none;
+	color: #07a962;
+}
+QPushButton:hover[btnType="miniBtn"]
+{
+	border-bottom:1px solid #07a962;
+	border-top:1px solid #ffffff;
+	border-left:none;
+	border-right:none;
+}
+/*失败按钮样式*/
+QPushButton[btnType="Error"]
+{
+	border-radius: 2px;
+	color: #ffffff; 
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51);
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51); 
+}
+QPushButton:hover[btnType="Error"]
+{
+	color: #ffffff; 
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51);
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51); 
+}
+QPushButton:pressed[btnType="Error"]
+{
+	color: #ffffff; 
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51);
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51); 
+} 
+QPushButton:disabled[btnType="Error"]
+{
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51);
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #ff4f65, stop:1 #e63c51); 
+	/*color: #ccccd0;*/
+	color: transparent;
+}
+
+/**************************检查更新窗口  zying完**************************/
+
+/**************************BLCustomCalendarWidget**************************/
+QPushButton[btnType=CalendarLast] { 
+	border-image: url(:/resGreenCom/common_16_toleft_main) ; 
+}
+QPushButton:hover[btnType=CalendarLast] {
+	border-image: url(:/resGreenCom/common_16_toleft_highlight);  
+}
+QPushButton:disabled[btnType=CalendarLast] {
+	border-image: url(:/resGreenCom/common_16_toleft_main_disable);  
+}
+QPushButton[btnType=CalendarNext] { 
+	border-image: url(:/resGreenCom/common_16_collapse_main) ;
+}
+QPushButton:hover[btnType=CalendarNext] {
+	border-image: url(:/resGreenCom/common_16_collapse_highlight);  
+}
+QPushButton:disabled[btnType=CalendarNext] {
+	border-image: url(:/resGreenCom/common_16_collapse_disable);  
+}
+
+/************************** UserAcoount **************************/
+QPushButton[btnType=account_create]
+{
+  color:#242735;
+  padding-right:43px;
+  border:0px;
+}
+
+QPushButton[btnType=account_add]
+{
+  color:#242735;
+  padding-right:10px;
+  border:0px;
+}
+
+QPushButton[btnType=topButton]{
+	 border-top:0px;
+	 border-bottom:1px solid rgb(193,234,215);
+	 text-align:left;
+	 background-color:#ffffff;
+	 padding-left:5px;
+}
+QPushButton:hover[btnType=topButton]
+{
+	 border-top:0px;
+	 border-bottom:1px solid rgb(193,234,215);
+	 text-align:left;
+	 background-color:#F7F7F8;
+	 padding-left:5px;
+}
+
+QPushButton[btnType=match_btn]{
+	 border-top:1px solid rgb(156, 221, 192);
+	 text-align:left;
+	 background-repeat:no;
+}
+QPushButton:hover[btnType=match_btn]
+{
+	 border-top:1px solid rgb(156, 221, 192);
+	 text-align:left;
+	 background-color:#b4e5cf;
+	 color:#242735;
+}
+
+/************************** MDI_Widget **************************/
+
+
+/**************************快捷交易面板 **************************/
+
+QPushButton[btnType=minus_plus_btn]
+{
+	color: #1c1a1a;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+}
+
+/**************************快捷交易面板 end**************************/
+
+/**************************交易订单**************************/
+/*新订单的左边图表*/
+
+/*Buy Sell btn*/
+QPushButton[btnType=BuySell_Button]
+{
+	font-family: Trebuchet MS;
+	font-size: 18px;
+	line-height: normal;
+	text-align: center;
+	color: #ffffff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border: 0px;
+}
+
+/*切换周期按钮*/
+QPushButton[btnType=PeriodBtn_Button]
+{
+	color: #ffffff;
+	font-size: 10px;
+	line-height: normal;
+	background-position: right;
+	background-repeat: no-repeat;
+	border-radius: 2px;
+	border:none; 
+	padding:0px; 
+	text-align: left;
+	background-image: url(:/resGreenTraderOrder/common-16-expand);
+}
+
+/*放大按钮*/
+QPushButton[btnType=ZoomIn_Button]
+{
+	border-image: url(:/resGreenTraderOrder/zoom-in);
+}
+
+/*缩小按钮*/
+QPushButton[btnType=ZoomOut_Button]
+{
+	border-image: url(:/resGreenTraderOrder/zoom-out);
+}
+
+/*执行失败的OK*/
+QPushButton[btnType=orderFail_ok]
+{
+	
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.43;
+	letter-spacing: normal;
+	color: #f0f0f1;
+	border: 1px solid #515254; 
+	background-color: #2d2e33; 
+}
+
+/*28关闭按钮*/
+QPushButton[btnType=close_Button]
+{
+	border:0px; 
+	border-image: url(:/resGreenCom/Close_28);
+}
+QPushButton:hover[btnType=close_Button]
+{
+	border-radius: 2px; 
+	border-image: url(:/resGreenCom/Close_Hover_28);
+}
+
+
+/*日期图标*/
+QPushButton[btnType=dateTime_Button] 
+{
+	color: #242735; 
+	border: 1px solid #e5e5e7;
+	border-radius: 2px;
+	line-height: 1.33;
+	padding-left: 32px; 
+	text-align: left;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-image : url(:/resGreenCom/Resources/Images/Green/common/common_24_clock.png);
+}
+QPushButton:hover[btnType=dateTime_Button] 
+{ 
+	border:1px solid #07a962; 
+	background-image : url(:/resGreenCom/Resources/Images/Green/common/common_24_clock_highlight.png);
+}
+QPushButton:checked[btnType=dateTime_Button] 
+{
+	border:1px solid #07a962; 
+	background-image : url(:/resGreenCom/Resources/Images/Green/common/common_24_clock_highlight.png);
+}
+
+/*Up*/
+
+/*日期*/
+QPushButton[btnType=date_Button]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	line-height: 1.45;
+	padding:0px; 
+	text-align: center;	
+	color: #242735;
+}
+QPushButton:hover[btnType=date_Button]
+{
+	border-color: #07a962;
+}
+QPushButton:hover[btnType=date_Button]
+{
+	border-color: #07a962;
+}
+
+/*时间*/
+QPushButton[btnType=time_Button]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	line-height: 1.45;
+	padding-left: 0px; 
+	padding-right: 8px; 
+	color: #242735;
+	text-align: center;	
+}
+QPushButton:hover[btnType=time_Button]
+{
+	border-color: #07a962;
+}
+QPushButton:checked[btnType=time_Button] 
+{
+	border-color: #07a962;
+}
+
+/**************************交易订单 end **************************/
+
+/**************************个性化设置 **************************/
+/*黑色主题*/
+QPushButton[labelType=ThemeDark_Label]
+{
+	border-image: url(:/resGreenInitPreferences/ThemeDark);
+}
+
+/*白色主题*/
+QPushButton[labelType=ThemeWhite_Label]
+{
+	border-image: url(:/resGreenInitPreferences/ThemeWhite);
+}
+
+/*系统推荐*/
+QPushButton[labelType=UpDown_1_Label]
+{
+	border-image: url(:/resGreenInitPreferences/UpDown1);
+}
+
+QPushButton[labelType=UpDown_2_Label]
+{
+	border-image: url(:/resGreenInitPreferences/UpDown2);
+}
+
+QPushButton[labelType=UpDown_3_Label]
+{
+	border-image: url(:/resGreenInitPreferences/UpDown3);
+}
+
+QPushButton[labelType=UpDown_4_Label]
+{
+	border-image: url(:/resGreenInitPreferences/UpDown4);
+}
+
+/**************************个性化设置 end **************************/
+
+/**************************个人资料 **************************/
+QPushButton[btnType=button_head] 
+{
+	border: 1px solid #e5e5e7; 
+	border-radius: 2px; 
+	color: #242735;
+	 
+	line-height: 1.45;
+	padding-left: 20px; 
+	background-color: #ffffff;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-image : url(:/resGreenCom/common_24_add_main);
+}
+QPushButton:hover[btnType=button_head] 
+{ 
+	border: 1px solid #07a962;  
+	background-image : url(:/resGreenCom/common_24_add_highlight);
+}
+QPushButton:checked[btnType=button_head] 
+{
+	border: 1px solid #07a962;  
+}
+
+/**************************个人资料 end **************************/
+
+/**************************指标属性 **************************/
+/*指标属性的第二层表头*/
+
+
+/*配置 btn*/
+QPushButton[btnType=configBtn_BlChart] 
+{
+	background-color: #ffffff;  
+	border:none; 
+
+	line-height: 1.45; 
+}
+
+/*更多 btn*/
+QPushButton[btnType=more_BlChart] 
+{
+	border-image:url(:/resGreenCom/common_24_customize);
+}
+
+/*对话框中的条目按钮*/
+QPushButton[btnType=itemBtn_BlChart] 
+{
+	background-color: #ffffff; 
+	background-repeat: no-repeat; 
+	border: 0px; 
+	color: #000000; 
+	font-family: Microsoft YaHei UI; 
+	font-size: 11px; 
+	font-weight: normal; 
+	font-style: normal;  
+	line-height: 1.45;
+	text-align: left; 
+	padding-left: 8px;
+}
+QPushButton:hover[btnType=itemBtn_BlChart] 
+{ 
+	background-color: #07a962; 
+	color:#ffffff;
+}
+QPushButton:checked[btnType=itemBtn_BlChart] 
+{
+	background-color: #f7f7f8; 
+	color:#07a962;
+}
+
+/*左边导航 btn*/
+QPushButton[btnType=navigationBtn_BLChart] 
+{ 
+	color: #999aa1; 
+	border:none; 
+ 
+	line-height: 1.45;
+	text-align: right;
+}
+
+QPushButton:pressed[btnType=navigationBtn_BLChart]
+{
+	color: #07a962; 
+}
+
+/*线的样式和宽度 btn*/
+QPushButton[btnType=line_BlChart] 
+{
+	background-position: right;
+	background-repeat: no-repeat;
+	border-radius: 2px;
+	padding-left:0px; 
+	padding-right:0px; 
+	padding-top:0px; 
+	text-align: left;
+	background-image:url(:/resGreenCom/common_16_dropdown_main);
+	border:1px solid #e5e5e7;
+}
+QPushButton:hover[btnType=line_BlChart] 
+{ 
+	background-color: #ffffff; 
+	border:1px solid #9cddc0; 
+}
+QPushButton:checked[btnType=line_BlChart] 
+{
+	background-color: #ffffff; 
+	border:1px solid #07a962; 
+}
+
+/*添加新的水平位 Iconbtn*/
+QPushButton[btnType=addHorizonPosIconBtn_BlChart] 
+{
+	border-image:url(:/resGreenCom/common_24_add_highlight);
+}
+
+/*添加新的水平位 Labelbtn*/
+QPushButton[btnType=addHorizonPosLabelBtn_BlChart] 
+{
+	border: none; 
+	color:#242735;
+	 
+	line-height: 1.45;
+}
+
+/*水平位删除 btn*/
+QPushButton[btnType=deleteStyle_BlChart] 
+{
+	border-image: url(:/resGreenCom/common_24_close_main);
+}
+QPushButton:hover[btnType=deleteStyle_BlChart] 
+{ 
+	border-image: url(:/resGreenCom/common_24_close_hover);
+}
+QPushButton:pressed[btnType=deleteStyle_BlChart] 
+{
+	border-image: url(:/resGreenCom/common_24_close_hover);
+}
+
+/*自定义下拉框 btn*/
+QPushButton[btnType=customizeDialogBtn_BlChart] 
+{
+	background-position: right;
+	background-repeat: no-repeat;
+	color:#242735;
+	padding-left:8px; 
+	padding-top:0px; 
+	text-align: left; 
+	 
+	line-height: 1.45; 
+	border-radius: 2px;
+	background-image:url(:/resGreenCom/common_16_dropdown_main);
+	border:1px solid #e5e5e7;
+}
+QPushButton:hover[btnType=customizeDialogBtn_BlChart] 
+{ 
+	background-color: #ffffff; 
+	border:1px solid #9cddc0; 
+}
+QPushButton:checked[btnType=customizeDialogBtn_BlChart] 
+{
+	background-color: #ffffff; 
+	border:1px solid #07a962; 
+}
+
+/*关于窗口*/
+
+/**************************指标属性 end **************************/
+
+/**************************BLPushButton_ColorfulTabBtn**************************/
+QPushButton[btnType=colorfulTabBtn]
+{
+	border:0px; 
+	border-radius:2px; 
+	color: #242735;
+	padding-left: 8; 
+	padding-right: 8;
+	 
+	line-height: normal;   
+}
+QPushButton:checked[btnType=colorfulTabBtn]
+{
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890); 
+	color: #ffffff; 
+}
+QPushButton:checked:hover[btnType=colorfulTabBtn]
+{
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890); 
+	color: #ffffff;
+}
+
+/**************************BLPushButton_PlainTabBtn**************************/
+QPushButton[btnType=PlainTabBtn]
+{
+	border:0px; 
+	border-radius:2px; 
+	color: #242735;
+	background-color: #00000000;
+	text-align : center;
+	padding-top:0;
+	line-height: normal;   
+}
+QPushButton:checked[btnType=PlainTabBtn]
+{
+	padding-top:0;
+	color: #07a962; 
+}
+QPushButton:hover[btnType=PlainTabBtn]
+{ 
+	padding-top:0;
+}
+QPushButton:checked:hover[btnType=PlainTabBtn]
+{
+	padding-top:0;
+	color: #07a962; 
+}
+/**************************BLPushButton_PlainBtn**************************/
+QPushButton[btnType=PlainBtn]
+{
+	border:0px; 
+	border-radius:2px; 
+	color: #07a962;
+	background-color: #00000000;
+	text-align : center;
+	padding-top:0;
+	line-height: normal;   
+}
+QPushButton:checked[btnType=PlainBtn]
+{
+	padding-top:0;
+}
+QPushButton:hover[btnType=PlainBtn]
+{ 
+	padding-top:0;
+}
+QPushButton:checked:hover[btnType=PlainBtn]
+{
+	padding-top:0;
+	color: #07a962; 
+}
+/**************************品种分析 样式**************************/
+/*detail-Button */
+QPushButton[btnType=detail]{
+	font-size: 12px; 
+	font-weight: normal; 
+	font-style: normal;  
+	line-height: normal;
+	color:#07a962;
+	border:0px;
+}
+QPushButton:hover[btnType=detail]{
+	font-size: 12px; 
+	font-weight: normal; 
+	font-style: normal;  
+	line-height: normal;
+	color:#4dbe8c;
+	border:0px;
+}
+QPushButton:disabled[btnType=detail]{
+	font-size: 12px; 
+	font-weight: normal; 
+	font-style: normal;  
+	line-height: normal;
+	color:#ccccd0;
+	border:0px;
+}
+
+QPushButton[btnType=unSelect] {background-image: url(:/resGreenButtons/btn_28_addstar);background-color:none; border:none;}
+QPushButton:hover[btnType=unSelect] {background-image: url(:/resGreenButtons/btn_28_addstar_hover);background-color:none;border:none; }
+QPushButton:pressed[btnType=unSelect] {background-image: url(:/resGreenButtons/btn_28_addstar_pressed);background-color:none;border:none;}
+QPushButton[btnType=select] {background-image: url(:/resGreenButtons/btn_28_onstar);background-color:none; border:none;}
+QPushButton:hover[btnType=select] {background-image: url(:/resGreenButtons/btn_28_onstar_hover);background-color:none;border:none; }
+QPushButton:pressed[btnType=select] {background-image: url(:/resGreenButtons/btn_28_onstar_pressed);background-color:none;border:none;}
+
+
+/* Toolbar上的图表，不需要贴图 */
+
+/* Toolbar上的图表，需要贴图 */
+QPushButton[btnType="toolBarAddPicAction"]
+{
+	color:rgb(60, 60, 60);
+	border-radius: 2px;
+	margin:1px;
+}
+QPushButton:hover[btnType="toolBarAddPicAction"]
+{
+	background-color: rgb(245, 245, 246);
+	border:none; 
+	color: rgb(7, 169, 98); 
+}
+QPushButton:hover:checked[btnType="toolBarAddPicAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192);
+}
+QPushButton:pressed[btnType="toolBarAddPicAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192); 
+	margin-top: 1px;
+	margin-left: 1px;
+}
+QPushButton:pressed:checked[btnType="toolBarAddPicAction"]
+{
+	margin-top: 0px;
+	margin-left: 0px;
+}
+QPushButton:checked[btnType="toolBarAddPicAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192);
+}
+
+QPushButton[toolBarAddPicAction="Histogram"]
+{
+	background-image:url(:/resGreenTools/Histogram);
+}
+QPushButton:hover[toolBarAddPicAction="Histogram"]
+{
+	background-image:url(:/resGreenTools/Histogram_HL);
+}
+QPushButton[toolBarAddPicAction="Candle"]
+{
+	background-image:url(:/resGreenTools/Candle);
+}
+QPushButton:hover[toolBarAddPicAction="Candle"]
+{
+	background-image:url(:/resGreenTools/Candle_HL);
+}
+QPushButton[toolBarAddPicAction="Discount"]
+{
+	background-image:url(:/resGreenTools/Discount);
+}
+QPushButton:hover[toolBarAddPicAction="Discount"]
+{
+	background-image:url(:/resGreenTools/Discount_HL);
+}
+QPushButton[toolBarAddPicAction="Mouse"]
+{
+	background-image:url(:/resGreenTools/Mouse);
+}
+QPushButton:hover[toolBarAddPicAction="Mouse"]
+{
+	background-image:url(:/resGreenTools/Mouse_HL);
+}
+QPushButton[toolBarAddPicAction="Cross"]
+{
+	background-image:url(:/resGreenTools/Cross);
+}
+QPushButton:hover[toolBarAddPicAction="Cross"]
+{
+	background-image:url(:/resGreenTools/Cross_HL);
+}
+QPushButton[toolBarAddPicAction="Zoomin"]
+{
+	background-image:url(:/resGreenTools/Zoomin);
+}
+QPushButton:hover[toolBarAddPicAction="Zoomin"]
+{
+	background-image:url(:/resGreenTools/Zoomin_HL);
+}
+QPushButton[toolBarAddPicAction="Zoomout"]
+{
+	background-image:url(:/resGreenTools/Zoomout);
+}
+QPushButton:hover[toolBarAddPicAction="Zoomout"]
+{
+	background-image:url(:/resGreenTools/Zoomout_HL);
+}
+QPushButton[toolBarAddPicAction="Array"]
+{
+	background-image:url(:/resGreenTools/Array);
+}
+QPushButton:hover[toolBarAddPicAction="Array"]
+{
+	background-image:url(:/resGreenTools/Array_HL);
+}
+QPushButton[toolBarAddPicAction="Forward"]
+{
+	background-image:url(:/resGreenTools/Forward);
+}
+QPushButton:hover[toolBarAddPicAction="Forward"]
+{
+	background-image:url(:/resGreenTools/Forward_HL);
+}
+QPushButton[toolBarAddPicAction="Backward"]
+{
+	background-image:url(:/resGreenTools/Backward);
+}
+QPushButton:hover[toolBarAddPicAction="Backward"]
+{
+	background-image:url(:/resGreenTools/Backward_HL);
+}
+QPushButton:disabled[toolBarAddPicAction="Backward"]
+{
+	background-image:url(:/resGreenTools/Backward_Disable);
+}
+QPushButton[toolBarAddPicAction="Analyse"]
+{
+	background-image:url(:/resGreenTools/Analyse);
+}
+QPushButton:hover[toolBarAddPicAction="Analyse"]
+{
+	background-image:url(:/resGreenTools/Analyse_HL);
+}
+QPushButton:disabled[toolBarAddPicAction="Analyse"]
+{
+	background-image:url(:/resGreenTools/Analyse_Disable);
+}
+QPushButton[toolBarAddPicAction="Vertical Line"]
+{
+	background-image:url(:/resGreenTools/Vertical Line);
+}
+QPushButton:hover[toolBarAddPicAction="Vertical Line"]
+{
+	background-image:url(:/resGreenTools/HL Vertical Line);
+}
+QPushButton:disabled[toolBarAddPicAction="Vertical Line"]
+{
+	background-image:url(:/resGreenTools/Disable Vertical Line);
+}
+QPushButton[toolBarAddPicAction="Horizontal Line"]
+{
+	background-image:url(:/resGreenTools/Horizontal Line);
+}
+QPushButton:hover[toolBarAddPicAction="Horizontal Line"]
+{
+	background-image:url(:/resGreenTools/HL Horizontal Line);
+}
+QPushButton:disabled[toolBarAddPicAction="Horizontal Line"]
+{
+	background-image:url(:/resGreenTools/Disable Horizontal Line);
+}
+QPushButton[toolBarAddPicAction="Trend Line"]
+{
+	background-image:url(:/resGreenTools/Trend Line);
+}
+QPushButton:hover[toolBarAddPicAction="Trend Line"]
+{
+	background-image:url(:/resGreenTools/HL Trend Line);
+}
+QPushButton:disabled[toolBarAddPicAction="Trend Line"]
+{
+	background-image:url(:/resGreenTools/Disable Trend Line);
+}
+QPushButton[toolBarAddPicAction="Turning Line"]
+{
+	background-image:url(:/resGreenTools/Turning Line);
+}
+QPushButton:hover[toolBarAddPicAction="Turning Line"]
+{
+	background-image:url(:/resGreenTools/HL Turning Line);
+}
+QPushButton:disabled[toolBarAddPicAction="Turning Line"]
+{
+	background-image:url(:/resGreenTools/Disable Turning Line);
+}
+QPushButton[toolBarAddPicAction="Auto Trend"]
+{
+	background-image:url(:/resGreenTools/Auto Trend);
+}
+QPushButton:hover[toolBarAddPicAction="Auto Trend"]
+{
+	background-image:url(:/resGreenTools/HL Auto Trend);
+}
+QPushButton:disabled[toolBarAddPicAction="Auto Trend"]
+{
+	background-image:url(:/resGreenTools/Disable Auto Trend);
+}
+QPushButton[toolBarAddPicAction="Free Line"]
+{
+	background-image:url(:/resGreenTools/Free Line);
+}
+QPushButton:hover[toolBarAddPicAction="Free Line"]
+{
+	background-image:url(:/resGreenTools/HL Free Line);
+}
+QPushButton:disabled[toolBarAddPicAction="Free Line"]
+{
+	background-image:url(:/resGreenTools/Disable Free Line);
+}
+QPushButton[toolBarAddPicAction="Equidistant Channel"]
+{
+	background-image:url(:/resGreenTools/Equidistant Channel);
+}
+QPushButton:hover[toolBarAddPicAction="Equidistant Channel"]
+{
+	background-image:url(:/resGreenTools/HL Equidistant Channel);
+}
+QPushButton:disabled[toolBarAddPicAction="Equidistant Channel"]
+{
+	background-image:url(:/resGreenTools/Disable Equidistant Channel);
+}
+QPushButton[toolBarAddPicAction="StdDev Channel"]
+{
+	background-image:url(:/resGreenTools/StdDev Channel);
+}
+QPushButton:hover[toolBarAddPicAction="StdDev Channel"]
+{
+	background-image:url(:/resGreenTools/HL StdDev Channel);
+}
+QPushButton:disabled[toolBarAddPicAction="StdDev Channel"]
+{
+	background-image:url(:/resGreenTools/Disable StdDev Channel);
+}
+QPushButton[toolBarAddPicAction="Andrews Pitchfork"]
+{
+	background-image:url(:/resGreenTools/Andrews Pitchfork);
+}
+QPushButton:hover[toolBarAddPicAction="Andrews Pitchfork"]
+{
+	background-image:url(:/resGreenTools/HL Andrews Pitchfork);
+}
+QPushButton:disabled[toolBarAddPicAction="Andrews Pitchfork"]
+{
+	background-image:url(:/resGreenTools/Disable Andrews Pitchfork);
+}
+QPushButton[toolBarAddPicAction="Regression Channel"]
+{
+	background-image:url(:/resGreenTools/Regression Channel);
+}
+QPushButton:hover[toolBarAddPicAction="Regression Channel"]
+{
+	background-image:url(:/resGreenTools/HL Regression Channel);
+}
+QPushButton:disabled[toolBarAddPicAction="Regression Channel"]
+{
+	background-image:url(:/resGreenTools/Disable Regression Channel);
+}
+QPushButton[toolBarAddPicAction="Gann Line"]
+{
+	background-image:url(:/resGreenTools/Gann Line);
+}
+QPushButton:hover[toolBarAddPicAction="Gann Line"]
+{
+	background-image:url(:/resGreenTools/HL Gann Line);
+}
+QPushButton:disabled[toolBarAddPicAction="Gann Line"]
+{
+	background-image:url(:/resGreenTools/Disable Gann Line);
+}
+QPushButton[toolBarAddPicAction="Gann Fan"]
+{
+	background-image:url(:/resGreenTools/Gann Fan);
+}
+QPushButton:hover[toolBarAddPicAction="Gann Fan"]
+{
+	background-image:url(:/resGreenTools/HL Gann Fan);
+}
+QPushButton:disabled[toolBarAddPicAction="Gann Fan"]
+{
+	background-image:url(:/resGreenTools/Disable Gann Fan);
+}
+QPushButton[toolBarAddPicAction="Gann Grid"]
+{
+	background-image:url(:/resGreenTools/Gann Grid);
+}
+QPushButton:hover[toolBarAddPicAction="Gann Grid"]
+{
+	background-image:url(:/resGreenTools/HL Gann Grid);
+}
+QPushButton:disabled[toolBarAddPicAction="Gann Grid"]
+{
+	background-image:url(:/resGreenTools/Disable Gann Grid);
+}
+QPushButton[toolBarAddPicAction="Fibonacci Retracement"]
+{
+	background-image:url(:/resGreenTools/Fibonacci Retracement);
+}
+QPushButton:hover[toolBarAddPicAction="Fibonacci Retracement"]
+{
+	background-image:url(:/resGreenTools/HL Fibonacci Retracement);
+}
+QPushButton:disabled[toolBarAddPicAction="Fibonacci Retracement"]
+{
+	background-image:url(:/resGreenTools/Disable Fibonacci Retracement);
+}
+QPushButton[toolBarAddPicAction="Fibonacci Expansion"]
+{
+	background-image:url(:/resGreenTools/Fibonacci Expansion);
+}
+QPushButton:hover[toolBarAddPicAction="Fibonacci Expansion"]
+{
+	background-image:url(:/resGreenTools/HL Fibonacci Expansion);
+}
+QPushButton:disabled[toolBarAddPicAction="Fibonacci Expansion"]
+{
+	background-image:url(:/resGreenTools/Disable Fibonacci Expansion);
+}
+QPushButton[toolBarAddPicAction="Fibonacci Time Zones"]
+{
+	background-image:url(:/resGreenTools/Fibonacci Time Zones);
+}
+QPushButton:hover[toolBarAddPicAction="Fibonacci Time Zones"]
+{
+	background-image:url(:/resGreenTools/HL Fibonacci Time Zones);
+}
+QPushButton:disabled[toolBarAddPicAction="Fibonacci Time Zones"]
+{
+	background-image:url(:/resGreenTools/Disable Fibonacci Time Zones);
+}
+QPushButton[toolBarAddPicAction="Fibonacci Channel"]
+{
+	background-image:url(:/resGreenTools/Fibonacci Channel);
+}
+QPushButton:hover[toolBarAddPicAction="Fibonacci Channel"]
+{
+	background-image:url(:/resGreenTools/HL Fibonacci Channel);
+}
+QPushButton:disabled[toolBarAddPicAction="Fibonacci Channel"]
+{
+	background-image:url(:/resGreenTools/Disable Fibonacci Channel);
+}
+QPushButton[toolBarAddPicAction="Fibonacci Arc"]
+{
+	background-image:url(:/resGreenTools/Fibonacci Arc);
+}
+QPushButton:hover[toolBarAddPicAction="Fibonacci Arc"]
+{
+	background-image:url(:/resGreenTools/HL Fibonacci Arc);
+}
+QPushButton:disabled[toolBarAddPicAction="Fibonacci Arc"]
+{
+	background-image:url(:/resGreenTools/Disable Fibonacci Arc);
+}
+QPushButton[toolBarAddPicAction="Fibonacci Fan"]
+{
+	background-image:url(:/resGreenTools/Fibonacci Fan);
+}
+QPushButton:hover[toolBarAddPicAction="Fibonacci Fan"]
+{
+	background-image:url(:/resGreenTools/HL Fibonacci Fan);
+}
+QPushButton:disabled[toolBarAddPicAction="Fibonacci Fan"]
+{
+	background-image:url(:/resGreenTools/Disable Fibonacci Fan);
+}
+QPushButton[toolBarAddPicAction="Rectangle"]
+{
+	background-image:url(:/resGreenTools/Rectangle);
+}
+QPushButton:hover[toolBarAddPicAction="Rectangle"]
+{
+	background-image:url(:/resGreenTools/HL Rectangle);
+}
+QPushButton:disabled[toolBarAddPicAction="Rectangle"]
+{
+	background-image:url(:/resGreenTools/Disable Rectangle);
+}
+QPushButton[toolBarAddPicAction="Triangle"]
+{
+	background-image:url(:/resGreenTools/Triangle);
+}
+QPushButton:hover[toolBarAddPicAction="Triangle"]
+{
+	background-image:url(:/resGreenTools/HL Triangle);
+}
+QPushButton:disabled[toolBarAddPicAction="Triangle"]
+{
+	background-image:url(:/resGreenTools/Disable Triangle);
+}
+QPushButton[toolBarAddPicAction="Ellipse"]
+{
+	background-image:url(:/resGreenTools/Ellipse);
+}
+QPushButton:hover[toolBarAddPicAction="Ellipse"]
+{
+	background-image:url(:/resGreenTools/HL Ellipse);
+}
+QPushButton:disabled[toolBarAddPicAction="Ellipse"]
+{
+	background-image:url(:/resGreenTools/Disable Ellipse);
+}
+QPushButton[toolBarAddPicAction="Diamond"]
+{
+	background-image:url(:/resGreenTools/Diamond);
+}
+QPushButton:hover[toolBarAddPicAction="Diamond"]
+{
+	background-image:url(:/resGreenTools/HL Diamond);
+}
+QPushButton:disabled[toolBarAddPicAction="Diamond"]
+{
+	background-image:url(:/resGreenTools/Disable Diamond);
+}
+QPushButton:disabled[toolBarAddPicAction="Array"]
+{
+	background-image:url(:/resGreenTools/Array_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Candle"]
+{
+	background-image:url(:/resGreenTools/Candle_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Cross"]
+{
+	background-image:url(:/resGreenTools/Cross_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Forward"]
+{
+	background-image:url(:/resGreenTools/Forward_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Histogram"]
+{
+	background-image:url(:/resGreenTools/Histogram_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Mouse"]
+{
+	background-image:url(:/resGreenTools/Mouse_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Zoomin"]
+{
+	background-image:url(:/resGreenTools/Zoomin_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Zoomout"]
+{
+	background-image:url(:/resGreenTools/Zoomout_Disable);
+}
+QPushButton:disabled[toolBarAddPicAction="Discount"]
+{
+	background-image:url(:/resGreenTools/Discount_Disable);
+}
+QPushButton[toolBarAddPicAction="Text"]
+{
+	background-image:url(:/resGreenTools/Text);
+}
+QPushButton:hover[toolBarAddPicAction="Text"]
+{
+	background-image:url(:/resGreenTools/HL Text);
+}
+QPushButton:disabled[toolBarAddPicAction="Text"]
+{
+	background-image:url(:/resGreenTools/Disable Text);
+}
+/*工具栏交易分组图标-zhang0701*/
+QPushButton[ImgType="toolBarImageAction"]
+{
+	background-image:url(:/resGreenTools/tools_28_newOrder_main);
+	background-repeat:no-repeat;
+	background-position:left;
+	background-color：#ffffff;
+	color: #000000;
+	text-align:left;
+	margin-left: 0px;
+	padding-left: 27px;
+}
+QPushButton:hover[ImgType="toolBarImageAction"]
+{
+	background-image:url(:/resGreenTools/tools_28_newOrder_hover);
+	color: #07a962;
+}
+QPushButton:disabled[ImgType="toolBarImageAction"]
+{
+	background-image:url(:/resGreenTools/tools_28_newOrder_disable);
+	color: #DCDCDC;
+}
+QPushButton:pressed[ImgType="toolBarImageAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192); 
+	margin-top: 1px;
+	margin-left: 1px;
+}
+QPushButton:pressed:checked[ImgType="toolBarImageAction"]
+{
+	margin-top: 0px;
+	margin-left: 0px;
+}
+QPushButton:checked[ImgType="toolBarImageAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192);
+}
+
+QPushButton[toolBarAddPicAction="Market depth"]
+{
+	background-image:url(:/resGreenTools/rest-25);
+}
+QPushButton:hover[toolBarAddPicAction="Market depth"]
+{
+	background-image:url(:/resGreenTools/rest-25-hover);
+}
+QPushButton:disabled[toolBarAddPicAction="Market depth"]
+{
+	background-image:url(:/resGreenTools/rest-25-diable);
+}
+QPushButton[toolBarAddPicAction="Variety analysis"]
+{
+	background-image:url(:/resGreenTools/rest-26);
+}
+QPushButton:hover[toolBarAddPicAction="Variety analysis"]
+{
+	background-image:url(:/resGreenTools/rest-26-hover);
+}
+QPushButton:disabled[toolBarAddPicAction="Variety analysis"]
+{
+	background-image:url(:/resGreenTools/rest-26-disable);
+}
+QPushButton[toolBarAddPicAction="Trading panel"]
+{
+	background-image:url(:/resGreenTools/rest-27);
+}
+QPushButton:hover[toolBarAddPicAction="Trading panel"]
+{
+	background-image:url(:/resGreenTools/rest-27-hover);
+}
+QPushButton:disabled[toolBarAddPicAction="Trading panel"]
+{
+	background-image:url(:/resGreenTools/rest-27-disable);
+}
+
+/* 假装自己是Separator的btn */
+QPushButton[btnType="SeparatorBtn"]
+{
+	background-color:white;
+}
+
+
+/* Toolbar 菜单按键 */
+QPushButton:item[btnType="toolBarAddMenu"]
+{ 
+	margin-left: -10px; 
+}
+QPushButton[btnType="toolBarAddMenu"]
+{
+	padding-left: -20px; 
+}
+/* Toolbar 菜单按键 绘图，指标，周期，模板的展开按钮*/
+QPushButton::menu-indicator[btnType="toolBarAddMenu"]
+{
+	width:17px; height: 25; 
+	image:url(:/resGreenCom/common_16_movedown_main);
+	background-repeat:no-repeat;
+}
+QPushButton::menu-indicator:hover[btnType="toolBarAddMenu"]
+{
+	image:url(:/resGreenCom/Movedown_HL);
+	background-repeat:no-repeat;
+}
+QPushButton::menu-indicator:pressed[btnType="toolBarAddMenu"]
+{
+	image:url(:/resGreenCom/Movedown_HL);
+	background-repeat:no-repeat;
+}
+QPushButton::menu-indicator:disabled[btnType="toolBarAddMenu"]
+{
+	image:url(:/resGreenCom/common_16_movedown_disable);
+	background-repeat:no-repeat;
+}
+
+
+QPushButton:hover[btnType="toolBarAddMenu"]
+{
+	border:none;
+	background-color: rgb(245, 245, 246);
+	color: rgb(7, 169, 98);
+}
+QPushButton:pressed[btnType="toolBarAddMenu"]
+{
+	background-color: rgb(207, 238, 224); 
+	border:none;
+}
+
+QPushButton[btnType="toolBarAddMenuNoIcon"]
+{
+	padding-left: -10px; 
+}
+QPushButton::menu-indicator[btnType="toolBarAddMenuNoIcon"]
+{
+	width:7px; height: 23px;
+}
+QPushButton:hover[btnType="toolBarAddMenuNoIcon"]
+{
+	border:none;
+	background-color: rgb(245, 245, 246);
+	color: rgb(7, 169, 98);
+}
+QPushButton:pressed[btnType="toolBarAddMenuNoIcon"]
+{
+	border:1px solid rgb(151, 221, 192); 
+	background-color: rgb(207, 238, 224);
+}
+
+
+
+QPushButton[btnStyle="NewsContentBtn"]
+{
+	border:1px solid transparent; 
+	background-position: left; 
+	background-repeat: no-repeat;
+	color:#242735; 
+	padding-left:8px;
+	padding-top:0px;
+	text-align: right;
+	line-height: 1.45; 
+}
+
+QPushButton:checked[btnStyle="NewsContentBtn"]
+{
+	background-color: #d7f1e6;
+	border:1px solid #9cddc0;
+	border-radius: 2px;
+} 
+
+QPushButton:hover[btnStyle="NewsContentBtn"]
+{
+	color: #07a962;
+} 
+
+QPushButton:checked:hover[btnStyle="NewsContentBtn"]
+{
+	color:#242735; 
+}
+
+
+QPushButton[btnStyle="NetWorkStateIconBtn"]
+{
+	border:1px solid transparent;
+	color:#242735;
+	padding-left:8px; 
+	padding-top:0px;
+	text-align: right; 
+	line-height: 1.45;
+}
+QPushButton:checked:hover[btnStyle="NetWorkStateIconBtn"]
+{ 
+	color:#242735;
+}
+QPushButton[btnStyle="multiTimeZoneBtnChecked"]
+{
+	border:1px solid transparent; 
+	background-image:url(:/resGreenCom/common_16_dropup_highlight);
+	background-position: left; 
+	background-repeat: no-repeat;
+	color:#242735;
+	padding-left:8px; 
+	padding-top:0px; 
+	text-align: right;
+	line-height: 1.45;
+}
+QPushButton:hover[btnStyle="multiTimeZoneBtnChecked"] 
+{
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+} 
+QPushButton:checked[btnStyle="multiTimeZoneBtnChecked"] 
+{ 
+	background-color: #d7f1e6;
+	border:1px solid #9cddc0;
+	border-radius: 2px;
+} 
+QPushButton:checked:hover[btnStyle="multiTimeZoneBtnChecked"]
+{ 
+	color:#242735; 
+	background-image:url(:/resGreenCom/common_16_dropup_highlight);
+}
+
+QPushButton[btnStyle="multiTimeZoneBtnUnChecked"]
+{
+	border:1px solid transparent; 
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+	background-position: left; 
+	background-repeat: no-repeat;
+	color:#242735;
+	padding-left:8px; 
+	padding-top:0px; 
+	text-align: right;
+	line-height: 1.45;
+}
+QPushButton:hover[btnStyle="multiTimeZoneBtnUnChecked"] 
+{
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+} 
+QPushButton:checked[btnStyle="multiTimeZoneBtnUnChecked"] 
+{ 
+	background-color: #d7f1e6;
+	border:1px solid #9cddc0;
+	border-radius: 2px;
+} 
+QPushButton:checked:hover[btnStyle="multiTimeZoneBtnUnChecked"]
+{ 
+	color:#242735; 
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+}
+
+
+QPushButton[btnType="multiTimeZoneBtnSgnHide"]
+{
+	border:1px solid transparent; 
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+	background-position: left;
+	background-repeat: no-repeat;
+	color:#242735;
+	padding-left:8px; 
+	padding-top:0px;
+	text-align: right;
+	line-height: 1.45; 
+}
+QPushButton:hover[btnType="multiTimeZoneBtnSgnHide"]
+{
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+
+} 
+QPushButton:checked[btnType="multiTimeZoneBtnSgnHide"]
+{
+	background-color: #d7f1e6; 
+	border:1px solid #9cddc0;
+	border-radius: 2px;
+} 
+QPushButton:checked:hover[btnType="multiTimeZoneBtnSgnHide"]
+{ 
+	color:#242735;
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight);
+}
+
+
+QPushButton[btnStyle="multiTimeZoneBtn"] 
+{
+	border: none; background-color:#2c2d30;
+	background-image: url(:/resGreenCom/common_16_dropdown_disable);
+	background-repeat:no-repeat;
+}
+QPushButton:hover[btnStyle="multiTimeZoneBtn"]
+{
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight); 
+	background-repeat:no-repeat;
+	background-color:#F5F5F5;  
+} 
+QPushButton:checked[btnStyle="multiTimeZoneBtn"]
+{
+	background-color: #F5F5F5; 
+	border-radius: 2px;
+} 
+QPushButton:checked:hover[btnStyle="multiTimeZoneBtn"]
+{
+	background-color:#F5F5F5;
+	background-image:url(:/resGreenCom/common_16_dropup_highlight);
+	background-repeat:no-repeat;
+}
+
+
+QPushButton[btnStyle="multiTimeZoneBtn"]
+ {
+	border: none; border-radius: 2px;
+	font-size: 10px; line-height: 1.45;
+	text-align:right;
+	background-image: url(:/resGreenCom/common_16_dropdown_main);
+	background-position: right; background-repeat: no-repeat; text-align: left; padding-left:8px; background-color: 2c2d30}
+
+QPushButton:hover[btnStyle="multiTimeZoneBtn"] { 
+	background-color: #F5F5F5; 
+	border: none;
+}
+
+QPushButton:checked[btnStyle="multiTimeZoneBtn"]
+{
+	border: none; 
+	background-image: url(:/resGreenCom/common_16_dropdown_highlight); background-color:#F5F5F5;
+}
+
+QPushButton:disabled[btnStyle="multiTimeZoneBtn"]
+{
+	color:#68696b; border: none;background-color:#3a3b3e;
+	background-image: url(:/resGreenCom/common_16_dropdown_disable);
+}
+/**************************MainFrame 主页面 完结**************************/
+
+/**************************资讯-新闻弹窗**************************/
+QPushButton[btnType=voiceClose]{
+	border-image: url(:/resGreenChart/Close);
+} 
+QPushButton::hover[btnType=voiceClose]{
+	border-image: url(:/resGreenChart/Close_Gray);
+	background-color: #f7f7f8;border-radius: 2px;
+}
+
+QPushButton[btnType=voiceControl]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	padding-left: 8px; 
+	padding-right: 8px; 
+	color: #07a962;
+	text-align: right;	
+	background-image: url(:/resGreenCom/common-16-mute);
+	background-position:left;
+    background-repeat:no-repeat;
+	background-origin: content;
+}
+QPushButton:checked[btnType=voiceControl]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	padding-left: 8px; 
+	padding-right: 8px; 
+	color: #07a962;
+	text-align: right;	
+	background-image: url(:/resGreenCom/common-16-broadcast);
+	background-position:left;
+    background-repeat:no-repeat;
+	background-origin: content;
+}
+
+
+/**************************资讯-日历**************************/
+QPushButton[btnType=lastWeek]
+{
+	border: none;
+	padding-left: 24px; 
+	padding-right: 8px; 
+	text-align: right;	
+	background-image: url(:/resGreenCom/Resources/Images/Green/common/common_24_frontweek.png);
+	background-position:left;
+    background-repeat:no-repeat;
+}
+QPushButton:hover[btnType=lastWeek]
+{
+	background-image: url(:/resGreenCom/Resources/Images/Green/common/common_24_frontweek_highlight.png);
+}
+
+QPushButton[btnType=nextWeek]
+{
+	border: none;
+	padding-left: 8px; 
+	padding-right: 24px; 
+	text-align: left;	
+	background-image: url(:/resGreenCom/Resources/Images/Green/common/common_24_nextweek.png);
+	background-position:right;
+    background-repeat:no-repeat;
+}
+QPushButton:hover[btnType=nextWeek]
+{
+	background-image: url(:/resGreenCom/Resources/Images/Green/common/common_24_nextweek_highlight.png);
+}
+
+QPushButton[btnType=calendarTypeBtn] {
+	border:1px solid transparent; 
+	background-image:url(:/resGreenCom/common_16_dropdown_main); 
+	background-position: right; 
+	background-repeat: no-repeat;
+	background-origin: padding; 
+	color:#242735; 
+	padding-left:8px;
+	padding-right:20px; 
+	text-align: left; 
+	background-color: rgba(0,0,0,0); 
+ 
+}
+QPushButton:hover[btnType=calendarTypeBtn] {
+	background-image:url(:/resGreenCom/common_16_dropdown_highlight); 
+
+} 
+
+QPushButton:checked[btnType=calendarTypeBtn] { 
+	background-color: #d7f1e6; 
+	border:1px solid #9cddc0; 
+	border-radius: 2px;
+} 
+QPushButton:checked:hover[btnType=calendarTypeBtn] {
+ 	color:#242735; 
+	background-image:url(:/resGreenCom/common_16_dropdown_main);
+}
+
+
+QPushButton[btnType=calendarTypeChange] 
+{
+	background-image: url(:/resGreenFinancialInfo/infoBlank); 
+	background-repeat: no-repeat; 
+	border: 0px; 
+	text-align: left; 
+	padding-left: 32px; 
+	padding-right: 8px;
+	color: #242735; 
+	font-family: Microsoft YaHei UI; 
+	font-size: 13px; 
+	font-weight: normal; 
+	font-style: normal;  
+	line-height: normal; 
+}
+QPushButton:hover[btnType=calendarTypeChange] 
+{
+	background-color: #f7f7f8; 
+}
+QPushButton:checked[btnType=calendarTypeChange] 
+{
+	background-image: url(:/resGreenFinancialInfo/infoTick)
+}
+
+/**************************图片查看器**************************/
+QPushButton[btnType=lastImg]{
+	border-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools-28-previous-main.png);
+} 
+QPushButton::hover[btnType=lastImg]{
+	border-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools-28-previous-hover.png);
+}
+
+QPushButton[btnType=nextImg]{
+	border-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools-28-next-main.png);
+} 
+QPushButton::hover[btnType=nextImg]{
+	border-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools-28-next-hover.png);
+}
+
+QPushButton[btnType=transfromImg]{
+	border-image: url(:/resGreenCom/Resources/Images/Green/common/common_28_rotate_main.png);
+} 
+QPushButton::hover[btnType=transfromImg]{
+	border-image: url(:/resGreenCom/Resources/Images/Green/common/common_28_rotate_highlight.png);
+}
+
+QPushButton[btnType=zoomInImg]{
+	border-image: url(:/resGreenTools/Zoomin);
+} 
+QPushButton::hover[btnType=zoomInImg]{
+	border-image: url(:/resGreenTools/Zoomin_HL);
+}
+
+QPushButton[btnType=zoomOutImg]{
+	border-image: url(:/resGreenTools/Zoomout);
+} 
+QPushButton::hover[btnType=zoomOutImg]{
+	border-image: url(:/resGreenTools/Zoomout_HL);
+}
+
+QPushButton[btnType=resetImg]{
+	border-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools_28_1 to 1_main.png);
+} 
+QPushButton::hover[btnType=resetImg]{
+	border-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools_28_1 to 1_highlight.png);
+}
+
+QPushButton[btnType=saveImg]{
+	border-image: url(:/resGreenTools/Download);
+} 
+QPushButton::hover[btnType=saveImg]{
+	border-image: url(:/resGreenTools/Download_HL);
+}
+
+/**************************图片查看器 完**************************/
+
+QPushButton[btnType=datetime_item]  { 
+	background-repeat: no-repeat; border: 0px; text-align: left; padding-left: 8px; color: #242735; 
+	font-family: HelveticaNeue;  line-height: 1.45;
+}
+QPushButton:hover[btnType=datetime_item]  {background-color: #07a962; color:#ffffff;}
+QPushButton:checked[btnType=datetime_item]  {background-color: #f7f7f8; color: #07a962; }
+QPushButton:checked:hover[btnType=datetime_item]  {background-color: #f7f7f8; color: #07a962; }
+/**************************K线跳转 完**************************/
+
+/**************************BLComboxSearch**************************/
+QPushButton[btnType=listitem_title_img]{background-image: url(:/resGreenCom/Collapse); background-repeat: none;
+			background-position: left; border: 0px; } 
+QPushButton:checked[btnType=listitem_title_img]{background-image: url(:/resGreenCom/common_16_expand); }
+
+/**************************BLComboxSearch 完**************************/
+
+
+QPushButton[btnType=item]{
+	text-align:left;
+	padding-left:8px;
+	border: 0px;
+}
+QPushButton:hover[btnType=item]{
+	background-color: #f7f7f8;
+}
+
+QPushButton:checked[btnType=item]{
+	color: #07a962;
+}
+
+QPushButton[btnType=clearAll]{
+	text-align:left;
+	padding-left:8px;
+	border: 0px;
+	color: #07a962;
+	background-color: #ffffff;
+}
+
+QPushButton[btnType=itemTitle]{
+	background-image: url(:/resGreenCom/Collapse); background-repeat: none;
+	background-position: left; border: 0px; 
+	border: 0px; color: #232427; 
+	text-align:left;
+	padding-left: 20px;
+}
+QPushButton:checked[btnType=itemTitle]{
+	background-image: url(:/resGreenCom/common_16_expand); 
+}
+
+/**************************品种叠加 完**************************/
+/**************************模板管理**************************/
+QPushButton[btnType=openTemplateBtn]{
+border:1px solid #e5e5e7; 
+ color: #232427;
+}
+
+QPushButton[btnType=sourcePathBtn]{
+		border: 0px; background-color :#00000000;
+		color: #242735; 
+}
+
+/**************************模板管理 完**************************/
+/**************************图表回放**************************/
+QPushButton[btnType=playback]{ 
+	background-image: url(:/resGreenTools/Setplaytime) ; 
+	background-position : center; border:0px;
+} 
+QPushButton:checked[btnType=playback]{ 
+	background-image: url(:/resGreenTools/Setplaytime); 
+	border: 1px solid #9cddc0; 
+	background-color: #d7f1e6; border-radius: 2px; 
+} 
+QPushButton:hover[btnType=playback]{ 
+	background-image: url(:/resGreenTools/Setplaytime_HL); 
+	background-color: #f7f7f8; border-radius: 2px;
+} 
+QPushButton:checked:hover[btnType=playback]{ 
+	background-image: url(:/resGreenTools/Setplaytime); 
+	border: 1px solid #9cddc0; 
+	background-color: #d7f1e6; border-radius: 2px; 
+} 
+
+QPushButton[btnType=play]{ 
+	background-image: url(:/resGreenTools/Play) ; 
+	background-position : center; border:0px;
+} 
+QPushButton:checked[btnType=play]{ 
+	background-image: url(:/resGreenTools/Pause);  
+} 
+QPushButton:hover[btnType=play]{ 
+	background-image: url(:/resGreenTools/Play_HL); 
+	background-color: #f7f7f8; border-radius: 2px;
+} 
+QPushButton:checked:hover[btnType=play]{ 
+	background-image: url(:/resGreenTools/Pause_HL); 
+	background-color: #f7f7f8; border-radius: 2px; 
+} 
+QPushButton:disabled[btnType=play]{ 
+	background-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools_28_play_disable.png); 
+	background-color: rgba(0,0,0,0);
+}
+
+QPushButton[btnType=lastIndex]{ 
+	background-image: url(:/resGreenTools/Back_HL) ; 
+	background-position : center; border:0px;
+} 
+QPushButton:checked[btnType=lastIndex]{ 
+	background-image: url(:/resGreenTools/Back_HL); 
+	border: 1px solid #9cddc0; 
+	background-color: #d7f1e6; border-radius: 2px; 
+} 
+QPushButton:hover[btnType=lastIndex]{ 
+	background-image: url(:/resGreenTools/Back); 
+	background-color: #f7f7f8; border-radius: 2px;
+} 
+QPushButton:checked:hover[btnType=lastIndex]{ 
+	background-image: url(:/resGreenTools/Back_HL); 
+	border: 1px solid #9cddc0; 
+	background-color: #d7f1e6; border-radius: 2px; 
+} 
+QPushButton:disabled[btnType=lastIndex]{ 
+	background-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools_28_back_disable.png); 
+	background-color: rgba(0,0,0,0); 
+}
+
+QPushButton[btnType=nextIndex]{ 
+	background-image: url(:/resGreenTools/Next) ; 
+	background-position : center; border:0px;
+} 
+QPushButton:checked[btnType=nextIndex]{ 
+	background-image: url(:/resGreenTools/Next);
+	border: 1px solid #9cddc0; 
+	background-color: #d7f1e6; border-radius: 2px;
+} 
+QPushButton:hover[btnType=nextIndex]{ 
+	background-image: url(:/resGreenTools/Next_HL); 
+	background-color: #f7f7f8; border-radius: 2px;
+} 
+QPushButton:checked:hover[btnType=nextIndex]{ 
+	background-image: url(:/resGreenTools/Next); 
+	border: 1px solid #9cddc0; 
+	background-color: #d7f1e6; border-radius: 2px; 
+} 
+QPushButton:disabled[btnType=nextIndex]{ 
+	background-image: url(:/resGreenTools/Resources/Images/Green/Tools/tools_28_next_disable.png);
+	background-color: rgba(0,0,0,0); 
+}
+
+QPushButton[btnType=palyback_close]{ 
+	background-image: url(:/resGreenCom/Close_28) ; 
+	background-position : center; border:0px;
+} 
+QPushButton:hover[btnType=palyback_close]{ 
+	background-image: url(:/resGreenCom/Close_HL_28); 
+	background-color: #f7f7f8; border-radius: 2px;
+} 
+/**************************图表回放 完**************************/
+
+/**************************BL_head_menu zying 完**************************/
+/************************* QToolButton 控件类**************************/
+
+QToolButton[btnType=TraderExpandBtn]
+{
+	/*border:0px;
+	color:#f7f7f8;*/
+	background-image:url(:/resGreenTraderTeminal/TraderTitleFlodup);
+	background-color:transparent;
+}
+QToolButton[btnType=TraderExpandBtn]:hover
+{
+	/*background-color:#ffffff;*/
+	background-image:url(:/resGreenTraderTeminal/TraderTitleFlodup_HL);
+}
+QToolButton[btnType=TraderExpandBtn]:checked
+{
+	background-color:#f7f7f8;
+}
+QToolButton[btnType=TraderFlodupBtn]
+{
+    background-color:transparent;
+	background-image:url(:/resGreenTraderTeminal/TraderTitleExpend);
+}
+QToolButton[btnType=TraderFlodupBtn]:hover
+{
+	background-image:url(:/resGreenTraderTeminal/TraderTitleExpend_HL);
+}
+
+QToolButton[btnType=TraderMaximumBtn]
+{
+	border:0px;
+	background-image:url(:/resGreenTraderTeminal/TraderTitleMax);
+	background-color:transparent;
+}
+QToolButton[btnType=TraderMaximumBtn]:hover
+{
+	background-image:url(:/resGreenTraderTeminal/TraderTitleMax_HL);
+}
+QToolButton[btnType=TraderMaximumBtn]:checked
+{
+	background-color:#f7f7f8;
+}
+
+/**************************QToolButton-Right**************************/
+QToolButton[toolBtnType=right] 
+{
+	background-color:#ffffff;
+	color:#999aa1;
+	border:none ;
+}
+QToolButton:hover[toolBtnType=right] 
+{
+	color: #07a962;
+}
+QToolButton:checked[toolBtnType=right] 
+{
+	color: #07a962;border-right:2px solid #07a962;
+}
+/**************************QToolButton-Top**************************/
+
+QToolButton[toolBtnType=top]{
+  background-color:rgb(247,247,248);
+  color:#333543;
+  border:none;
+}
+QToolButton:hover[toolBtnType=top]{
+  color:#07a962;
+}
+QToolButton:checked[toolBtnType=top]{
+  border-top: 2px solid #07a962;
+  background-color:#ffffff;
+  color:#333543;
+  padding-left:-1px;
+}
+
+QToolButton[toolbtnType="textGreen12"]
+{
+	background-color:#ffffff;color:#07a962;
+	border:0px;border-radius: 2px;
+}
+QToolButton:hover[toolbtnType="textGreen12"]
+{
+	background-color:#ffffff
+}
+QToolButton[toolbtnType="textGray12"]
+{
+	background-color:#ffffff;color:#999aa1;
+	border:0px;border-radius: 2px;
+}
+QToolButton:hover[toolbtnType="textGray12"]
+{
+	background-color:#ffffff;
+}
+
+QToolButton[toolbtnType="noborder"]
+{
+	background-color:#ffffff;
+	border:0px;border-radius: 2px;
+}
+
+/************************** MarketTitle **************************/
+QToolButton[toolbtnType=search_btn]{
+  image:url(:/resGreenCom/Search_Gray);
+  border:0px;
+  background-color:#ffffff;
+}
+QToolButton:hover[toolbtnType=search_btn]{
+  image:url(:/resGreenCom/Search_HL);
+}
+QToolButton:checked[toolbtnType=search_btn]{
+  image:url(:/resGreenCom/Search_HL);
+}
+
+QToolButton[searchType=search_btn]{
+  border:0px; 
+  border-bottom:1px solid rgb(229,229,231);
+  background-color:#ff0000;
+}
+
+QToolButton[mdiType="mdiMaxBtn"]
+{
+	border:none;
+	image:url(:/resGreenCom/Maximize);
+	background-color: rgb(255, 255, 255);
+}
+QToolButton::hover[mdiType="mdiMaxBtn"]
+{
+	image:url(:/resGreenCom/Maximize_HL);
+}
+QToolButton[mdiType="mdiMaxBtn_focus"]
+{
+	border:none;
+	image:url(:/resGreenCom/Maximize);
+	background-color:rgb(180, 229, 207);
+}
+QToolButton::hover[mdiType="mdiMaxBtn_focus"]
+{
+	image:url(:/resGreenCom/Maximize_HL);
+}
+
+QToolButton[mdiType="mdiCloseBtn"]
+{
+	border:none;
+	image:url(:/resGreenCom/Close_28);
+	background-color:rgb(255, 255, 255);
+}
+QToolButton::hover[mdiType="mdiCloseBtn"]
+{
+	image:url(:/resGreenCom/Close_HL_28);
+}
+QToolButton[mdiType="mdiCloseBtn_focus"]
+{
+	border:none;
+	image:url(:/resGreenCom/Close_28);
+	background-color:rgb(180, 229, 207);
+}
+QToolButton::hover[mdiType="mdiCloseBtn_focus"]
+{
+	image:url(:/resGreenCom/Close_HL_28);
+}
+
+QToolButton[btnType=timeChooseBtnUp]
+{
+    background-color:transparent;
+	padding: 0px; 
+	border: none;
+	text-align:center;
+	background-position: center; 
+}
+QToolButton[btnType=timeChooseBtnUp]
+{
+	background-image:url(:/resGreenCom/common_16_moveup_main);
+}
+QToolButton[btnType=timeChooseBtnUp]:hover
+{
+	background-image:url(:/resGreenCom/common_16_moveup_highlight);
+}
+
+/*Down*/
+QToolButton[btnType=timeChooseBtnDown]
+{
+    background-color:transparent;
+	padding: 0px; 
+	border: none;
+	text-align:center;
+	background-position: center; 
+}
+QToolButton[btnType=timeChooseBtnDown]
+{
+	background-image:url(:/resGreenCom/Movedown);
+}
+QToolButton[btnType=timeChooseBtnDown]:hover
+{
+	background-image:url(:/resGreenCom/Movedown_HL);
+}
+
+QToolButton
+{
+	border: 0px;
+	background-color: rgb(240, 240, 240);
+}
+QToolButton:hover, QToolButton:pressed
+{
+	background-color:rgb(245, 245, 246);
+}
+
+QToolButton[btnType="toolBarAddAction"]
+{
+	background-color: rgb(255, 255, 255);
+	color:rgb(60, 60, 60);
+	border-radius: 2px;
+	margin:1px;
+}
+QToolButton:hover[btnType="toolBarAddAction"]
+{
+	background-color: rgb(245, 245, 246);
+	border:none; 
+	color: rgb(7, 169, 98); 
+}
+QToolButton:hover:checked[btnType="toolBarAddAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192);
+}
+QToolButton:pressed[btnType="toolBarAddAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192); 
+}
+QToolButton:checked[btnType="toolBarAddAction"]
+{
+	background-color: rgb(207, 238, 224);
+	border: 1px solid rgb(151, 221, 192);
+}
+QToolButton:disabled[btnType="toolBarAddAction"]
+{
+	color: gray;
+}
+
+
+/**************************BL_head_menu zying **************************/
+QToolButton[toolType="messageButtonNoLogin"]{
+	border:none;	
+	background-color:rgb(255,255,255);
+	padding-left:4;
+	border-bottom:none;
+	qproperty-icon: url(:/resGreenCom/common_28_message_main);
+
+}
+QToolButton[toolType="messageButtonNoLogin"]:hover{
+	background-color:palette(alternate-base);
+	qproperty-icon: url(:/resGreenCom/common_28_message_green);
+
+}
+QToolButton[toolType="commonButtonLogined"]{
+	border:none;	
+	background-color:rgb(255,255,255);
+	padding-left:4;
+	border-bottom:none;
+	qproperty-icon: url(:/resGreenCom/Setting);
+
+}
+QToolButton[toolType="commonButtonLogined"]:hover{
+	background-color:palette(alternate-base);
+	qproperty-icon: url(:/resGreenCom/Setting_HL);
+
+}
+QToolButton[toolType="personButtonLogined"]{
+	border:none;	
+	background-color:rgb(255,255,255);
+	padding-left:4;
+	border-bottom:none;
+	qproperty-icon: url(:/resGreenCom/common_28_personal_main);
+
+}
+QToolButton[toolType="personButtonLogined"]:hover{
+	background-color:palette(alternate-base);
+	qproperty-icon: url(:/resGreenCom/common_28_personal_highlight);
+
+}
+QToolButton[toolType="accountButtonLogined"]{
+	border:none;	
+	background-color:rgb(255,255,255);
+	padding-left:4;
+	border-bottom:none;
+	qproperty-icon: url(:/resGreenCom/common_28_safe_main);
+
+}
+QToolButton[toolType="accountButtonLogined"]:hover{
+	background-color:palette(alternate-base);
+	qproperty-icon: url(:/resGreenCom/common_28_safe_highlight);
+
+}
+ 
+QToolButton[toolType="cancelButtonNoLogin"]{
+ background-color: #f7f7f8; 
+ line-height: 1.43; 
+ color: #242735; 
+ border: 1px solid #e5e5e7;
+ border-radius: 2px;
+ } 
+QToolButton[toolType="cancelButtonNoLogin"]:disabled { 
+	background-color: #f7f7f8; 
+	
+	line-height: 1.43;  
+	color: #ccccd0; 
+	border: 1px solid #f7f7f8; 
+	border-radius: 2px;
+	}
+QToolButton[toolType="cancelButtonNoLogin"]:hover {
+	background-color: #e5e5e7;
+
+	line-height: 1.43; 
+	color: #242735; 
+	border: 1px solid #e5e5e7;
+	border-radius: 2px;
+	} 
+QToolButton[toolType="cancelButtonNoLogin"]:pressed {
+	background-color: #e5e5e7;
+	
+	line-height: 1.43; 
+	color: #242735;
+	border: 1px solid #f0f0f1;
+	border-radius: 2px;
+}
+
+QToolButton[toolType="registButtonNoLogin"] { 
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890); 
+	
+
+	line-height: 1.43; 
+	color: #ffffff; border: 
+	1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890);
+	border-radius: 2px; 
+}
+QToolButton[toolType="registButtonNoLogin"]:disabled { 
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 208, 114, 0.4), stop:1 rgba(1, 168, 144, 0.4) ); 
+  
+	line-height: 1.43; 
+	color: #ffffff;
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 208, 114, 0.4), stop:1 rgba(1, 168, 144, 0.4) ); 
+	border-radius: 2px;
+	opacity: 0.4; 
+}
+QToolButton[toolType="registButtonNoLogin"]:hover { 
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #36d891, stop:1 #24b597);
+	
+
+	line-height: 1.43;
+	color: #ffffff; 
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #36d891, stop:1 #24b597);
+	border-radius: 2px;
+}
+QToolButton[toolType="registButtonNoLogin"]:pressed {
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #04bd70, stop:1 #049c89);
+	 
+	line-height: 1.43; 
+	color: #ffffff; 
+	border: 1px solid qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #04bd70, stop:1 #049c89);
+	border-radius: 2px;
+}
+
+/************************* QRadioButton 控件类**************************/
+
+QRadioButton{
+	color: #242735;
+	border: 0px;
+	text-indent: 8;
+}
+QRadioButton:hover{
+	color: #07a962;
+}
+QRadioButton:indicator{
+	width:16px; height:16px;  border-image: url(:/resGreenButtons/Radio);
+}
+QRadioButton:indicator:checked{
+	border-image: url(:/resGreenButtons/RadioSelect);
+}
+QRadioButton:indicator:hover{
+	border-image: url(:/resGreenButtons/RadioHover);
+}
+QRadioButton:indicator:checked:hover{
+	border-image: url(:/resGreenButtons/RadioSelect);
+}
+QRadioButton:indicator:disabled{
+	border-image: url(:/resGreenButtons/RadioSelectDisable);
+}
+QRadioButton:indicator:checked:disabled{
+	border-image: url(:/resGreenButtons/RadioSelectDisable);
+}
+
+/************************* QCheckBox 控件类**************************/
+QCheckBox[cboxType="topOne"]
+{
+	font-weight: 400;
+	background-color: rgb(247, 247, 248);
+	border: 1px solid rgb(229, 229, 231);
+}
+QCheckBox::indicator[cboxType=topOne] 
+{
+	width: 16px;  
+	height: 16px; 
+}
+QCheckBox::indicator:checked[cboxType=topOne]  
+{
+	image: url(:/resGreenCom/Expand); 
+}
+QCheckBox::indicator:unchecked[cboxType=topOne]
+{
+	image: url(:/resGreenCom/Collapse); 
+}
+
+QCheckBox[btnType=checkBox]{
+	color: #242735; 
+	text-indent: 8;
+}
+QCheckBox:hover[btnType=checkBox]{
+	color: #07a962;
+}
+QCheckBox:indicator[btnType=checkBox]{
+	width:16px; height:16px;  
+	border-image: url(:/resGreenButtons/CheckBox);
+}
+QCheckBox:indicator:checked[btnType=checkBox]{
+	border-image: url(:/resGreenButtons/CheckBoxSelect);
+}
+QCheckBox:indicator:hover[btnType=checkBox]{
+	border-image: url(:/resGreenButtons/CheckBoxHover);
+}
+QCheckBox:indicator:checked:hover[btnType=checkBox]{
+	border-image: url(:/resGreenButtons/CheckBoxSelect);
+}
+QCheckBox:indicator:disabled[btnType=checkBox]{
+	border-image: url(:/resGreenButtons/CheckBoxDisable);
+}
+QCheckBox:indicator:checked:disabled[btnType=checkBox]{
+	border-image: url(:/resGreenButtons/CheckBoxSelectDisable);
+}
+/************************* QGroupBox 控件类**************************/
+
+QGroupBox
+{
+	border: 1px solid #e5e5e7;
+	margin-top: 4px;
+}
+QGroupBox::title
+{ 
+	color: #999aa1; 
+	padding-top: -13px; 
+	left: 10px; 
+	margin-left: 6px; 
+	margin-right: 6px;
+}
+/************************* QMenu 控件类**************************/
+
+QMenu{
+	background-color: #ffffff;
+	color: rgb(30, 30, 30);
+	border-radius: 2px;
+	menu-scrollable: 1; 
+}
+QMenu::item{
+    height: 32px;
+	spacing: 5px;
+	padding-left:32px;
+	padding-right: 32px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background: rgb(255,255, 255);
+}
+QMenu::indicator
+{
+	width: 24px;
+    height: 32px;
+	background: #f0f0f1;
+}
+QMenu::indicator:checked
+{
+	image:url(:/resGreenCom/Tick);
+}
+QMenu::right-arrow
+{
+	image:url(:/resGreenCom/common_16_secondery_main); 
+	width: 32px;
+	height: 32px;
+}
+QMenu::item:selected{
+	border-color: darkblue;
+	background: rgb(247,247, 248);
+}
+QMenu::separator{
+	height: 1px;
+	background: #e5e5e7;
+}
+QMenu::item:disabled{
+	color:#cccdd0;
+}
+/***************************市场栏菜单**************************************/
+QMenu[menuType=custom]{
+	background-color: #ffffff;
+	color: rgb(30, 30, 30);
+	border-radius: 2px;
+	menu-scrollable: 1; 
+}
+QMenu::item[menuType=custom]{
+    height: 32px;
+	spacing: 5px;
+	padding-left:0px;
+	padding-right: 24px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background: rgb(255,255, 255);
+}
+QMenu::indicator[menuType=custom]
+{
+	width: 24px;
+    height: 32px;
+	background: #f0f0f1;
+}
+QMenu::indicator:checked[menuType=custom]
+{
+	image:url(:/resGreenCom/Tick);
+}
+QMenu::right-arrow[menuType=custom]
+{
+	image:url(:/resGreenCom/common_16_secondery_main); 
+	width: 32px;
+	height: 32px;
+}
+QMenu::item:selected[menuType=custom]{
+	border-color: darkblue;
+	background: rgb(247,247, 248);
+}
+QMenu::separator[menuType=custom]{
+	height: 1px;
+	background: #e5e5e7;
+}
+QMenu::item:disabled[menuType=custom]{
+	image:url(:/resGreenCom/menu_gray); 
+	image-position:left;
+	margin-right:24px;
+	background:rgb(255,255, 255);
+	color:#cccdd0;
+}
+/************************* QMenuBar 控件类**************************/
+QMenuBar
+{
+	background-color: rgb(240, 240, 241);
+	color: rgb(30, 30, 30);
+	padding:3px 3px; 
+	font-size: 9pt;
+}
+QMenuBar::item 
+{
+	padding: 3px 8px 3px 8px;
+	background: transparent;
+}
+QMenuBar::item:selected 
+{ 
+	background:#ffffff;
+}
+QMenuBar::item:pressed
+{
+	background: rgb(215,241,230);
+}
+/************************* QToolBar 控件类**************************/
+
+/* 菜单栏 和 Toolbar */
+QToolBar
+{
+	background-color: rgb(255, 255, 255); 
+	color: rgb(60, 60, 60);
+	spacing:2px;
+}
+QToolBar::handle
+{
+	background-image: url(:/resGreenFinancialInfo/toolBar_handle);
+	background-repeat : no-repeat; /*不重复排列*/
+	background-position : left; /*向对齐*/
+	width: 9px;
+	height: 28px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+QToolBar::separator 
+{
+	background-image: url(:/resGreenFinancialInfo/toolBar_separator); 
+	width: 7px; 
+	height: 28px; 
+	margin-top: 1px; 
+	margin-bottom: 1px;
+}
+
+/* tabbar右边两个箭头 toolbar右边隐藏的下拉按键 */
+QToolBarExtension
+{
+	margin-top:4px;
+	margin-right:3px;
+	qproperty-icon: url(":/resGreenFinancialInfo/common_16_more");
+}
+QToolBarExtension:hover,QToolBarExtension:pressed
+{
+	margin-top:4px;
+	margin-right:3px;	
+}
+
+
+/************************* QTabbar 控件类**************************/
+QTabBar
+{
+	qproperty-drawBase: 0;
+}
+QTabBar::tab
+{
+	border-top:none solid #000000;
+	border-right:1px solid #e5e5e7;
+	background:rgb(240, 240,240);
+	color:rgb(128, 128,128);
+	min-width:110;
+	max-width:150;
+	min-height:32;
+	
+}
+QTabBar::close-button
+{
+	image: url(:/resGreenCom/common_24_close_main);
+	subcontrol-position : right;
+}
+
+QTabBar::close-button:hover,QTabBar::close-button:selected
+{
+	image: url(:/resDarkChart/Close);
+	subcontrol-position : right;
+}
+
+QTabBar::tab:selected 
+{
+	border-color: rgb(#e5e5e7);
+	background:white;
+	color:rgb(#242735);
+	/* border-top-left-radius: 4px; */
+	/* border-top-right-radius: 4px; */
+}
+/************************* QStatusBar 控件类**************************/
+/* 底部状态栏 */
+QStatusBar
+{
+	background-color:rgb(255, 255, 255);
+}
+QStatusBar::item
+{
+	border: 0px
+}
+/************************* QSlider 控件类**************************/
+
+QSlider::groove:horizontal[sliderType=slider]{  
+	height:4px; border-radius: 2px; 
+}
+QSlider::add-page:horizontal[sliderType=slider]{ 
+	background: #e5e5e7; height:4px; border-radius: 2px; 
+}
+QSlider::sub-page:horizontal[sliderType=slider]{ 
+	background: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 #00d072, stop:1 #01a890); height:4px; border-radius: 2px; 
+}
+QSlider::handle:horizontal[sliderType=slider]{
+	background: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890); 
+	width:12px; margin-top: -4px; margin-bottom: -4px; border-radius: 6px;
+}
+
+QSlider::groove:vertical[sliderType=slider]{  
+	width:4px; border-radius: 2px; 
+}
+QSlider::add-page:vertical[sliderType=slider]{ 
+	background: #e5e5e7; width:4px; border-radius: 2px; 
+}
+QSlider::sub-page:vertical[sliderType=slider]{ 
+	background: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0, stop:0 #00d072, stop:1 #01a890); width:4px; border-radius: 2px; 
+}
+QSlider::handle:vertical[sliderType=slider]{
+	background: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 #00d072, stop:1 #01a890); 
+	height:12px; margin-left: -4px; margin-right: -4px; border-radius: 6px;
+}
+
+/************************* QScrollBar 控件类**************************/
+
+QScrollBar{
+	border:none;
+	background:transparent;
+}
+
+/*textBrowser的滚轮*/
+QScrollBar:vertical
+{
+	width:4px;
+	background:rgba(0,0,0,0);
+}
+QScrollBar:vertical:hover
+{
+	width:4px;
+	background:rgba(0,0,0,0);
+}
+QScrollBar::handle:vertical
+{
+	width:4px;
+	background:rgba(153, 154, 161, 0.5);
+	border-radius:2px;
+	min-height: 80px;
+}
+QScrollBar::handle:vertical:hover
+{
+	width:4px;
+	background:rgba(153, 154, 161, 0.5);
+	border-radius:2px;
+	min-height: 80px;
+}
+QScrollBar::add-line:vertical
+{
+	height:0px;width:4px;
+	subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical
+{
+	height:0px;width:4px;
+	subcontrol-position:top;
+}
+QScrollBar::add-line:vertical:hover
+{
+	height:0px;width:4px;
+	subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical:hover
+{
+	height:0px;width:4px;
+	subcontrol-position:top;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background:rgba(0,0,0,0);
+	border-radius:2px;
+}
+/************************* QListView 控件类**************************/
+
+QListView
+{
+	background-color:#ffffff;
+	border:0px;
+}
+QListView::item{
+	background-color:#ffffff;
+	color:#242735;
+	border:0px;
+	/*padding-left : 5px; zxf 2020-9-1 受影响了，屏蔽掉*/
+}
+QListView::item:hover{
+	background: #07a962;
+	color: #ffffff;
+}
+QListView::item:selected{
+	background: #f7f7f8;
+	color: #07a962;
+}
+QListView[listviewType=combox]
+{
+	background-color:#ffffff;
+	border:0px;
+}
+
+QListView::item[listviewType=combox]{
+	background-color:#ffffff;
+	color:#242735;
+	border:0px;
+	padding-left : 5px; 
+}
+QListView::item:hover[listviewType=combox]{
+	background: #07a962;
+	color: #ffffff;
+}
+QListView::item:selected[listviewType=combox]{
+	background: #f7f7f8;
+	color: #07a962;
+}
+/************************* QTabelView 控件类**************************/
+/************************* QHeaderView 控件类**************************/
+
+QHeaderView[headerViewType="timingtableview"]{
+	
+    color: #333543;
+    background-color:#ffffff;
+    border:0px;
+    border-radius:0px;
+    max-height:24px;
+	border-bottom:1px solid rgb(229,229,231);
+	text-align:left;
+}
+
+QHeaderView[headerViewType="timingtableview"]::section
+{
+   background-color:rgb(247, 247, 248);
+   color:rgb(153, 154, 161);
+   border-top:1px solid rgb(229, 229, 231);
+}
+
+
+QHeaderView[headerViewType="tradeheaderview"]{
+	
+    color: #333543;
+    background-color:#ffffff;
+    border:0px;
+    border-radius:0px;
+    min-height:28px;
+	border-bottom:1px solid rgb(229,229,231);
+	text-align:left;
+}
+
+QHeaderView::section[headerViewType="tradeheaderview"]
+{
+	background-color:#ffffff;
+	color:#999aa1; 
+	padding-left: 8px;
+	border:none;
+	height:28px; 
+	border-bottom:1px solid rgb(229,229,231);
+}
+/************************* QDateEdit 控件类**************************/
+/*日期框*/
+QDateEdit[datetype="historydate"]
+{
+	color:#232427;
+	border-radius:2px;
+	border:1px solid rgb(229,229,231);
+}
+QDateEdit:hover[datetype="historydate"]
+{
+	border:1px solid rgb(0,229,213);
+}
+QDateEdit::up-button[datetype="historydate"]
+{
+	width:0px;
+}
+QDateEdit::down-button[datetype="historydate"]
+{
+	width:0px;
+}
+
+QHeaderView{
+
+    line-height: 1.33;
+    color:#999aa1;
+    background-color: rgb(255, 255, 255);
+}
+QHeaderView::section{
+    line-height: 1.33;
+    color:#999aa1;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ececec;
+}
+
+QHeaderView[headerViewType=detail_headerView]
+{
+	
+	
+    color: #333543;
+    background-color:#ffffff;
+    border:0px;
+    border-radius:0px;
+    min-height:40px;
+	/*border-bottom:1px solid rgb(229,229,231);*/
+	text-align:left;
+}
+QHeaderView::section[headerViewType=detail_headerView]
+{
+	background-color:#f7f7f8;
+	color:#999aa1; 
+	padding-left: 8px;
+	border:none;
+	height:40px; 
+	font-family: PingFangSC;
+	border-bottom:1px solid rgb(229,229,231);
+}
+
+/************************* QTimeEdit 控件类**************************/
+
+/*时间框*/
+QTimeEdit[datetype="historytime"]
+{
+	border-radius:2px;
+	border:1px solid rgb(229,229,213);
+}
+QTimeEdit:hover[datetype="historytime"]
+{
+	border:1px solid rgb(0,229,213);
+}
+QTimeEdit::up-button[datetype="historytime"]
+{
+	width:0px;
+}
+QTimeEdit::down-button[datetype="historytime"]
+{
+	width:0px;
+}
+/************************* QLineEdit 控件类**************************/
+
+QLineEdit
+{
+	background-color:#ffffff;
+	color:#333543;
+	border:0px;
+}
+QLineEdit:disabled{
+	border:1px solid #e5e5e7;color:#cccdd0; background-color:#f7f7f8;
+}
+QLineEdit[lineEditType="hotkeylineedit"]
+{
+	border-top: none;
+	border-bottom: 1px solid rgb(229, 229, 231);
+	border-left: 1px solid rgb(229, 229, 231);
+	border-right: 1px solid rgb(229, 229, 231);
+	padding: 20px;
+	background-color:#ffffff;
+
+}
+QLineEdit[editType=focusout]{
+	border:1px solid #e5e5e7;color:#333543;
+}
+QLineEdit[editType=focusout_empty]{
+	border:1px solid #e5e5e7;color:#999aa1;
+}
+QLineEdit[editType=focus]{
+	border:1px solid #07a962;color:#333543;
+}
+QLineEdit[editType=focus_empty]{
+	border:1px solid #07a962;color:#999aa1;
+}
+QLineEdit[editType=enter]{
+	border:1px solid #9cddc4;color:#333543;
+}
+QLineEdit[editType=enter_empty]{
+	border:1px solid #9cddc4;color:#999aa1;
+}
+QLineEdit[editType=wrong]{
+	border:1px solid #e63c51;color:#333543;
+}
+QLineEdit[editType=wrong_empty]{
+	border:1px solid #e63c51;color:#999aa1;
+}
+QLineEdit[editType=font_padding]{
+	padding-left:4px;
+}
+/**************************BLPasswordEditor**************************/
+QLineEdit[editType=account_region]
+{
+	background-color:#ffffff;
+	border:0px solid #000000;
+	padding-left:0px;
+	color:#333543;
+}
+QLineEdit[editType=account_phone]
+{
+	background-color:#ffffff;
+	border:0px solid #000000;
+	padding-left:0px;
+	color:#333543;
+}
+QLineEdit[editType=PWEditor_normal]
+{
+	background-color:#ffffff;
+	border:1px solid #e5e5e7;
+	padding-left:0px;
+	color:#333543;
+}
+QLineEdit[editType=PWEditor_highlight]{
+	background-color:#ffffff;
+	padding-left:0px;
+	border:1px solid #07a962;
+	color:#333543;
+}
+QLineEdit[editType=PWEditor_Error]{
+	background-color:#ffffff;
+	padding-left:0px;
+	border:1px solid #e63c51;
+	color:#333543;
+}
+QLineEdit[editType=PWEditor_Disable]{
+	background-color:#f7f7f8;
+	padding-left:0px;
+	border:1px solid #e5e5e7;
+	color:#cccdd0;
+}
+
+
+/*滚动条右边参数的编辑框 QLineEdit*/
+QLineEdit[lineEditType=sliderLineEdit_BlChart]
+{
+	color:#242735;
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	background-color: #ffffff;
+	 
+	font-size: 10px; 
+	text-align: left; 
+	padding-left: 4px;
+	padding-right: 10px;
+	background-image: url(:/resGreenCom/image_slider_percent);
+	background-repeat:no repeat;
+	background-position:center right;
+}
+
+
+/*自定义选择颜色的编辑框*/
+QLineEdit[lineEditType=pSelectCrEdit_BlChart]
+{
+	border: none;
+	background-color: transparent;
+	color:#242735;
+}
+
+/*自定义颜色的编辑框*/
+QLineEdit[lineEditType=pCustomCrEdit_BlChart]
+{
+	border: none;
+	background-color: transparent;
+	color:#242735;
+	 
+}
+QLineEdit:disabled[lineEditType=pCustomCrEdit_BlChart]
+{
+	border: none;
+	background-color: transparent;
+	color:#68696b; 
+}
+
+QLineEdit[lineEdit="password"]{
+	font: 10px "Microsoft YaHei UI";
+	color:#999aa1;
+	background-color:#ffffff;
+}
+
+QLineEdit[editType=search_edit]{
+ border:0px; 
+ border-bottom:1px solid rgb(229,229,231);
+ background-color: #ffffff;
+}
+
+QLineEdit[editType=minus_plus_edit]
+{
+	line-height: 1.33;
+	text-align: right;
+	color: #242735;
+	border:0px;
+	background-color: #ffffff;
+}
+
+/*编辑框*/
+QLineEdit[lineEditType=content_LineEdit]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	line-height: 1.45;
+	padding-left: 8px; 
+	padding-top: 3px;
+	color: #242735;
+}
+
+/*时间编辑框*/
+QLineEdit[lineEditType=time_LineEdit]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	line-height: 1.45;
+	padding: 0px;
+	border: none;
+	text-align:center;
+	color: #242735;
+	background-color: #ffffff;
+}
+
+/*右边参数的编辑框 QLineEdit*/
+QLineEdit[lineEditType=parameterLineEdit_BlChart]
+{
+	border: 1px solid #e5e5e7;
+	border-radius: 2px; 
+	font-family: Helvetica; 
+	line-height: 1.45;
+	padding-left: 8px; 
+	padding-top: 3px;
+}
+QLineEdit:hover[lineEditType=parameterLineEdit_BlChart]
+{
+	border: 1px solid #07a962;
+}
+
+QLineEdit[lineEditType=search] {
+	  
+	border: 1px solid #e5e5e7; color: #333543; border-radius: 2px;
+}
+QLineEdit:hover[lineEditType=search] {
+	border: 1px solid #07a962; border-radius: 2px;
+}
+QLineEdit[lineEditType=search_focus] {
+	  
+	border: 1px solid #07a962; color: #333543; border-radius: 2px;
+}
+
+/**************************品种叠加**************************/
+QLineEdit[lineEditType=search_overLay] {
+	background-image: url(:/resGreenCom/Resources/Images/Green/Common/common_24_search_main.png); background-repeat: none;
+	background-position: left; border:1px solid #e5e5e7;
+}
+QLineEdit[lineEditType=search_overLay_Focus] {
+	border: 1px solid #07a962; 
+	background-image: url(:/resGreenCom/Resources/Images/Green/Common/common_24_search_highlight.png); background-repeat: none;
+	background-position: left;
+}
+/************************* QListWidget 控件类**************************/
+
+QListWidget[listwidgetType=hotkeylistwidget]
+{
+	border-top: none;
+	border-bottom: none;
+	border-left: 1px solid rgb(229, 229, 231);
+	border-right: 1px solid rgb(229, 229, 231);
+}
+QListWidget[listwidgetType=hotkeylistwidget]::Item:hover,
+QListWidget[listwidgetType=hotkeylistwidget]::Item:selected {
+    background-color:#ffffff;
+}
+
+QListWidget::Item[listWidgetType=item]{padding-left: 8px; height: 24px;    line-height: 1.45; border: 0px; color: #232427; }
+QListWidget::Item:hover[listWidgetType=item]{background-color: #e6f6ef; }
+QListWidget::Item:selected[listWidgetType=item]{border: 0px; background-color: #b4e5cf;}
+
+/************************* QTextBrowser 控件类**************************/
+/*协议内容显示窗口*/
+QTextBrowser[textBrowser=privacyText]
+{
+	background-color: #ffffff;
+	font-size: 14px;
+	color:#242735;
+	border: none;
+}
+/*富文本内容窗口*/
+QTextBrowser[textBrowser=richText]
+{
+	background-color:#ffffff;
+	
+    line-height: 1.5;
+    color:#242735;
+    border: none;
+}
+
+QTextBrowser{
+	border:0px;
+}
+/************************* QScrollArea 控件类**************************/
+
+QScrollArea[scrollAreaType=noBorder]
+{
+	border:0px; 
+	background-color: #e5e5e7; 
+}
+
+/************************* QTableWidget 控件类**************************/
+
+QTableWidget[tableWidgetType=noBorder]
+{
+	border:0px;
+}
+
+QTableWidget::item
+{ 
+	line-height: 4.5;  /*padding-left:8px;*/
+	
+	font-size: 18px;
+	font-weight: 600;
+	/*font-stretch: normal;*/
+	font-style: normal;
+	line-height: normal;
+	/*letter-spacing: normal;*/
+	selection-background-color:#e6f6ef;
+	selection-color:#242735;
+}
+QTableWidget[tableWidgetType="varietyDetail"]::item:alternate:!selected,QTableWidget::item:alternate:!selected{ background: #f7f7f8 ; } 
+QTableView[tableWidgetType="varietyDetail"]::item:!alternate:!selected, QTableWidget::item:!alternate:!selected{ background: #ffffff; }
+/************************* QToolTip 控件类**************************/
+QToolTip
+{
+	border:1px solid black;
+	background: white;
+}
+/************************* QDateTimeEdit 控件类**************************/
+QDateTimeEdit[editType=datetime]{
+	border: 0px;
+	color: #333543;
+	font-family: HelveticaNeue;  
+}
+QDateTimeEdit:disabled[editType=datetime]{
+	color:#ccccd0; border: 0px; background-color:#f7f7f8;
+}
+
+QDateTimeEdit::up-button[editType=datetime]{
+          width:0px;
+}
+QDateTimeEdit::down-button[editType=datetime]{
+          width:0px;
+}
+/************************* QTableCornerButton 控件类**************************/
+QTableCornerButton::section
+{
+	background:#ffffff;
+}
+/************************* QTextEdit 控件类**************************/
+QTextEdit[textEdtiType=content]
+{
+	color: #242735;
+	border:1px solid #e5e5e7; 
+	background-color: #ffffff;
+}
+QTextEdit:hover[textEdtiType=content]
+{
+	border:1px solid #07a962;
+}
+
+/* 中间文本的样式 */
+QTextEdit[textType="desc"]
+{
+	border: 1px solid #e5e5e7;
+	background: white;
+}
+
+/************************* QTableView 控件类**************************/
+
+QTableView[tableViewType="tableview"]
+{
+	border:none;
+}
+QTableView[tableViewItemType="tableviewItem"]::item
+{
+	border:1px solid rgb(229,229,231);
+}
+QTableView[timetableViewItemType="tableviewItem"]::item
+{
+	selection-background-color:rgb(255,255,255);
+	selection-color:rgb(230,60,81);
+}
+QTableView[timetableViewItemType1="tableviewItem"]::item
+{
+	selection-background-color:rgb(255,255,255);
+	selection-color:rgb(26,84,223);
+	
+}
+
+QTableView[tableViewType="tradetableview"] 
+{
+	background-color:#ffffff;
+	selection-background-color:#e6f6ef;
+	color:#333543;
+	
+	border:0px;
+}
+
+/*图表样式*/
+QTableView[tableViewType=calendar_form]
+{
+    line-height: 1.33;
+    color:#333543;
+    gridline-color: #ececec;
+    margin-top:9px;
+    margin-left:4px;
+    margin-right:5px;
+    background-color: rgb(255, 255, 255);
+    selection-color: #333543;
+    selection-background-color: rgb(255, 255, 255);
+}
+
