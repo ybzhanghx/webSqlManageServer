@@ -7,16 +7,27 @@ import (
 	"github.com/astaxie/beego"
 )
 
-type TableDataManagerController struct {
-	beego.Controller
-}
+type (
+	TableDataManagerController struct {
+		beego.Controller
+	}
+	//数据返回结构
+	TBDataListReturn struct {
+		CommonReturn `json:",inline"`
+		Fields       []models.FieldType
+		Data         []interface{}
+		Totals       int64
+	}
 
-type TBDataListReturn struct {
-	CommonReturn `json:",inline"`
-	Fields       []models.FieldType
-	Data         []interface{}
-	Totals       int64
-}
+	//更新请求参数
+	UpdateTableParm struct {
+		DB  string
+		TB  string
+		Add string
+		Del []int
+		Upd string
+	}
+)
 
 // @Title getTableDataList
 // @Description getTableDataList
@@ -58,14 +69,6 @@ func (f *TableDataManagerController) DataList() {
 	ReturnData.Data = getData
 	ReturnData.Fields = fields
 	return
-}
-
-type UpdateTableParm struct {
-	DB  string
-	TB  string
-	Add string
-	Del []int
-	Upd string
 }
 
 // @Title del

@@ -7,28 +7,42 @@ import (
 	"github.com/BurntSushi/toml"
 )
 
-type Server struct {
-	AppName         string
-	HTTPPort        int
-	RunMode         string
-	CopyRequestBody bool
-	AutoRender      bool
-	EnableDocs      bool
-}
+type (
+	Config struct {
+		*conf.CommConf
+		Server    *Server
+		MysqlConf *MysqlConf
+		funcList  *FuncListConf
+	}
+	Server struct {
+		AppName         string
+		HTTPPort        int
+		RunMode         string
+		CopyRequestBody bool
+		AutoRender      bool
+		EnableDocs      bool
+	}
 
-type MysqlConf struct {
-	Addr         string
-	User         string
-	Pwd          string
-	DbName       string
-	SystemDbName string
-}
+	MysqlConf struct {
+		Addr         string
+		User         string
+		Pwd          string
+		DbName       string
+		SystemDbName string
+	}
 
-type Config struct {
-	*conf.CommConf
-	Server    *Server
-	MysqlConf *MysqlConf
-}
+	FuncListConf struct {
+		Name     string
+		Value    string
+		types    string
+		Children []FuncNode
+	}
+	FuncNode struct {
+		Name     string
+		Value    string
+		Children []FuncNode
+	}
+)
 
 var (
 	confPath string

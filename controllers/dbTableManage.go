@@ -7,14 +7,29 @@ import (
 	"github.com/astaxie/beego"
 )
 
-type DBTBInfoManagerController struct {
-	beego.Controller
-}
+type (
+	DBTBInfoManagerController struct {
+		beego.Controller
+	}
 
-type ReturnGetAllTable struct {
-	CommonReturn `json:",inline"`
-	Data         []models.DBTBInfo
-}
+	//所以表名返回结果
+	ReturnGetAllTable struct {
+		CommonReturn `json:",inline"`
+		Data         []models.DBTBInfo
+	}
+	//更新请求参数
+	UpdateTBConfParm struct {
+		DB       string                         `json:"DB"`
+		TB       string                         `json:"TB"`
+		FuncName string                         `json:"funcName"`
+		Data     []models.DataTableUpdateConfig `json:"Data"`
+	}
+	//数据配置返回
+	ReturnGetTableConfig struct {
+		CommonReturn `json:",inline"`
+		Data         []models.DataTableConfigReturn
+	}
+)
 
 // @Title tableList
 // @Description
@@ -35,13 +50,6 @@ func (f *DBTBInfoManagerController) GetAllTable() {
 		return
 	}
 	ReturnData.Data = dbTb
-}
-
-type UpdateTBConfParm struct {
-	DB       string                         `json:"DB"`
-	TB       string                         `json:"TB"`
-	FuncName string                         `json:"funcName"`
-	Data     []models.DataTableUpdateConfig `json:"Data"`
 }
 
 // @Title update
@@ -71,11 +79,6 @@ func (f *DBTBInfoManagerController) UpdateTableConfig() {
 		return
 	}
 
-}
-
-type ReturnGetTableConfig struct {
-	CommonReturn `json:",inline"`
-	Data         []models.DataTableConfigReturn
 }
 
 // @Title FuncList
