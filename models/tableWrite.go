@@ -92,7 +92,6 @@ func UpdateTableRows(tb string, tx *sql.Tx, bytes string, pData interface{}, col
 			setV := v.FieldName + "=" + tmpV
 			upV = append(upV, setV)
 		}
-
 		idValue = strconv.Itoa(readersSliceNode.GetField("Id").Int())
 		return
 	}
