@@ -1,0 +1,332 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/dbTbInfo/TableConfig": {
+            "get": {
+                "tags": [
+                    "dbTbInfo"
+                ],
+                "description": "list object",
+                "operationId": "DBTBInfoManagerController.FuncList",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "DB",
+                        "description": "db",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "TB",
+                        "description": "tb",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ReturnGetTableConfig"
+                        }
+                    }
+                }
+            }
+        },
+        "/dbTbInfo/getAllTables": {
+            "get": {
+                "tags": [
+                    "dbTbInfo"
+                ],
+                "operationId": "DBTBInfoManagerController.tableList",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ReturnGetAllTable"
+                        }
+                    }
+                }
+            }
+        },
+        "/dbTbInfo/updateTableConfig": {
+            "post": {
+                "tags": [
+                    "dbTbInfo"
+                ],
+                "description": "update object",
+                "operationId": "DBTBInfoManagerController.update",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "parm",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controllers.UpdateTBConfParm"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/table/list": {
+            "get": {
+                "tags": [
+                    "table"
+                ],
+                "description": "getTableDataList",
+                "operationId": "TableDataManagerController.getTableDataList",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "DB",
+                        "description": "funcName",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "TB",
+                        "description": "funcName",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "description": "funcName",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "size",
+                        "description": "funcName",
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/table/updateTableData": {
+            "post": {
+                "tags": [
+                    "table"
+                ],
+                "description": "update object",
+                "operationId": "TableDataManagerController.del",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "parm",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controllers.UpdateTableParm"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controllers.CommonReturn": {
+            "title": "CommonReturn",
+            "type": "object",
+            "properties": {
+                "Code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Msg": {
+                    "type": "string"
+                }
+            }
+        },
+        "controllers.ReturnGetAllTable": {
+            "title": "ReturnGetAllTable",
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/controllers.CommonReturn"
+                },
+                "Data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.DBTBInfo"
+                    }
+                }
+            }
+        },
+        "controllers.ReturnGetTableConfig": {
+            "title": "ReturnGetTableConfig",
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/controllers.CommonReturn"
+                },
+                "Data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.DataTableConfigReturn"
+                    }
+                }
+            }
+        },
+        "controllers.UpdateTBConfParm": {
+            "title": "UpdateTBConfParm",
+            "type": "object",
+            "properties": {
+                "DB": {
+                    "type": "string"
+                },
+                "Data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.DataTableUpdateConfig"
+                    }
+                },
+                "TB": {
+                    "type": "string"
+                },
+                "funcName": {
+                    "type": "string"
+                }
+            }
+        },
+        "controllers.UpdateTableParm": {
+            "title": "UpdateTableParm",
+            "type": "object",
+            "properties": {
+                "Add": {
+                    "type": "string"
+                },
+                "DB": {
+                    "type": "string"
+                },
+                "Del": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "TB": {
+                    "type": "string"
+                },
+                "Upd": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DBTBInfo": {
+            "title": "DBTBInfo",
+            "type": "object",
+            "properties": {
+                "DbName": {
+                    "type": "string"
+                },
+                "TbName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "models.DataTableConfig": {
+            "title": "DataTableConfig",
+            "type": "object",
+            "properties": {
+                "columnKey": {
+                    "type": "string"
+                },
+                "data_type": {
+                    "type": "string"
+                },
+                "field_desc": {
+                    "type": "string"
+                },
+                "field_name": {
+                    "type": "string"
+                },
+                "is_null": {
+                    "type": "string"
+                },
+                "length": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.DataTableConfigReturn": {
+            "title": "DataTableConfigReturn",
+            "type": "object",
+            "properties": {
+                "data_type": {
+                    "type": "string"
+                },
+                "field_desc": {
+                    "type": "string"
+                },
+                "field_name": {
+                    "type": "string"
+                },
+                "is_able_null": {
+                    "type": "boolean"
+                },
+                "is_key": {
+                    "type": "boolean"
+                },
+                "is_null": {
+                    "type": "string"
+                },
+                "length": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.DataTableUpdateConfig": {
+            "title": "DataTableUpdateConfig",
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/models.DataTableConfig"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "newName": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
