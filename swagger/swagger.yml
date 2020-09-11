@@ -67,6 +67,23 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/controllers.ReturnFuncList'
+  /entry/saveFuncList:
+    get:
+      tags:
+        - entry
+      operationId: EntryManagerController.tableList
+      parameters:
+        - in: body
+          name: body
+          description: parm
+          required: true
+          schema:
+            $ref: '#/definitions/controllers.ParmSaveFuncList'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.ReturnFuncList'
   /table/list:
     get:
       tags:
@@ -77,16 +94,16 @@ paths:
         - in: query
           name: DB
           description: funcName
-        type: string
-      - in: query
-        name: TB
-        description: funcName
-        type: string
-      - in: query
-        name: page
-        description: funcName
-        type: integer
-        format: int64
+          type: string
+        - in: query
+          name: TB
+          description: funcName
+          type: string
+        - in: query
+          name: page
+          description: funcName
+          type: integer
+          format: int64
       - in: query
         name: size
         description: funcName
@@ -147,6 +164,12 @@ definitions:
         format: int64
       Msg:
         type: string
+  controllers.ParmSaveFuncList:
+    title: ParmSaveFuncList
+    type: object
+    properties:
+      Data:
+        $ref: '#/definitions/conf.FuncNode'
   controllers.ReturnFuncList:
     title: ReturnFuncList
     type: object

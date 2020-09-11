@@ -6,33 +6,35 @@ import (
 	"errors"
 	"fmt"
 	"github.com/astaxie/beego/logs"
+	"github.com/iancoleman/orderedmap"
 	"github.com/jinzhu/copier"
 	"github.com/jmoiron/sqlx"
 )
 
 //获取 数据库表数据
 func GetDBNames() (res []models.DBTBInfo, err error) {
-	sqlFmt := `select TABLE_SCHEMA DB,table_name TB  from information_schema.tables
-			where  table_type='BASE TABLE' ORDER BY DB;`
-
 	var sqlData []models.DbTb
-	err = mysqls.SysInfDb.Select(&sqlData, sqlFmt)
+	sqlData, err = models.GetAllDBTB(false)
 	if err != nil {
-		logs.Error(err.Error())
 		return
 	}
-	var tmpMap = make(map[string][]string)
+
+	var tmpMap = orderedmap.New()
 	for i := range sqlData {
-		if _, ok := tmpMap[sqlData[i].DB]; !ok {
-			tmpMap[sqlData[i].DB] = []string{}
+
+		var resValue []string
+		if res, ok := tmpMap.Get(sqlData[i].DB); ok {
+			resValue = res.([]string)
 		}
-		tmpMap[sqlData[i].DB] = append(tmpMap[sqlData[i].DB], sqlData[i].TB)
+		resValue = append(resValue, sqlData[i].TB)
+		tmpMap.Set(sqlData[i].DB, resValue)
 	}
 
-	for key, value := range tmpMap {
+	for _, key := range tmpMap.Keys() {
 		var tmpNode models.DBTBInfo
 		tmpNode.DbName = key
-		tmpNode.TbName = value
+		tmpV, _ := tmpMap.Get(key)
+		tmpNode.TbName = tmpV.([]string)
 		res = append(res, tmpNode)
 	}
 	return

@@ -103,6 +103,33 @@
                 }
             }
         },
+        "/entry/saveFuncList": {
+            "get": {
+                "tags": [
+                    "entry"
+                ],
+                "operationId": "EntryManagerController.tableList",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "parm",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ParmSaveFuncList"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.ReturnFuncList"
+                        }
+                    }
+                }
+            }
+        },
         "/table/list": {
             "get": {
                 "tags": [
@@ -221,6 +248,15 @@
                 },
                 "Msg": {
                     "type": "string"
+                }
+            }
+        },
+        "controllers.ParmSaveFuncList": {
+            "title": "ParmSaveFuncList",
+            "type": "object",
+            "properties": {
+                "Data": {
+                    "$ref": "#/definitions/conf.FuncNode"
                 }
             }
         },

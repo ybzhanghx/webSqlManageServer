@@ -323,3 +323,26 @@ func TypeDatabaseNameNoNull(newStruct dynamicstruct.Builder, Field *sql.ColumnTy
 	//	return ""
 	//}
 }
+
+func GetAllDBTB(isSystem bool) (sqlData []DbTb, err error) {
+	sqlFmt := `select TABLE_SCHEMA DB,table_name TB  from information_schema.tables
+			where  table_type='BASE TABLE' ORDER BY DB;`
+	err = mysqls.SysInfDb.Select(&sqlData, sqlFmt)
+	if err != nil {
+		logs.Error(err.Error())
+	}
+
+	if !isSystem {
+		j := 0
+		for _, val := range sqlData {
+			var tmp = strings.ToLower(val.DB)
+			if tmp != "information_schema" && tmp != "mysql" && tmp != "performance_schema" {
+				sqlData[j] = val
+				j++
+			}
+		}
+		sqlData = sqlData[:j]
+	}
+	//sort.Sort()
+	return
+}
