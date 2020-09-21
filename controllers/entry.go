@@ -58,10 +58,4 @@ func (f *EntryManagerController) SaveFuncList() {
 		return
 	}
 
-	//err = service.WriteTable(&models.DbTb{DB: parmData.DB, TB: parmData.TB}, parmData.Add, parmData.Upd, parmData.Del)
-	//if err != nil {
-	//	ReturnData.SetData(1, err.Error())
-	//	return
-	//}
-
 }

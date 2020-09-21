@@ -9,11 +9,6 @@ import (
 type TimeStamp int64
 
 var (
-	//dateTimeFormats = []string{RFC3339Micro, RFC3339Millis, time.RFC3339, time.RFC3339Nano, ISO8601LocalTime, ISO8601TimeWithReducedPrecision, ISO8601TimeWithReducedPrecisionLocaltime}
-	//rxDateTime      = regexp.MustCompile(DateTimePattern)
-	//// MarshalFormat sets the time resolution format used for marshaling time (set to milliseconds)
-	//MarshalFormat = RFC3339Millis
-	//loc, _ := time.LoadLocation("Local")
 	TimeFormat1 = "2006-01-02 15:04:05"
 	LocZone, _  = time.LoadLocation("Asia/Shanghai")
 )
