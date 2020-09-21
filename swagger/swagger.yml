@@ -31,10 +31,25 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/controllers.ReturnGetTableConfig'
+  /dbTbInfo/connectMysql:
+    post:
+      tags:
+        - dbTbInfo
+      parameters:
+        - in: body
+          name: body
+          description: "true"
+          schema:
+            $ref: '#/definitions/conf.MysqlConf'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.CommonReturn'
   /dbTbInfo/getAllTables:
     get:
       tags:
-      - dbTbInfo
+        - dbTbInfo
       operationId: DBTBInfoManagerController.tableList
       responses:
         "200":
@@ -104,11 +119,11 @@ paths:
           description: funcName
           type: integer
           format: int64
-      - in: query
-        name: size
-        description: funcName
-        type: integer
-        format: int64
+        - in: query
+          name: size
+          description: funcName
+          type: integer
+          format: int64
       responses:
         "200":
           description: ""
@@ -154,6 +169,20 @@ definitions:
       Name:
         type: string
       Value:
+        type: string
+  conf.MysqlConf:
+    title: MysqlConf
+    type: object
+    properties:
+      Addr:
+        type: string
+      DbName:
+        type: string
+      Pwd:
+        type: string
+      SystemDbName:
+        type: string
+      User:
         type: string
   controllers.CommonReturn:
     title: CommonReturn

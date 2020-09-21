@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"bailun.com/CT4_quote_server/WebManageSvr/conf"
 	"bailun.com/CT4_quote_server/WebManageSvr/models"
+	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
 	"bailun.com/CT4_quote_server/WebManageSvr/service"
 	"encoding/json"
 	"github.com/astaxie/beego"
@@ -110,4 +112,32 @@ func (f *DBTBInfoManagerController) TableConfig() {
 	}
 
 	ReturnData.Data = res
+}
+
+// @Title FuncList
+// @Description list object
+
+// @Param   body		body 	conf.MysqlConf true
+// @Success  200  {object} controllers.CommonReturn
+// @router /connectMysql [post]
+func (f *DBTBInfoManagerController) ConnectMysql() {
+	var ReturnData CommonReturn
+	ReturnData.SetData(0, "sucesss to connect")
+	defer func() {
+		f.Data["json"] = ReturnData
+		f.ServeJSON()
+
+	}()
+	var parmData conf.MysqlConf
+	err := json.Unmarshal(f.Ctx.Input.RequestBody, &parmData)
+	if err != nil {
+		ReturnData.SetData(1, "parm is error:"+err.Error())
+		return
+	}
+	err = mysqls.ConnectNewSql(&parmData)
+	if err != nil {
+		ReturnData.SetData(1, "connect failed")
+		return
+	}
+
 }

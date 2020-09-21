@@ -54,7 +54,7 @@ func ReadDBTBConfig(dbtb *DbTb) (sqlData []DataTableConfig, err error) {
 	sqlFmt := fmt.Sprintf(`SELECT COLUMN_NAME field_name,column_comment field_desc,DATA_TYPE data_type,
 	IS_NULLABLE is_null,IFNULL(CHARACTER_MAXIMUM_LENGTH,0) length,COLUMN_KEY 
 	FROM INFORMATION_SCHEMA.COLUMNS
-	WHERE  LOWER(table_schema) = "%s" and TABLE_NAME = "%s"`, dbtb.DB, dbtb.TB)
+	WHERE  TABLE_SCHEMA = "%s" and TABLE_NAME = "%s"`, dbtb.DB, dbtb.TB)
 	if err = mysqls.SysInfDb.Select(&sqlData,
 		sqlFmt); err != nil {
 		logs.Error(sqlData, err)

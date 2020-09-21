@@ -18,6 +18,15 @@ func init() {
 
 	beego.GlobalControllerRouter["bailun.com/CT4_quote_server/WebManageSvr/controllers:DBTBInfoManagerController"] = append(beego.GlobalControllerRouter["bailun.com/CT4_quote_server/WebManageSvr/controllers:DBTBInfoManagerController"],
 		beego.ControllerComments{
+			Method:           "ConnectMysql",
+			Router:           `/connectMysql`,
+			AllowHTTPMethods: []string{"post"},
+			MethodParams:     param.Make(),
+			Filters:          nil,
+			Params:           nil})
+
+	beego.GlobalControllerRouter["bailun.com/CT4_quote_server/WebManageSvr/controllers:DBTBInfoManagerController"] = append(beego.GlobalControllerRouter["bailun.com/CT4_quote_server/WebManageSvr/controllers:DBTBInfoManagerController"],
+		beego.ControllerComments{
 			Method:           "GetAllTable",
 			Router:           `/getAllTables`,
 			AllowHTTPMethods: []string{"get"},

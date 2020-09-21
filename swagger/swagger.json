@@ -46,6 +46,31 @@
                 }
             }
         },
+        "/dbTbInfo/connectMysql": {
+            "post": {
+                "tags": [
+                    "dbTbInfo"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "true",
+                        "schema": {
+                            "$ref": "#/definitions/conf.MysqlConf"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.CommonReturn"
+                        }
+                    }
+                }
+            }
+        },
         "/dbTbInfo/getAllTables": {
             "get": {
                 "tags": [
@@ -234,6 +259,27 @@
                     "type": "string"
                 },
                 "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "conf.MysqlConf": {
+            "title": "MysqlConf",
+            "type": "object",
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "DbName": {
+                    "type": "string"
+                },
+                "Pwd": {
+                    "type": "string"
+                },
+                "SystemDbName": {
+                    "type": "string"
+                },
+                "User": {
                     "type": "string"
                 }
             }

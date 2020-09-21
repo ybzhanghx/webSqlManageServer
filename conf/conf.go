@@ -50,7 +50,7 @@ var (
 )
 
 func init() {
-	flag.StringVar(&confPath, "conf", "./conf.toml", "config path")
+	flag.StringVar(&confPath, "conf", "./WebManageSvr.toml", "config path")
 }
 
 func Init() (err error) {

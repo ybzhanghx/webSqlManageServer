@@ -16,29 +16,9 @@ var (
 
 func MysqlInit() {
 	c := conf.Conf.MysqlConf
-	var err error
-
-	SysInfDb, err = sqltool.InitDB(c.User, c.Pwd, c.Addr, c.SystemDbName)
+	err := ConnectNewSql(c)
 	if err != nil {
 		panic(err)
-	}
-	ArrSqlDb = make(map[string]*sqlx.DB)
-	var dbName []struct {
-		DataBase string `db:"Database"`
-	}
-
-	err = SysInfDb.Select(&dbName, "show databases ")
-	if err != nil {
-		panic(err)
-	}
-
-	for i := range dbName {
-		var tmpDb *sqlx.DB
-		tmpDb, err = sqltool.InitDB(c.User, c.Pwd, c.Addr, dbName[i].DataBase)
-		if err != nil {
-			panic(err)
-		}
-		ArrSqlDb[dbName[i].DataBase] = tmpDb
 	}
 
 	//testInfDb, err = sqltool.InitDB(conf.Conf.MysqlConf.User, conf.Conf.MysqlConf.Pwd, conf.Conf.MysqlConf.Addr,
@@ -54,6 +34,32 @@ func MysqlInit() {
 	//for i := range dbNames {
 	//	funcTableMap.Store(dbNames[i], dataBaseMapTable{"TradeFxDB", dbNames[i]})
 	//}
+}
+func ConnectNewSql(c *conf.MysqlConf) (err error) {
+
+	SysInfDb, err = sqltool.InitDB(c.User, c.Pwd, c.Addr, "INFORMATION_SCHEMA")
+	if err != nil {
+		logs.Error(err.Error())
+		return
+	}
+	ArrSqlDb = make(map[string]*sqlx.DB)
+	var dbName []struct {
+		DataBase string `db:"Database"`
+	}
+	err = SysInfDb.Select(&dbName, "show databases ")
+	if err != nil {
+		logs.Error(err.Error())
+	}
+
+	for i := range dbName {
+		var tmpDb *sqlx.DB
+		tmpDb, err = sqltool.InitDB(c.User, c.Pwd, c.Addr, dbName[i].DataBase)
+		if err != nil {
+			logs.Error(err.Error())
+		}
+		ArrSqlDb[dbName[i].DataBase] = tmpDb
+	}
+	return
 }
 
 func GetDbs(DB string) (*sqlx.DB, error) {
