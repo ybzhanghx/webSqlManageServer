@@ -1,15 +1,13 @@
 package service
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/conf"
-	"bailun.com/CT4_quote_server/WebManageSvr/models"
+	"WebManageSvr/conf"
+	"WebManageSvr/models"
 	"github.com/astaxie/beego/logs"
 )
 
 func GetFuncList() (Res *conf.FuncListConf, err error) {
-	if conf.Conf.FuncList.Types == "conf" {
-		return conf.Conf.FuncList, nil
-	}
+
 	Res = &conf.FuncListConf{Name: "root", Value: "root", Children: []conf.FuncNode{}}
 	var DBTBs []models.DBTBInfo
 	DBTBs, err = GetDBNames()

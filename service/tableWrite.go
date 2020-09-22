@@ -1,8 +1,8 @@
 package service
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/models"
-	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
+	"WebManageSvr/models"
+	"WebManageSvr/mysqls"
 	"fmt"
 	"github.com/astaxie/beego/logs"
 	"github.com/jmoiron/sqlx"
@@ -14,7 +14,7 @@ func WriteTable(dbInfo *models.DbTb, add, upd string, del []int) (err error) {
 	if err2 != nil {
 		return err2
 	}
-	sqlFmt := fmt.Sprintf("SELECT * FROM `%s` ", dbInfo.TB)
+	sqlFmt := fmt.Sprintf("SELECT * FROM `%s` limit 1", dbInfo.TB)
 	var rows *sqlx.Rows
 	rows, err = dbs.Queryx(sqlFmt)
 	if err != nil {

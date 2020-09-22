@@ -1,8 +1,8 @@
 package service
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/models"
-	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
+	"WebManageSvr/models"
+	"WebManageSvr/mysqls"
 	"errors"
 	"fmt"
 	"github.com/astaxie/beego/logs"

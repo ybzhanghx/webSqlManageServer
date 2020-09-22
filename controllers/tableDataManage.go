@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/models"
-	"bailun.com/CT4_quote_server/WebManageSvr/service"
+	"WebManageSvr/models"
+	"WebManageSvr/service"
 	"encoding/json"
 	"github.com/astaxie/beego"
 )

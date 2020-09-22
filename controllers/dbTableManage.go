@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/conf"
-	"bailun.com/CT4_quote_server/WebManageSvr/models"
-	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
-	"bailun.com/CT4_quote_server/WebManageSvr/service"
+	"WebManageSvr/conf"
+	"WebManageSvr/models"
+	"WebManageSvr/mysqls"
+	"WebManageSvr/service"
 	"encoding/json"
 	"github.com/astaxie/beego"
 )

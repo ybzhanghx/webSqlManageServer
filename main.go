@@ -1,10 +1,9 @@
 package main
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/conf"
-	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
-	_ "bailun.com/CT4_quote_server/WebManageSvr/routers"
-	commConf "bailun.com/CT4_quote_server/common/conf"
+	"WebManageSvr/conf"
+	_ "WebManageSvr/routers"
+
 	"encoding/json"
 	"flag"
 	"github.com/astaxie/beego"
@@ -20,14 +19,13 @@ func main() {
 		panic(err)
 	}
 	BeeConfInit()
-	mysqls.MysqlInit()
 
 	beego.Run()
 }
 
 func BeeConfInit() {
 	Conf := conf.Conf
-	var logCfg = commConf.LoggerConfig{
+	var logCfg = conf.LoggerConfig{
 		FileName:            Conf.LogConf.LogPath,
 		Level:               Conf.LogConf.Level,
 		EnableFuncCallDepth: true,
@@ -45,14 +43,14 @@ func BeeConfInit() {
 	logs.EnableFuncCallDepth(logCfg.EnableFuncCallDepth)
 	logs.SetLogFuncCallDepth(logCfg.LogFuncCallDepth)
 
-	beego.BConfig.AppName = Conf.Server.AppName
-	beego.BConfig.Listen.HTTPPort = Conf.Server.HTTPPort
+	beego.BConfig.AppName = conf.Conf.Server.AppName
+	beego.BConfig.Listen.HTTPPort = conf.Conf.Server.HTTPPort
 	//beego.BConfig.RunMode = Conf.Server.RunMode
 	// 是否允许在 HTTP 请求时，返回原始请求体数据字节，默认为 false
-	beego.BConfig.CopyRequestBody = Conf.Server.CopyRequestBody
+	beego.BConfig.CopyRequestBody = conf.Conf.Server.CopyRequestBody
 	// 是否模板自动渲染，默认值为 true，对于 API 类型的应用，应用需要把该选项设置为 false，不需要渲染模板
-	beego.BConfig.WebConfig.AutoRender = Conf.Server.AutoRender
-	beego.BConfig.WebConfig.EnableDocs = Conf.Server.EnableDocs
+	beego.BConfig.WebConfig.AutoRender = conf.Conf.Server.AutoRender
+	beego.BConfig.WebConfig.EnableDocs = conf.Conf.Server.EnableDocs
 	beego.BConfig.RunMode = Conf.Server.RunMode
 	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
 		AllowAllOrigins:  true,

@@ -1,7 +1,7 @@
 package models
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
+	"WebManageSvr/mysqls"
 	"database/sql"
 	"encoding/json"
 	"fmt"
@@ -89,7 +89,7 @@ func UpdateTableRows(tb string, tx *sql.Tx, bytes string, pData interface{}, col
 			case "time":
 				tmpV = "'" + getV.String() + "'"
 			}
-			setV := v.FieldName + "=" + tmpV
+			setV := "`" + v.FieldName + "` =" + tmpV
 			upV = append(upV, setV)
 		}
 		idValue = strconv.Itoa(readersSliceNode.GetField("Id").Int())
