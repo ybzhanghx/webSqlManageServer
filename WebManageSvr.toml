@@ -1,0 +1,18 @@
+
+ver = "1.0.0"
+
+[logConf]
+logPath = "/data/logs/WebManageSvr.log"
+level = 7  # 7:Debug 6:Info 5:Notify 4:Warn 3:Erro 2:Critical 1:Alert 0:Emergency
+adapter = "file" #file console
+
+[server]
+appName = "WebManageSvr"
+httpPort = 8180
+runMode = "dev"
+copyRequestBody = true
+autoRender = false
+EnableDocs = true
+
+
+
