@@ -1,11 +1,11 @@
 package test
 
 import (
-	"bailun.com/CT4_quote_server/WebManageSvr/conf"
-	"bailun.com/CT4_quote_server/WebManageSvr/controllers"
-	"bailun.com/CT4_quote_server/WebManageSvr/mysqls"
-	_ "bailun.com/CT4_quote_server/WebManageSvr/routers"
-	"bailun.com/CT4_quote_server/WebManageSvr/service"
+	"WebManageSvr/conf"
+	"WebManageSvr/controllers"
+	"WebManageSvr/mysqls"
+	_ "WebManageSvr/routers"
+	"WebManageSvr/service"
 	"bytes"
 	"encoding/json"
 	"fmt"
@@ -102,4 +102,10 @@ func TestGetDB(t *testing.T) {
 
 	}
 
+}
+func TestGos(t *testing.T) {
+	a := map[string]int{"2": 2, "3": 3, "4": 4}
+	for i := range a {
+		fmt.Println(a[i])
+	}
 }
